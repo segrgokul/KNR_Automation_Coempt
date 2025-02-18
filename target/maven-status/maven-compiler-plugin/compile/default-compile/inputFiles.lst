@@ -1,6 +1,6 @@
 D:\Coempt_Automation\coempt_automation\src\main\java\base\BasicFunctions.java
 D:\Coempt_Automation\coempt_automation\src\main\java\browsers\BrowserManager.java
-D:\Coempt_Automation\coempt_automation\src\main\java\dataProcessing\ReadExcelData.java
+D:\Coempt_Automation\coempt_automation\src\main\java\dataProcessing\ExcelComparator.java
 D:\Coempt_Automation\coempt_automation\src\main\java\dataProcessing\ReadExcelFiles.java
 D:\Coempt_Automation\coempt_automation\src\main\java\dataProcessing\ReadPdfData.java
 D:\Coempt_Automation\coempt_automation\src\main\java\pageModules\AttendanceTheoryPage.java
@@ -10,6 +10,7 @@ D:\Coempt_Automation\coempt_automation\src\main\java\pageModules\LoginPage.java
 D:\Coempt_Automation\coempt_automation\src\main\java\pageModules\MasterPage.java
 D:\Coempt_Automation\coempt_automation\src\main\java\pageModules\ReportCoursePage.java
 D:\Coempt_Automation\coempt_automation\src\main\java\pageModules\ReportEnrollmentPage.java
+D:\Coempt_Automation\coempt_automation\src\main\java\pageModules\ReportEnrollmentPageForGrade.java
 D:\Coempt_Automation\coempt_automation\src\main\java\pageModules\ResultTRDataPage.java
 D:\Coempt_Automation\coempt_automation\src\main\java\pageModules\SettingsAssingCoursePage.java
 D:\Coempt_Automation\coempt_automation\src\main\java\pageObjMod\pom.java

@@ -43,14 +43,18 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 	String practicalTotalSecMarks;
 	String practicalVivaMaxMarks;	
 	String practicalVivaSecMarks;
-	
-	
-	
-	
-	
-	
-	
+    boolean creditexecuted = false; // Flag to track execution
+    boolean gradeexecuted = false;
+	 double totalWeightedGrades = 0;
+     double totalCredits = 0;
 
+	List<Double> creditsList = new ArrayList<>();
+    List<Double> gradePointsList = new ArrayList<>();
+	
+	
+	
+	
+	double sgpa;
 	double Paper1;
 	double Paper2;
 	double Paper3;
@@ -77,7 +81,12 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 	double theoryTotal;
 	double praticalTotal;
 	double grandTotal;
+	double credits;
 	String subject;
+	String grade;
+	 double cgpa;
+	String gradeLetters;
+	Object gradePoints;
 	// four pattern
 	double theorySecMark;
 
@@ -615,7 +624,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 
 	public void processEightSubjectPatternPdf(Object Regno, File latestFile, Object paper1, Object paper2,
 			Object paper3, Object praticalExam, Object theoryExam, Object examTotal, String subjectToFind,
-			ExtentTest testCaseName) throws IOException {
+			ExtentTest testCaseName,Object gradeSecured,Object gradeLetter,Object gradePoint) throws IOException {
 		if (latestFile != null) {
 			try (PDDocument document = PDDocument.load(latestFile)) {
 				PDFTextStripper stripper = new PDFTextStripper();
@@ -793,7 +802,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 								}
 								checkMarks(Regno, "Theory Internal Sec. Marks", paper1, paper2, paper3, praticalExam,
 										theoryExam, subjectToFind, examTotal, theoryInternalSecMarks,
-										theoryInternalMaxMark, testCaseName);
+										theoryInternalMaxMark, testCaseName, gradeSecured, gradeLetter,gradePoint);
 								// Use the value
 							} catch (NumberFormatException e) {
 
@@ -824,7 +833,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 								// Check Theory (Univ) Sec. Marks
 								checkMarks(Regno, "Theory (Univ) Sec. Marks", paper1, paper2, paper3, praticalExam,
 										theoryExam, subjectToFind, examTotal, theoryUnivSecMarks, theoryMaxMark,
-										testCaseName);
+										testCaseName, gradeSecured,gradeLetter,gradePoint);
 
 								// Use the value
 							} catch (NumberFormatException e) {
@@ -871,7 +880,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 								// Check pratical internal Sec. Marks
 								checkMarks(Regno, "Pratical Internal Sec. Marks", paper1, paper2, paper3, praticalExam,
 										theoryExam, subjectToFind, examTotal, practicalInternalSecMarks, praticalMaxMark,
-										testCaseName);
+										testCaseName, gradeSecured,gradeLetter,gradePoint);
 
 							} catch (NumberFormatException e) {
 							
@@ -906,7 +915,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 								// Check pratical internal Sec. Marks
 								checkMarks(Regno, "Pratical Univ Sec. Marks", paper1, paper2, paper3, praticalExam,
 										theoryExam, subjectToFind, examTotal, practicalUnivSecMarks,
-										praticalTotalMaxMark, testCaseName);
+										praticalTotalMaxMark, testCaseName ,gradeSecured,gradeLetter,gradePoint);
 
 							} catch (NumberFormatException e) {
 
@@ -940,7 +949,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 								// Check Grand Total Sec. Marks (assumed max marks as 200)
 								checkMarks(Regno, "Theory plus pratical Sec. Marks", paper1, paper2, paper3,
 										praticalExam, theoryExam, subjectToFind, examTotal, theoryPracticalSecMarks,
-										grandTotalMaxMark, testCaseName);
+										grandTotalMaxMark, testCaseName, gradeSecured,gradeLetter,gradePoint);
 
 								// Use the value
 							} catch (NumberFormatException e) {
@@ -1039,7 +1048,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 								}
 								checkMarks(Regno, "Theory Total Sec. Marks", paper1, paper2, paper3, praticalExam,
 										theoryExam, subjectToFind, examTotal, theoryTotalSecMarks,
-										theoryInternalMaxMark, testCaseName);
+										theoryInternalMaxMark, testCaseName,gradeSecured,gradeLetter,gradePoint);
 								// Use the value
 							} catch (NumberFormatException e) {
 
@@ -1070,7 +1079,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 								// Check pratical internal Sec. Marks
 								checkMarks(Regno, "Pratical Total Sec. Marks", paper1, paper2, paper3, praticalExam,
 										theoryExam, subjectToFind, examTotal, practicalTotalSecMarks,
-										praticalTotalMaxMark, testCaseName);
+										praticalTotalMaxMark, testCaseName, gradeSecured,gradeLetter,gradePoint);
 
 							} catch (NumberFormatException e) {
 
@@ -1104,7 +1113,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 								// Check Grand Total Sec. Marks (assumed max marks as 200)
 								checkMarks(Regno, "Theory plus pratical Sec. Marks", paper1, paper2, paper3,
 										praticalExam, theoryExam, subjectToFind, examTotal, theoryPracticalSecMarks,
-										theoryInternalMaxMark, testCaseName);
+										theoryInternalMaxMark, testCaseName, gradeSecured,gradeLetter,gradePoint);
 
 								// Use the value
 							} catch (NumberFormatException e) {
@@ -1153,10 +1162,688 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 	
 	
 	
-	
+	public void processBscSubjectPatternPdf(Object Regno, File latestFile, Object paper1, Object paper2, Object paper3,
+			Object praticalExam, Object theoryExam, Object examTotal, String subjectToFind, ExtentTest testCaseName,Object gradeSecured,Object gradeLetter,Object gradePoint)
+			throws IOException {
+		
+		if (latestFile != null) {
+			try (PDDocument document = PDDocument.load(latestFile)) {
+				PDFTextStripper stripper = new PDFTextStripper();
+				int totalPages = document.getNumberOfPages();
+				System.out.println("Total Pages: " + totalPages);
+				System.out.println("---------------------------------------------------");
+
+				// Iterate through all pages and extract text
+				for (int page = 1; page <= totalPages; page++) {
+					stripper.setStartPage(page);
+					stripper.setEndPage(page);
+
+					//TO print the text
+					
+					String text = stripper.getText(document).replaceAll("[\r\n]+", "\n");
+			//		System.out.println(text);
+					
+					System.out.println("Page " + page + ":");
+					System.out.println("---------------------------------------------------");
+					// Extract registration number
+
+					Pattern registrationPattern = Pattern.compile("Registration No :\\s*(\\d+)");
+					Pattern sgpaPattern = Pattern.compile(
+						    "\\bSemester Grade Point Average \\(SGPA\\)\\s*:\\s*(\\d+(?:\\.\\d+)?)"
+						);
+
+
+				        Matcher sgpaMatcher = sgpaPattern.matcher(text);
+				    	Matcher regMatcher = registrationPattern.matcher(text);
+					
+				        if (sgpaMatcher.find()) {
+				         
+				            String sgpaMarks = sgpaMatcher.group(1); 
+				            sgpa = Double.parseDouble(sgpaMarks);
+				        	System.out.println("SGPA Found: " + sgpa);  // Extracts SGPA value
+
+				        
+				    
+
+				
+
+					if (regMatcher.find()) {
+						// Capture the matched number
+						String extractedNumber1 = regMatcher.group(1);
+						registrationNumber = Long.parseLong(extractedNumber1);
+
+						System.out.println("Registration No: " + registrationNumber);
+					}
+
+
+					String regex = "(M\\.Sc\\.|B\\.Sc\\.)\\s+Nursing\\s+\\(\\d{4}\\s+NR\\)\\s+[IVXLCDM]+\\s+Semester\\s+Examination";
+
+			        
+			        Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
+			        Matcher matcher1 = pattern.matcher(text);
+
+			        if (matcher1.find()) {
+			            System.out.println("Match found Course: " + matcher1.group());
+			        } else {
+			            System.out.println("No match found.");
+			        }
+			         // Match "M.Sc." or "B.Sc."
+			        Pattern nursingPattern = Pattern.compile(
+			        	    "^([\\w\\s&]+(?:[\\w\\s&]+)*)\\s+" +              // Subject name (handles multi-line)
+			        	    "(\\d+)\\s*\\(Theory\\)\\s+" +                     // Marks associated with (Theory)
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?\\s+" +  // 1st field (optional (F))
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?\\s+" +  // 2nd field (optional (F))
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?\\s+" +  // 3rd field (optional (F))
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?\\s+" +  // 4th field (optional (F))
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?\\s+" +  // 5th field (optional (F))
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?\\s+" +  // 6th field (optional (F))
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?\\s+" +  // 7th field (optional (F))
+			        	    "([A-F][+-]?|---)\\s+" +                             // Grade field (A-F, A+, A-, or ---)
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?$" +    // Final field (optional (F))
+			        	    "|(\\d+)\\s*\\(Practical\\)\\s+" +                    // For the Practical section (same as Theory, no subject name)
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?\\s+" +  // 1st field (optional (F))
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?\\s+" +  // 2nd field (optional (F))
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?\\s+" +  // 3rd field (optional (F))
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?\\s+" +  // 4th field (optional (F))
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?\\s+" +  // 5th field (optional (F))
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?\\s+" +  // 6th field (optional (F))
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?\\s+" +  // 7th field (optional (F))
+			        	    "([A-F][+-]?|---)\\s+" +                             // Grade field (A-F, A+, A-, or ---)
+			        	    "(\\d+|NE|NR|NA|NEAT|AP|AB|---)(?:\\s*\\(F\\))?$",     // Final field (optional (F))
+			        	    Pattern.MULTILINE | Pattern.DOTALL
+			        	);
+
+
+
+
+
+
+
+
+
+
+					Matcher nursingPatternMatcher = nursingPattern.matcher(text);
+					Pattern Result = Pattern.compile("Result:\\s*(\\w+)", Pattern.CASE_INSENSITIVE);
+					Matcher resultMatcher = Result.matcher(text);
+
+					if (resultMatcher.find()) {
+					    String[] result = resultMatcher.group().split(":\\s*");
+					    
+					    // Extracting only the value (Fail, Pass, AP)
+					    if (result.length > 1) {
+					        System.out.println("Result: " + result[1]);  // Printing only the extracted value
+					 status =result[1];
+					 System.out.println(status);
+					    }
+					}
+
+					
+					// Extract and print each row
+					while (nursingPatternMatcher.find()) {
+					    if (matcher1.group().contains("B.Sc.")) {
+					      	
+					    	try {        
+					    		// Assuming you already have the nursingPatternMatcher from matching the input
+					    		if (nursingPatternMatcher.group(1) != null) {
+					    		    // If it's a Theory section, capture the subject name from the group
+					    		    subject = nursingPatternMatcher.group(1).trim();
+					    		    System.out.println(subject);
+					    		    
+					    		} else if (nursingPatternMatcher.group(2) != null) {
+					    		    // If it's a Practical section, the subject name will not be captured,
+					    		    // so you might want to set it to some default or empty value
+					    		    subject = "bc"; // or "Practical Subject" as a placeholder
+					    		} else {
+					    		    // If neither group matches (error case)
+					    
+					    		    if (nursingPatternMatcher.group(12) != null) {
+					    		        // Practical section: Capture the practical marks
+					    		        subject = "Practical Subject";  // Or use the Theory subject if you want to associate
+					    		        System.out.println("Subject (Practical): " + subject);
+					    		   
+					    		        credits = Double.parseDouble(nursingPatternMatcher.group(12));
+						            	
+					    		        System.out.println("Credits: " + credits);
+					    		    }	
+					    				
+					    		    	
+					    		    
+					    		    
+					    		}
+
+
+								   if (!creditexecuted && !subject.equalsIgnoreCase("Communicative English")) {
+									// Check if both group 2 and group 11 are present and parse the appropriate value
+									   if (nursingPatternMatcher.group(2) != null) {
+									       try {
+									           credits = Double.parseDouble(nursingPatternMatcher.group(2)); // Parse group 2 (Theory)
+									       } catch (NumberFormatException e) {
+									           // Handle case where group 2 is not a valid number
+									           System.out.println("Invalid value in group 2");
+									       }
+									   } else if (nursingPatternMatcher.group(11) != null) {
+									       try {
+									    	   
+									           credits = Double.parseDouble(nursingPatternMatcher.group(11)); // Parse group 11 (Practical/Final)
+									       } catch (NumberFormatException e) {
+									           // Handle case where group 11 is not a valid number
+									           System.out.println("Invalid value in group 11");
+									       }
+									   }
+									   
+									  
+									   creditsList.add(credits);
+									   
+									   if (!matcher1.group().trim().contains("B.Sc. Nursing (2022 NR) II Semester Examination")) {
+
+									   
+									   if (creditsList.size() > 2) {
+								            creditsList = creditsList.subList(2, creditsList.size()); // Keeps only last 2
+								        }
+
+								        // Print updated list
+								    //    System.out.println(creditsList); 
+								//        creditexecuted = true;   // Mark as executed to prevent future addit
+								        
+									   }
+									  else{
+										   
+										   if (creditsList.size() > 4) {
+									            creditsList = creditsList.subList(4, creditsList.size()); // Keeps only last 2
+									        }
+
+									        // Print updated list
+									     //   System.out.println(creditsList); 
+									  }
+									  
+								   
+								   
+								   }
+						                
+						         else {
+					            	
+						            credits = Double.parseDouble(nursingPatternMatcher.group(2));
+					            	System.out.println(credits);
+					            }
+					            
+					          
+					            
+					            
+					     	   if (nursingPatternMatcher.group(3) != null) {
+							       try {
+							    	   theoryInternalMaxMarks = nursingPatternMatcher.group(3);// Parse group 2 (Theory)
+							    	   System.out.println(theoryInternalMaxMarks);
+							       } catch (NumberFormatException e) {
+							           // Handle case where group 2 is not a valid number
+							           System.out.println("Invalid value in group 2");
+							       }
+							   } else if (nursingPatternMatcher.group(13) != null) {
+							       try {
+							    	   
+							    	   theoryInternalMaxMarks = nursingPatternMatcher.group(13);// Parse group 2 (Theory)
+										 // Parse group 11 (Practical/Final)
+							       } catch (NumberFormatException e) {
+							           // Handle case where group 11 is not a valid number
+							           System.out.println("Invalid value in group 11");
+							       }}
+							 
+					            
+					            theoryInternalSecMarks =nursingPatternMatcher.group(4);
+					            theoryUnivMaxMarks = nursingPatternMatcher.group(5);
+								theoryUnivSecMarks = nursingPatternMatcher.group(6);
+								theoryTotalMaxMarks = nursingPatternMatcher.group(7);
+								theoryTotalSecMarks = nursingPatternMatcher.group(8);
+								String gradeSecuredPercentage =nursingPatternMatcher.group(9);
+								gradeLetters =nursingPatternMatcher.group(10);
+
+								   if (!gradeexecuted && !subject.equalsIgnoreCase("Communicative English")) {
+									 
+									   if (nursingPatternMatcher.group(11) != null) {
+									       
+										   if(nursingPatternMatcher.group(11).equals("---")){
+											   System.out.println(gradeSecured);
+											   
+											   gradePoints =  objectToDataType(gradeSecured); 
+											   
+											   System.out.println(gradePoints);
+											   
+										   }
+										   
+										   try {
+									    	   gradePoints = Double.parseDouble(nursingPatternMatcher.group(11));// Parse group 2 (Theory)
+									    	
+									       System.out.println("11");
+									       } catch (NumberFormatException e) {
+									           // Handle case where group 2 is not a valid number
+									           System.out.println("Invalid value in group 2");
+									       }
+									   } else if (nursingPatternMatcher.group(19) != null) {
+									       
+										   
+										   try {
+									    	   
+									    	   System.out.println("19");
+									    	   gradePoints = Double.parseDouble(nursingPatternMatcher.group(20)); // Parse group 11 (Practical/Final)
+									       } catch (NumberFormatException e) {
+									           // Handle case where group 11 is not a valid number
+									           System.out.println("Invalid value in group 11");
+									       }
+									       
+									
+									   
+									   }
+									 
+									   gradePointsList.add((Double) gradePoints);
+									   
+									   System.out.println(gradePointsList);
+									   
+									   if (!matcher1.group().trim().contains("B.Sc. Nursing (2022 NR) II Semester Examination")) {
+
+												   
+									   if (gradePointsList.size() > 2) {
+								    	gradePointsList = gradePointsList.subList(2, gradePointsList.size()); // Keeps only last 2
+							        }
+								    
+							//	    gradeexecuted =true;
+						     
+									   System.out.println(gradePointsList);
+									   
+						        	}
+									   
+									   else {
+   
+											   if (gradePointsList.size() > 4) {
+													gradePointsList = gradePointsList.subList(4, gradePointsList.size()); // Keeps only last 2
+										        }
+									   }
+										   
+								   }
+					   
+						            else {
+						            	
+						            gradePoints =  nursingPatternMatcher.group(11);
+						         
+						            }
+
+							
+								
+								System.out.println("==============");
+					            System.out.println("subject: " + subject);
+					            System.out.println("Credits: " + credits);
+					            System.out.println("Internal Max Mark: " + theoryInternalMaxMarks);
+					            System.out.println("Internal Sec Mark:" + theoryInternalSecMarks);
+					            System.out.println("Univ Max Marks:"+ theoryUnivMaxMarks);
+					            System.out.println("Univ Sec Marks:"+ theoryUnivSecMarks);
+					            System.out.println("Total Max Marks:"+ theoryTotalMaxMarks);
+					            System.out.println("Total Sec Marks:"+ theoryTotalSecMarks);
+					            System.out.println("Grade Secured Percentage:"+ gradeSecuredPercentage);
+					            System.out.println("Grade Letters:"+ gradeLetters);
+					            System.out.println("Grade Points:"+ gradePoints);
+						          
+					    
+								
+								System.out.println("------------------------");
+								
+
+				                
+							
+						
+						paper1Mark =0.0;
+						paper2Mark=0.0;
+						paper3Mark =0.0;
+						praticalTotalSecMark =0.0;
+						ExamTotalScore =0.0;
+						Paper1  =0.0;
+						Paper2=0.0;
+						Paper3 =0.0;
+						PraticalExamTotal =0.0;
+						
+						
+						if ((status.equals("Pass") || status.equals("Fail") || status.equals("AP"))& subject.equals(subjectToFind)) {
+
+							try {
+								System.out.println("Internal is running");
+								
+								if (!theoryInternalSecMarks.equals("NA")||!theoryInternalSecMarks.equals("AB")||!theoryInternalSecMarks.equals("NE") ||!  theoryInternalSecMarks.equals("NE (AT)")) {
+								theoryInternalMaxMark = Double.parseDouble(theoryInternalMaxMarks);
+								paper1Mark = Double.parseDouble(theoryInternalSecMarks) ;
+								}
+								checkMarks(Regno, "Internal Sec. Marks", paper1, paper2, paper3, praticalExam,
+										theoryExam, subjectToFind, examTotal, theoryInternalSecMarks,
+										theoryInternalMaxMark, testCaseName,gradeSecured,gradeLetter,gradePoint);
+								// Use the value
+							} catch (NumberFormatException e) {
+
+								if (theoryInternalSecMarks.equals("AB") || 
+										theoryInternalSecMarks.equals("NE") || 
+										theoryInternalSecMarks.equals("---") || 
+										theoryInternalSecMarks.equals("AP") ||
+										theoryInternalSecMarks.equals("NE (AT)")) {
+									paper1Mark = 0.0;
+									Paper1 = 0.0;
+									System.out.println(paper1Mark);
+
+								ExtentTest testCaseScenario = testCaseName.createNode("Theory internal sec. marks validation for the subject " + subject +" Test case has started running");
+								
+								testCaseScenario.log(Status.PASS,"The following Register number " + Regno +" for the subject "+ subject +" theory internal sec marks is: " + theoryInternalSecMarks);
+								
+								System.out.println("The following Register number " + Regno +" for the subject "+ subject +" theory internal sec marks is: " + theoryInternalSecMarks);
+									
+							
+								
+								}}
+
+							try {
+								System.out.println("univ is running");
+								if (!theoryUnivSecMarks.equals("NA")) {
+								theoryMaxMark = Double.parseDouble(theoryUnivMaxMarks);
+								paper2Mark = Double.parseDouble(theoryUnivSecMarks);
+								
+								}
+								// Check Theory (Univ) Sec. Marks
+								checkMarks(Regno, "Theory (Univ) Sec. Marks", paper1, paper2, paper3, praticalExam,
+										theoryExam, subjectToFind, examTotal, theoryUnivSecMarks, theoryMaxMark,
+										testCaseName,gradeSecured,gradeLetter,gradePoint);
+
+								// Use the value
+							} catch (NumberFormatException e) {
+
+								if (theoryUnivSecMarks.equals("AB") || 
+										theoryUnivSecMarks.equals("NE") || 
+									    theoryUnivSecMarks.equals("---") || 
+									    theoryUnivSecMarks.equals("AP") ||
+									    theoryUnivSecMarks.equals("NE (AT)")) {
+									paper2Mark = 0.0;
+									Paper2 =0.0;
+									System.out.println(paper2Mark);
+								
+							
+									 ExtentTest testCaseScenario = testCaseName.createNode("Theory Univ Sec. Marks Validation for the Subject "+ subject + " Test case has started running");
+									
+									
+									 testCaseScenario.log(Status.PASS,"\n The Following Registration number " + Regno +" for the Subject "+ subject 
+											 + " Therory Univ Sec. Marks is: " + theoryUnivSecMarks);
+									
+									 System.out.println("\nThe Following Registration number " + Regno
+												+ " Therory Univ Sec. Marks is: " + theoryUnivSecMarks);
+											 
+								}
+
+								}
+								// Handle gracefully, e.g., assign default value or log an error
+
+						
+
+							try {
+								
+								System.out.println("Grand total is running");
+								if (!theoryTotalSecMarks.equals("NA")) {
+								grandTotalMaxMark = Double.parseDouble(theoryTotalMaxMarks);
+								ExamTotalScore = Double.parseDouble(theoryTotalSecMarks);
+								}
+								// Check Grand Total Sec. Marks (assumed max marks as 200)
+								checkMarks(Regno, "Theory plus pratical Sec. Marks", paper1, paper2, paper3,
+										praticalExam, theoryExam, subjectToFind, examTotal, theoryTotalSecMarks,
+										grandTotalMaxMark, testCaseName, gradeSecured,gradeLetter,gradePoint);
+
+							// Use the value
+							} catch (NumberFormatException e) {
+								if (theoryTotalSecMarks.equals("AB") || 
+										theoryTotalSecMarks.equals("NE") || 
+										theoryTotalSecMarks.equals("---") || 
+										theoryTotalSecMarks.equals("AP") ||
+										theoryTotalSecMarks.equals("NE (AT)")) {
+									
+									ExamTotalScore = 0.0;
+									System.out.println(ExamTotalScore);
+								
+
+									 ExtentTest testCaseScenario = testCaseName.createNode("Theory plus pratical Sec. Marks Validation for the Subject "+ subject + " Test case has started running");
+										
+										
+									 testCaseScenario.log(Status.PASS,"\n The Following Registration number " + Regno +" for the Subject "+ subject 
+											 + " Theory plus Pratical Sec. Marks is: " + theoryTotalSecMarks);
+									
+									 System.out.println("\nThe Following Registration number " + Regno
+												+ " Theory plus Pratical Sec. Marks is:" + theoryTotalSecMarks);
+										
+
+							}}
+								
+								try {
+									
+									System.out.println("Grand garde total is running");
+									if (!gradeLetters.equals("NA")) {
+										double percentage = (ExamTotalScore / grandTotalMaxMark) * 100;
+										
+										getGrade(percentage);
+									}
+									// Check Grand Total Sec. Marks (assumed max marks as 200)				
+									checkMarks(Regno, "Grade Letters", paper1, paper2, paper3,
+											praticalExam, theoryExam, subjectToFind, examTotal, theoryTotalSecMarks,
+											grandTotalMaxMark, testCaseName, gradeSecured,gradeLetter,gradePoint);
+
+								// Use the value
+								} catch (NumberFormatException e) {
+									if (gradeLetters.equals("AB") || 
+											gradeLetters.equals("NE") || 
+											gradeLetters.equals("---") || 
+											gradeLetters.equals("AP") ||
+											gradeLetters.equals("NE (AT)")) {
+										
+									
+									
+
+										 ExtentTest testCaseScenario = testCaseName.createNode("Grade letter Validation for the Subject "+ subject + " Test case has started running");
+											
+											
+										 testCaseScenario.log(Status.PASS,"\n The Following Registration number " + Regno +" for the Subject "+ subject 
+												 + " Grade letter  is: " + gradeLetters);
+										
+										 System.out.println("\nThe Following Registration number " + Regno
+													+ " Grade letter is:" + gradeLetters);
+											
+
+								}		
+								
+							}
+								
+							// Check Theory Internal Sec. Marks
+					//		checkGradeValidation(Regno, "Grade Marks validation",gradeLetter,subjectToFind,testCaseName);
+						
+							// Stop after printing one subject
+						}
+
+						
+				
+
+//For MSC course		
+			
+			
+	else if (matcher1.group().contains("M.Sc.")) {
+							
+							System.out.println("==============");
+							subject = nursingPatternMatcher.group(1).trim();
+
+							theoryInternalMaxMarks = nursingPatternMatcher.group(2);
+							theoryUnivMaxMarks = nursingPatternMatcher.group(3);
+							theoryTotalMaxMarks = nursingPatternMatcher.group(4);
+							theoryTotalSecMarks = nursingPatternMatcher.group(5);
+							practicalInternalMaxMarks = nursingPatternMatcher.group(6);
+							practicalUnivMaxMarks = nursingPatternMatcher.group(7);
+							practicalTotalMaxMarks = nursingPatternMatcher.group(8);
+							practicalTotalSecMarks = nursingPatternMatcher.group(9);
+							theoryPracticalMaxMarks = nursingPatternMatcher.group(10);
+							theoryPracticalSecMarks = nursingPatternMatcher.group(11);
+							status = nursingPatternMatcher.group(12);
+
+							System.out.println("subject: " + nursingPatternMatcher.group(1).trim());
+
+							// Printing the required format
+							System.out.println("Theory Internal Max. Marks: " + theoryInternalMaxMarks);
+
+							System.out.println("Theory (Univ) Max. Marks: " + theoryUnivMaxMarks);
+							
+							System.out.println("Theory Total Max. Marks: " + theoryTotalMaxMarks);
+							
+
+							System.out.println("Theory Total Sec. Marks: " + theoryTotalSecMarks);
+
+							System.out.println("Practical Internal Max. Marks: " + practicalInternalMaxMarks);
+
+							System.out.println("Practical (Univ) Max. Marks: " + practicalUnivMaxMarks);
+							
+							System.out.println("Practical Total Max. Marks: " + practicalTotalMaxMarks);
+					
+							System.out.println("Practical Total Sec. Marks: " + practicalTotalSecMarks);
+							System.out.println("Theory + Practical Max. Marks: " + theoryPracticalMaxMarks);
+							System.out.println("Theory + Practical Sec. Marks: " + theoryPracticalSecMarks);
+							System.out.println("Status: " + status);
+							
+						paper1Mark =0.0;
+						paper2Mark=0.0;
+						paper3Mark =0.0;
+						praticalTotalSecMark =0.0;
+						ExamTotalScore =0.0;
+						Paper1  =0.0;
+						Paper2=0.0;
+						Paper3 =0.0;
+						PraticalExamTotal =0.0;
+						
+						
+						
+						if ((status.equals("Pass") || status.equals("Fail") || status.equals("AP"))& subject.equals(subjectToFind)) {
+
+							try {
+								
+								if (!theoryTotalSecMarks.equals("NA")||!theoryTotalSecMarks.equals("AB")||!theoryTotalSecMarks.equals("NE") ||!  theoryTotalSecMarks.equals("NE (AT)")) {
+								theoryInternalMaxMark = Double.parseDouble(theoryTotalMaxMarks);
+								paper1Mark = Double.parseDouble(theoryTotalSecMarks) ;
+								}
+								checkMarks(Regno, "Theory Total Sec. Marks", paper1, paper2, paper3, praticalExam,
+										theoryExam, subjectToFind, examTotal, theoryTotalSecMarks,
+										theoryInternalMaxMark, testCaseName, gradeSecured,gradeLetter,gradePoint);
+								// Use the value
+							} catch (NumberFormatException e) {
+
+								if (theoryTotalSecMarks.equals("AB") || 
+										theoryTotalSecMarks.equals("NE") || 
+										theoryTotalSecMarks.equals("NE(AT)") || 
+										theoryTotalSecMarks.equals("NE (AT)")) {
+									paper1Mark = 0.0;
+									Paper1 = 0.0;
+									System.out.println(paper1Mark);
+
+								ExtentTest testCaseScenario = testCaseName.createNode("Theory Total sec. marks validation for the subject " + subject +" Test case has started running");
+								
+								testCaseScenario.log(Status.PASS,"The following Register number " + Regno +" for the subject "+ subject +" theory Total sec marks is: " + theoryTotalSecMarks);
+								
+								System.out.println("The following Register number " + Regno +" for the subject "+ subject +" theory Total sec marks is: " + theoryTotalSecMarks);
+									
+							
+								
+								}}
+
+							try {
+								
+								if (!practicalTotalSecMarks.equals("NA")) {
+								praticalTotalMaxMark = Double.parseDouble(practicalTotalMaxMarks);
+								praticalTotalSecMark = Double.parseDouble(practicalTotalSecMarks);
+								}	// Use the value
+								// Check pratical internal Sec. Marks
+								checkMarks(Regno, "Pratical Total Sec. Marks", paper1, paper2, paper3, praticalExam,
+										theoryExam, subjectToFind, examTotal, practicalTotalSecMarks,
+										praticalTotalMaxMark, testCaseName, gradeSecured,gradeLetter,gradePoint);
+
+							} catch (NumberFormatException e) {
+
+								if (practicalTotalSecMarks.equals("AB") || 
+										practicalTotalSecMarks.equals("NE") || 
+										practicalTotalSecMarks.equals("NE(AT)") || 
+										practicalTotalSecMarks.equals("NE (AT)")) {
+									praticalTotalSecMark = 0.0;
+									PraticalExamTotal =0.0;
+									System.out.println(praticalTotalSecMark);
+								
+
+								 ExtentTest testCaseScenario = testCaseName.createNode("Pratical Total Sec. Marks Validation for the Subject "+ subject + " Test case has started running");
+									
+									
+								 testCaseScenario.log(Status.PASS,"\n The Following Registration number " + Regno +" for the Subject "+ subject 
+										 + " Practical Total Sec. Marks is:" + practicalTotalSecMarks);
+								
+								 System.out.println("\nThe Following Registration number " + Regno
+											+ " Practical Total Sec. Marks is:" + practicalTotalSecMarks);
+									
+								// Handle gracefully, e.g., assign default value or log an error
+
+							}}
+
+							try {
+								if (!theoryPracticalSecMarks.equals("NA")) {
+									theoryInternalMaxMark = Double.parseDouble(theoryPracticalMaxMarks);
+								ExamTotalScore = Double.parseDouble(theoryPracticalSecMarks);
+								}
+								// Check Grand Total Sec. Marks (assumed max marks as 200)
+								checkMarks(Regno, "Theory plus pratical Sec. Marks", paper1, paper2, paper3,
+										praticalExam, theoryExam, subjectToFind, examTotal, theoryPracticalSecMarks,
+										theoryInternalMaxMark, testCaseName, gradeSecured,gradeLetter,gradePoint);
+
+								// Use the value
+							} catch (NumberFormatException e) {
+								if (theoryPracticalSecMarks.equals("AB") || 
+										theoryPracticalSecMarks.equals("NE") || 
+										theoryPracticalSecMarks.equals("NE(AT)") || 
+										theoryPracticalSecMarks.equals("NE (AT)")) {
+									ExamTotalScore = 0.0;
+									System.out.println(ExamTotalScore);
+								
+
+									 ExtentTest testCaseScenario = testCaseName.createNode("Theory plus pratical Sec. Marks Validation for the Subject "+ subject + " Test case has started running");
+										
+										
+									 testCaseScenario.log(Status.PASS,"\n The Following Registration number " + Regno +" for the Subject "+ subject 
+											 + " Theory plus Pratical Sec. Marks is: " + theoryPracticalSecMarks);
+									
+									 System.out.println("\nThe Following Registration number " + Regno
+												+ " Theory plus Pratical Sec. Marks is:" + theoryPracticalSecMarks);
+										
+
+							}}
+								
+							
+
+							// Check Theory Internal Sec. Marks
+
+							// Stop after printing one subject
+						}
+						
+	}}
+						
+						catch(Exception e) {
+							
+						}} //try
+			        
+					}						
+					}
+	    System.out.println("==============");
+
+	    checkGradePointValidation(Regno, "Grade Point", gradeSecured,gradeLetter,gradePoint, subjectToFind,
+				testCaseName);
+        System.out.println("==============");
+
+
+			}}}
+		else {
+	            System.out.println("No match found.");
+	        }
+			
+			}
+		
+		
 	
 	public void processFourSubjectPatternPdf(Object Regno, File latestFile, Object paper1, Object paper2, Object paper3,
-			Object praticalExam, Object theoryExam, Object examTotal, String subjectToFind, ExtentTest testCaseName)
+			Object praticalExam, Object theoryExam, Object examTotal, String subjectToFind, ExtentTest testCaseName, Object gradeSecured,Object gradeLetter,Object gradePoint)
 			throws IOException {
 		if (latestFile != null) {
 			try (PDDocument document = PDDocument.load(latestFile)) {
@@ -1272,7 +1959,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 
 								checkMarks(Regno, "Theory Internal Sec Marks", paper1, paper2, paper3, praticalExam,
 										theoryExam, subjectToFind, examTotal, theorySecMarks, theoryInternalMaxMark,
-										testCaseName);
+										testCaseName ,gradeSecured,gradeLetter, gradePoint);
 								// Use the value
 
 							} catch (NumberFormatException e) {
@@ -1421,7 +2108,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 	}
 
 	public void processOneSubjectPaternPdf(File latestFile,Object Regno, Object paper1, Object paper2, Object paper3,
-			Object theoryExam, Object praticalExam, Object examTotal, ExtentTest testCaseName, String subjectToFind)
+			Object theoryExam, Object praticalExam, Object examTotal, ExtentTest testCaseName, String subjectToFind,Object gradeSecured,Object gradeLetter,Object gradePoint)
 			throws IOException {
 		if (latestFile != null) {
 			try (PDDocument document = PDDocument.load(latestFile)) {
@@ -1660,7 +2347,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 								}
 								checkMarks(Regno, "Theory Total Sec. Marks", paper1, paper2, paper3, praticalExam,
 										theoryExam, subjectToFind, examTotal, theoryTotalSecMarks,
-										theoryInternalMaxMark, testCaseName);
+										theoryInternalMaxMark, testCaseName, gradeSecured,gradeLetter, gradePoint);
 								// Use the value
 							} catch (NumberFormatException e) {
 
@@ -1693,7 +2380,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 								// Check pratical internal Sec. Marks
 								checkMarks(Regno, "Pratical Univ Sec. Marks", paper1, paper2, paper3, praticalExam,
 										theoryExam, subjectToFind, examTotal, practicalVivaSecMarks,
-										praticalTotalMaxMark, testCaseName);
+										praticalTotalMaxMark, testCaseName, gradeSecured,gradeLetter,gradePoint);
 
 							} catch (NumberFormatException e) {
 
@@ -1728,7 +2415,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 								// Check Grand Total Sec. Marks (assumed max marks as 200)
 								checkMarks(Regno, "Theory plus pratical Sec. Marks", paper1, paper2, paper3,
 										praticalExam, theoryExam, subjectToFind, examTotal, theoryPracticalSecMarks,
-										grandTotalMaxMark, testCaseName);
+										grandTotalMaxMark, testCaseName ,gradeSecured,gradeLetter,gradePoint);
 
 								// Use the value
 							} catch (NumberFormatException e) {
@@ -2489,21 +3176,24 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 					Matcher twoPatternMatcher = twoPattern.matcher(text);
 					
 					
-					Pattern bscNursingPattern = Pattern.compile(
-						    "^([\\w &]+ \\d+ \\(Theory\\))\\s+" +  // Capture subject name with number and "(Theory)"
-						    "((?:\\d+|NE|NR|NA|NEAT|AP)?)\\s+" +  // Capture first column (e.g., 25 or special values)
-						    "((?:\\d+|NE|NR|NA|NEAT|AP)?)\\s+" +  // Capture second column (e.g., 19 or special values)
-						    "((?:\\d+|NE|NR|NA|NEAT)?)\\s+" +  // Capture third column (e.g., 75 or special values)
-						    "((?:\\d+|NE|NR|NA|NEAT)?)\\s+" +  // Capture fourth column (e.g., 51 or special values)
-						    "((?:\\d+|NE|NR|NA|NEAT)?)\\s+" +  // Capture fifth column (e.g., 100 or special values)
-						    "((?:\\d+|NE|NR|NA|NEAT|AP)?)\\s+" +  // Capture sixth column (e.g., 70 or special values)
-						    "((?:\\d+|NE|NR|NA|NEAT)?)?\\s+" +  // Capture seventh column (e.g., 70 or special values)
-						    "((?:\\d+|NE|NR|NA|NEAT)?)?\\s+" +  // Capture eighth column (e.g., B+ or special values)
-						    "((?:\\w\\+?|NE|NR|NA|NEAT)?)?\\s+" +  // Capture ninth column (e.g., 7 or special values)
-						    "((?:\\d+|NE|NR|NA|NEAT)?)?$"  // Capture last column (optional, e.g., 7 or special values)
-						);
+					  Pattern nursingPattern = Pattern.compile(
+					            "^(.*?)\\s+(\\d+)\\s*\\(Theory\\)\\s+" +
+					            "(\\d+|NE|NR|NA|NEAT|AP)\\s+" +
+					            "(\\d+|NE|NR|NA|NEAT|AP)\\s+" +
+					            "(\\d+|NE|NR|NA|NEAT|AP)\\s+" +
+					            "(\\d+|NE|NR|NA|NEAT|AP)(?:\\s*\\(F\\))?\\s+" +
+					            "(\\d+|NE|NR|NA|NEAT|AP)\\s+" +
+					            "(\\d+|NE|NR|NA|NEAT|AP)(?:\\s*\\(F\\))?\\s+" +
+					            "(\\d+|NE|NR|NA|NEAT|AP)\\s+" +
+					            "([A-F][+-]?)\\s+" +
+					            "(\\d+|NE|NR|NA|NEAT|AP)$",
+					            Pattern.MULTILINE
+					        );
 
-					Matcher bscNursingPatternMatcher = bscNursingPattern.matcher(text);
+
+
+
+					Matcher nursingPatternMatcher = nursingPattern.matcher(text);
 
 					
 					
@@ -2515,7 +3205,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 						System.out.println("Pattern matched: 8 subject pattern detected.");
 
 						processEightSubjectPatternPdf(Regno, latestFile, paper1, paper2, paper3, praticalExam,
-								theoryExam, examTotal, subjectToFind, testCaseName);
+								theoryExam, examTotal, subjectToFind, testCaseName, gradeSecured,gradeLetter,gradePoint);
 						// processFourPatternValidation(Regno,paper1,paper2,paper3,theroryExam,praticalExam,examTotal,testCaseName);
 						// Exit once the matching method is called
 						return;
@@ -2528,7 +3218,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 						System.out.println("Matched by FourPattern: " + fourPatternMatcher.group());
 
 						processFourSubjectPatternPdf(Regno, latestFile, paper1, paper2, paper3, praticalExam,
-								theoryExam, examTotal, subjectToFind, testCaseName);
+								theoryExam, examTotal, subjectToFind, testCaseName, gradeSecured,gradeLetter,gradePoint);
 						// Exit once the matching method is called
 						return;
 					} else if (oneSubjectPatternMatcher.find()) {
@@ -2537,7 +3227,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 						System.out.println("Pattern matched: 1 subject pattern detected.");
 
 						processOneSubjectPaternPdf(latestFile,Regno, paper1, paper2, paper3, theoryExam, praticalExam,
-								examTotal, testCaseName, subjectToFind);
+								examTotal, testCaseName, subjectToFind, gradeSecured,gradeLetter,gradePoint);
 
 
 						// Exit once the matching method is called
@@ -2547,7 +3237,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 					else if (thirdSubjectPatternMatcher.find()) {
 						System.out.println("Pattern matched: Third patterns detected.");
 						processOneSubjectPaternPdf(latestFile,Regno, paper1, paper2, paper3, theoryExam, praticalExam,
-								examTotal, testCaseName, subjectToFind);
+								examTotal, testCaseName, subjectToFind, gradeSecured,gradeLetter,gradePoint);
 
 						// Exit once the matching method is called
 						return;
@@ -2563,11 +3253,13 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 						return;
 					}
 					
-					else if(bscNursingPatternMatcher.find()) {
+					else if(nursingPatternMatcher.find()) {
 						
 						
 						System.out.println("Pattern matched: Bsc nusing patterns detected.");
 						
+						processBscSubjectPatternPdf(Regno,latestFile,paper1,paper2,paper3,praticalExam,theoryExam,examTotal,subjectToFind,testCaseName,gradeSecured,gradeLetter,gradePoint);
+				
 						
 					}
 
@@ -3056,7 +3748,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 			ExtentTest testCaseName) throws IOException {
 
 		try {
-			if (subject.equalsIgnoreCase(subjectToFind)) {
+			if (subject.contains(subjectToFind)) {
 
 				ExtentTest testCaseScenario = testCaseName.createNode(
 						marksName + " Validation for the Subject" + subjectToFind + "Test case has started running");
@@ -3159,6 +3851,8 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 
 				theoryPlusPracticalTotalMarks(regno, marksName, theroryExam, subjectToFind, testCaseName);
 
+
+			
 			}
 
 			else {
@@ -3360,7 +4054,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 	// Helper function to check if the marks are greater than 50% of max marks
 	public void checkMarks(Object regno, String markName, Object paper1, Object paper2, Object paper3,
 			Object praticalExam, Object theoryExam, String subjectToFind, Object examTotal, String marks,
-			double maxMarks, ExtentTest testCaseName) throws IOException {
+			double maxMarks, ExtentTest testCaseName,Object gradeSecured,Object gradeLetter,Object gradePoint) throws IOException {
 
 		System.out.println(marks);
 
@@ -3392,7 +4086,7 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 			try {
 
 				if ((status.equals("Pass") || status.equals("Fail")) &&
-					    (markName.contains("Theory Internal Sec. Marks") || markName.contains("Theory Total Sec. Marks"))) {
+					    (markName.contains("Theory Internal Sec. Marks") || markName.contains("Theory Total Sec. Marks") || markName.contains("Internal Sec. Marks") )) {
 
 					
 					theoryInternalSecMarks(regno, markName, paper1, subjectToFind, testCaseName);
@@ -3420,13 +4114,29 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 						&& markName.contains("Theory plus pratical Sec. Marks")) {
 
 					theoryPlusPracticalSecMarks(regno, markName, theoryExam, subjectToFind, testCaseName);
-
+				
 				}
+				
+				else if((status.equals("Pass") || status.equals("Fail"))
+						&& markName.contains("Grade Letter")) {
 
+				
+					checkGradeLetterValidation(regno,  markName, gradeSecured,gradeLetter,gradePoint, subjectToFind, testCaseName);
+					
+				}		
+		/*		else if((status.equals("Pass") || status.equals("Fail"))
+						&& markName.contains("Grade Point")) {
+										
+					System.out.println("checkGradePointValidation");
+					checkGradePointValidation(regno,  markName, gradeSecured,gradeLetter,gradePoint, subjectToFind, testCaseName);
+				
+				
+				}*/
 				else {
-					System.out.println("==============");
-					securedMarks(regno, examTotal, testCaseName);
-					System.out.println("==============");
+					/*
+					 * System.out.println("=============="); securedMarks(regno, examTotal,
+					 * testCaseName); System.out.println("==============");
+					 */
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -3532,4 +4242,186 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 		}
 	}
 	
+
+	public void checkGradeLetterValidation(Object regno, String markName, Object gradeSecured,Object gradeLetter,Object gradePoint, String subjectToFind,
+			ExtentTest testCaseName) throws IOException {
+
+		
+		try {
+			
+			
+			if (subject.equalsIgnoreCase(subjectToFind)) {
+
+				ExtentTest testCaseScenario = testCaseName.createNode(
+						markName + " validation for the Subject " + subjectToFind + "Test case has started running");
+				
+
+				try {
+					if (grade.equals(gradeLetter)) {
+						System.out.println("Both grade letter from PDF file " + gradeLetters + " and excel file " + gradeLetter
+								+ " for the following Register " + regno + " number data are same");
+						testCaseScenario.log(Status.PASS, "Both grade letter from PDF file " + gradeLetters + " and excel file " + gradeLetter
+								+ " for the following Register " + regno + " number data are same");
+
+					}
+
+					else {
+						System.out.println("Both grade letter from PDF file " + gradeLetters + " and excel file " + gradeLetter
+								+ " for the following Register " + regno + " number data are not same");
+						testCaseScenario.log(Status.FAIL,
+								"Both grade letter from PDF file " + gradeLetters + " and excel file " + gradeLetter
+								+ " for the following Register " + regno + " number data are same"
+								,MediaEntityBuilder.createScreenCaptureFromPath(BasicFunctions.capture(driver)).build());
+
+					}
+
+				} catch (Exception e) {
+					System.out.println("Check the files for the following " + regno
+							+ " registration number " + e.getMessage());
+					testCaseScenario.log(Status.FAIL,
+							"Check the files for the following " + regno + " registration number "
+									+ e.getMessage(),
+							MediaEntityBuilder.createScreenCaptureFromPath(BasicFunctions.capture(driver)).build());
+
+				}
+			
+				
+					}}
+					 catch (Exception e) {
+							System.out.println("Check the files for the following " + regno
+									+ " registration number " + e.getMessage());
+						e.printStackTrace();
+							
+							
+}}
+	
+	public void checkGradePointValidation(Object regno, String markName, Object gradeSecured,Object gradeLetter,Object gradePoint, String subjectToFind,
+			ExtentTest testCaseName) throws IOException {
+
+		try {
+
+		
+			if(!"Communicative English".equalsIgnoreCase(subject)) {
+			ExtentTest testCaseScenario = testCaseName.createNode(
+					markName + "Grade point validation for the Subject " + subjectToFind + "Test case has started running");
+
+			try {			
+			
+			if (!subject.equals("Communicative English")) {
+
+				System.out.println("creditsList:" + creditsList);
+				
+				System.out.println(creditsList.get(0));
+
+				System.out.println(creditsList.get(1));
+				
+				
+				
+				
+				System.out.println("gradePointsList:" + gradePointsList);
+				
+				
+				System.out.println(gradePointsList.get(0));
+
+				System.out.println(gradePointsList.get(1));
+
+				
+				Double	TotalGradePoint1 = creditsList.get(0) *gradePointsList.get(0);  
+				Double	TotalGradePoint2 = creditsList.get(1) *gradePointsList.get(1);  
+
+				System.out.println("TotalGradePoint1: " + TotalGradePoint1);
+				System.out.println("TotalGradePoint2: " +TotalGradePoint2);							
+		
+				totalWeightedGrades = TotalGradePoint1+ TotalGradePoint2;
+		
+		
+				totalCredits = creditsList.get(0)+creditsList.get(1);
+		
+         // Calculate CGPA at the end
+            cgpa = totalCredits == 0 ? 0 : totalWeightedGrades / totalCredits;
+            System.out.println("Calculated CGPA: " + cgpa);
+            testCaseScenario.log(Status.PASS,"Calculated CGPA: " + cgpa
+					+ " for the following Register " + regno + " number");
+            System.out.println("------------------------");
+            
+            
+			}else {
+			    System.out.println("Insufficient data to calculate CGPA." +subject);
+			}
+		
+
+}	 // Calculate CGPA
+ 
+	catch(Exception e) {
+		
+		
+		testCaseScenario.log(Status.FAIL,"Calculated CGPA: " + cgpa
+					+ " for the following Register " + regno + " number");
+
+	}
+		
+	try {
+		
+		System.out.println("sgpa" +sgpa);
+		System.out.println("cgpa"+ cgpa);
+		
+		if (sgpa == cgpa) {
+		
+			
+			System.out.println("Both PDF SGPA value " +sgpa + " and Calculated SGPA "+ cgpa + " are same for the following Register " + regno + " number");
+		    testCaseScenario.log(Status.PASS,"Both PDF sgpa value " +sgpa + " and Calculated SGPA "+ cgpa + " are same for the following Register " + regno + " number");
+
+		    
+		} else {
+			System.out.println("Both PDF SGPA value " +sgpa + " and Calculated SGPA "+ cgpa + " are not same for the following Register " + regno + " number");
+		    testCaseScenario.log(Status.PASS,"Both PDF sgpa value " +sgpa + " and Calculated SGPA "+ cgpa + " are not same for the following Register " + regno + " number");
+
+		}
+	}
+	
+	catch(Exception e) {
+		  testCaseScenario.log(Status.FAIL,"Check the files CGPA: " + cgpa
+					+ " for the following Register " + regno + " number and sgpa value " + sgpa);
+
+	}
+	
+		}
+	
+
+			
+	}	
+		
+	catch(Exception e) {
+	
+		 e.printStackTrace();
+	}
+	}
+		
+	public String getGrade(double percentage) {
+	    
+	    
+	    if (percentage >= 85) {
+	        grade = "O";
+	    } else if (percentage >= 80) {
+	        grade = "A+";
+	    } else if (percentage >= 75) {
+	        grade = "A";
+	    } else if (percentage >= 65) {
+	        grade = "B+";
+	    } else if (percentage >= 60) {
+	        grade = "B";
+	    } else if (percentage >= 50) {
+	        grade = "C";
+	    } else if (percentage < 50 && percentage >= 0) {
+	        grade = "F";
+	    } else {
+	        grade = "Invalid";
+	    }
+	    
+	    System.out.println("Percentage: " + percentage + "%, Grade: " + grade);
+	    return grade;
+	}
+
+
 }
+  

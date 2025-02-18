@@ -7,8 +7,8 @@
         <methods>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
-          <include name="testCase7"/>
           <include name="afterClass"/>
+          <include name="testReadPdfData"/>
           <include name="afterTest"/>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>

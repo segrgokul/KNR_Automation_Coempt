@@ -32,6 +32,7 @@ import pageModules.MasterPage;
 import pageModules.ReportCoursePage;
 import pageModules.ReportEnrollmentPage;
 import pageModules.ReportEnrollmentPageForGrade;
+import pageModules.ReprortEnrollmentPageForAddtionalParameter;
 import pageModules.ResultTRDataPage;
 import pageModules.SettingsAssingCoursePage;
 
@@ -59,6 +60,7 @@ private static boolean isTestCaseEnrollSet1 = false;
 	MasterPage Master = new MasterPage();
 	ReportEnrollmentPage Enrollment = new  ReportEnrollmentPage();
 	ReportEnrollmentPageForGrade EnrollmentPageForGrade = new ReportEnrollmentPageForGrade();
+	ReprortEnrollmentPageForAddtionalParameter EnrollmentPageForAdditionalParameter = new ReprortEnrollmentPageForAddtionalParameter();
 	ReportCoursePage Coursewise = new  ReportCoursePage();
 	SettingsAssingCoursePage SetAssignCourse = new SettingsAssingCoursePage();
 	ResultTRDataPage TRData = new ResultTRDataPage();
@@ -308,9 +310,9 @@ public void testCase6(Object Regno, Object examdate, Object awardName, Object se
 }
 
 
-
-@Test(priority = 6, enabled = true, dataProvider = "excel")
-public void testCase7(Object Regno, Object examdate, Object awardName, Object semester, 
+//For bsc nuring sem one and other grade type patterns
+@Test(priority = 6, enabled = false, dataProvider = "excel")
+public void testCaseGrade(Object Regno, Object examdate, Object awardName, Object semester, 
                       Object regulation, Object examType, Object paper1, 
                       Object paper2, Object paper3, Object theroryExam, 
                       Object praticalExam, Object examTotal,String subjectToFind,Object gradeSecured,Object gradeLetter,Object gradePoint) 
@@ -381,6 +383,92 @@ public void testCase7(Object Regno, Object examdate, Object awardName, Object se
     }
 }
 
+@Test(priority = 7, enabled = false, dataProvider = "excel")
+public void testCasePaperMark(Object Regno, Object examdate, Object awardName, Object semester, 
+                      Object regulation, Object examType, Object paper1, 
+                      Object paper2, Object paper3, Object theroryExam, 
+                      Object praticalExam, Object examTotal,String subjectToFind,Object finalPaper1,Object finalPaper2) 
+                      throws InterruptedException, IOException {
+    // Set the test case name only once
+ 
+    
+   
+
+	 if(!isTestCaseEnrollSet1) { testCaseName =
+	  extentReport.createTest("Report Card Enrollment Page Actions");
+	  
+	  isTestCaseEnrollSet1 = true; // Mark it as set
+	  
+	  
+
+
+	  }
+	 
+	
+//	testCaseName = extentReport.createTest("Enrollment Page Actions");
+	System.out.println("=========================");
+	
+	System.out.println("This is a Normal Test Case5");
+    System.out.println("Starting testCase5 execution for the reg: " + Regno +" for the Subject: " + subjectToFind);
+    System.out.println("=========================");
+ 
+    
+	  // Navigate to the Enrollment Page
+    EnrollmentPageForAdditionalParameter.ReportCardEnrollNavigation(testCaseName);
+	  
+	  
+	  //For validation the final rocess score and scoe files
+	 /*  Enrollment.checkValidationResult(Regno, examdate, awardName, semester, 
+	            regulation, examType,  paper1, 
+	             paper2,  paper3,  theroryExam, 
+	            praticalExam, examTotal,subjectToFind,testCaseName); */
+	           
+	             
+	
+	
+    EnrollmentPageForAdditionalParameter.EnrollmentRegNo(Regno,testCaseName);
+    EnrollmentPageForAdditionalParameter.EnrollmentExamDate(examdate,testCaseName);
+    EnrollmentPageForAdditionalParameter.EnrollmentAwardName(awardName,testCaseName);
+    EnrollmentPageForAdditionalParameter.EnrollmentSemester(semester,testCaseName);
+    EnrollmentPageForAdditionalParameter.EnrollmentRegulation(regulation,testCaseName);
+    EnrollmentPageForAdditionalParameter.EnrollmentExamType(examType,testCaseName);
+    EnrollmentPageForAdditionalParameter.submitButton(testCaseName);
+    EnrollmentPageForAdditionalParameter.downloadPdfReportValidation(testCaseName,Regno,
+	  paper1,paper2,paper3,praticalExam,theroryExam,examTotal,subjectToFind,finalPaper1,finalPaper2);
+	 
+
+
+//Need to Create the separte methos in one class for the below ones exam,awardName,etcc
+
+    // Handle other details like exam date, award name, semester, etc.
+ //   Enrollment.processOtherDetails(examdate, awardName, semester, regulation, examType);
+
+    // Validate paper results and scores
+ //  Enrollment.validatePaperResults(Regno, paper1, paper2, paper3, praticalExam, theroryExam, examTotal);
+
+	System.out.println("=====================");
+    System.out.println("Reached end of testCase5 execution for: " + Regno +" and subject: "+ subjectToFind );
+    // **Stop execution if any cell is null or empty**
+    if (Regno == null || Regno.toString().trim().isEmpty()) {
+        System.out.println("Execution stopped: Found a null or empty cell in Excel.");
+        System.exit(0); // **Stops the program immediately**
+    }
+}
+
+@Test(priority = 8, enabled = true)
+
+public void testReadPdfData() {
+
+	        try {
+	            System.out.println("Starting PDF Data Read Test...");
+	            ReadPdfData.readPdfData();
+	            System.out.println("PDF Data Read Test Completed.");
+	        } catch (IOException e) {
+	            System.err.println("Error during PDF Data Read Test: " + e.getMessage());
+	            e.printStackTrace();
+	        }
+	    }
+	
 
 
 @Test(priority = 4, enabled = false, dataProvider = "excelComparison", dataProviderClass = dataProcessing.ExcelComparator.class)

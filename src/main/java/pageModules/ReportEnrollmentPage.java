@@ -44,7 +44,22 @@ public class ReportEnrollmentPage extends BasicFunctions {
 	
 	
 	
+
+	//For bhms y4 and bamsY3
+	String theoryMaxMarks;  // Take the last part
+
+	String theorySecMarks ;
+	String praticalMaxMarks; 
+	String praticalSecMarks; 
+	String vivaMaxMarks; 
+	String vivaSecMarks ;
 	
+	String theoryPraticalTotalMaxMarks; 
+	String theoryPraticalTotalSecMarks ;
+	
+	String grandTotalMaxMarks ;
+	String grandTotalSecMarks ;
+ 
 	
 	
 	
@@ -1197,7 +1212,7 @@ public class ReportEnrollmentPage extends BasicFunctions {
 						System.out.println("No match found!");
 					}
 
-					Pattern fourPattern = Pattern.compile("^(.*?)\\s+" + // Subject name (Group 1)
+					Pattern fourPattern = Pattern.compile( "([A-Za-z &'\\-]+)\\s+" + // Subject name (Group 1)
 							"(\\d+)\\s+(\\d+|NA)\\s+" + // Theory Max Marks (Group 2) | Theory Sec Marks (Group 3)
 							"(NA|\\d+)\\s+(NA|\\d+)\\s+" + // Practical Max Marks (Group 4) | Practical Sec Marks (Group
 															// 5)
@@ -1215,17 +1230,22 @@ public class ReportEnrollmentPage extends BasicFunctions {
 
 					while (fourPatternMatcher.find()) {
 
-						subject = fourPatternMatcher.group(1);
+						subject = fourPatternMatcher.group(1).trim();
 
-						String theoryMaxMarks = fourPatternMatcher.group(2); // Take the last part
+						 theoryMaxMarks = fourPatternMatcher.group(2); // Take the last part
 
-						String theorySecMarks = fourPatternMatcher.group(3);
-						String praticalMaxMarks = fourPatternMatcher.group(4);
-						String praticalVivaMaxMarks = fourPatternMatcher.group(5);
-						String praticalTotalMaxMarks = fourPatternMatcher.group(6);
-						String praticalTotalSecMarks = fourPatternMatcher.group(7);
-						String grandTotalMaxMarks = fourPatternMatcher.group(8);
-						String grandTotalSecMarks = fourPatternMatcher.group(9);
+						 theorySecMarks = fourPatternMatcher.group(3);
+						 praticalMaxMarks = fourPatternMatcher.group(4);
+						 praticalSecMarks = fourPatternMatcher.group(5);
+
+						 
+						 vivaMaxMarks = fourPatternMatcher.group(6);
+						 vivaSecMarks =fourPatternMatcher.group(7);
+						 
+						 theoryPraticalTotalMaxMarks = fourPatternMatcher.group(8);
+						 theoryPraticalTotalSecMarks = fourPatternMatcher.group(9);
+						 grandTotalMaxMarks = fourPatternMatcher.group(8);
+						 grandTotalSecMarks = fourPatternMatcher.group(9);
 						status = fourPatternMatcher.group(10);
 
 						// Check if this is the subject we are looking for
@@ -1240,14 +1260,14 @@ public class ReportEnrollmentPage extends BasicFunctions {
 
 						// Check if group(6) exists (to avoid IndexOutOfBoundsException)
 						if (fourPatternMatcher.groupCount() >= 6) {
-							System.out.println("Practical Viva Max Marks: " + praticalVivaMaxMarks);
+							System.out.println("Practical Sec Marks: " + praticalSecMarks);
 						} else {
-							System.out.println("Practical Viva Max Marks: NA"); // Handle cases where it's missing
+							System.out.println("Practical Sec Marks: NA"); // Handle cases where it's missing
 						}
 
 						// Practical Total Marks
-						System.out.println("Practical Total Max Marks: " + praticalTotalMaxMarks);
-						System.out.println("Practical Total Sec Marks: " + praticalTotalSecMarks);
+						System.out.println("Viva Max Marks: " + vivaMaxMarks);
+						System.out.println("Viva Total Sec Marks: " + vivaSecMarks);
 
 						// Grand Total
 						System.out.println("Grand Total Max Marks: " + grandTotalMaxMarks);
@@ -1260,85 +1280,146 @@ public class ReportEnrollmentPage extends BasicFunctions {
 						if (status.equals("Pass") || status.equals("Fail") || status.equals("AP")) {
 
 							try {
-								theoryInternalMaxMark = Double.parseDouble(theoryMaxMarks);
-
-								System.out.println(theoryInternalMaxMark);
-
+								
+								if (!theorySecMarks.equals("NA")||!theorySecMarks.equals("AB")||!theorySecMarks.equals("NE") ||!  theorySecMarks.equals("NE (AT)")) {
+							
+							theoryInternalMaxMark = Double.parseDouble(theoryMaxMarks);
 								paper1Mark = Double.parseDouble(theorySecMarks);
-
-								System.out.println(paper1Mark);
-
-								checkMarks(Regno, "Theory Internal Sec Marks", paper1, paper2, paper3, praticalExam,
+							}
+								
+								
+								checkMarks(Regno, "Theory Sec Marks", paper1, paper2, paper3, praticalExam,
 										theoryExam, subjectToFind, examTotal, theorySecMarks, theoryInternalMaxMark,
 										testCaseName);
 								// Use the value
 
 							} catch (NumberFormatException e) {
+								if (theorySecMarks.equals("AB") || 
+										theorySecMarks.equals("NE") || 
+										theorySecMarks.equals("NE") || 
+										theorySecMarks.equals("NE (AT)")) {
+									paper1Mark = 0.0;
+									Paper1 = 0.0;
+									System.out.println(paper1Mark);
 
+								ExtentTest testCaseScenario = testCaseName.createNode("Theory internal sec. marks validation for the subject " + subject +" Test case has started running");
+								
+								testCaseScenario.log(Status.PASS,"\nThe Following Registration number " + Regno
+										+ " Pratical Internal Sec. Marks: " + theorySecMarks);
+					
 								System.out.println("\nThe Following Registration number " + Regno
 										+ " Pratical Internal Sec. Marks: " + theorySecMarks);
-							}
-							/*
-							 * try { theoryMaxMark = Double.parseDouble(theoryUnivMaxMarks); paper2Mark =
-							 * Double.parseDouble(theoryUnivSecMarks);
-							 * 
-							 * // Check Theory (Univ) Sec. Marks checkMarks(Regno,
-							 * "Theory (Univ) Sec. Marks", paper1, paper2, paper3, praticalExam, theoryExam,
-							 * subjectToFind, examTotal, theoryInternalSecMarks, theoryInternalMaxMark,
-							 * testCaseName);
-							 * 
-							 * // Use the value } catch (NumberFormatException e) {
-							 * 
-							 * System.out.println("\nThe Following Registration number " + Regno +
-							 * " Therory Univ Sec. Marks:" + theoryUnivSecMarks); // Handle gracefully,
-							 * e.g., assign default value or log an error
-							 * 
-							 * }
-							 * 
-							 * try { praticalMaxMark = Double.parseDouble(practicalInternalMaxMarks);
-							 * paper3Mark = Double.parseDouble(practicalInternalSecMarks); // Use the value
-							 * // Check pratical internal Sec. Marks checkMarks(Regno,
-							 * "Pratical Internal Sec. Marks", paper1, paper2, paper3, praticalExam,
-							 * theoryExam, subjectToFind, examTotal, theoryInternalSecMarks,
-							 * theoryInternalMaxMark, testCaseName);
-							 * 
-							 * } catch (NumberFormatException e) {
-							 * System.out.println("\nThe Following Registration number " + Regno +
-							 * " Pratical Internal Sec. Marks: " + practicalInternalSecMarks); // Handle
-							 * gracefully, e.g., assign default value or log an error
-							 * 
-							 * }
-							 * 
-							 * try { praticalTotalMaxMark = Double.parseDouble(practicalUnivMaxMarks);
-							 * praticalTotalSecMark = Double.parseDouble(practicalUnivSecMarks); // Use the
-							 * value // Check pratical internal Sec. Marks checkMarks(Regno,
-							 * "Pratical (Univ)Sec. Marks", paper1, paper2, paper3, praticalExam,
-							 * theoryExam, subjectToFind, examTotal, practicalUnivSecMarks,
-							 * theoryInternalMaxMark, testCaseName);
-							 * 
-							 * } catch (NumberFormatException e) {
-							 * System.out.println("\nThe Following a Registration number " + Regno +
-							 * " Pratical (Univ)Sec. Marks is: " + practicalUnivSecMarks);
-							 * 
-							 * // Handle gracefully, e.g., assign default value or log an error
-							 * 
-							 * }
-							 * 
-							 * try { grandTotalMaxMark = Double.parseDouble(theoryPracticalMaxMarks);
-							 * ExamTotalScore = Double.parseDouble(theoryPracticalSecMarks);
-							 * 
-							 * // Check Grand Total Sec. Marks (assumed max marks as 200) checkMarks(Regno,
-							 * "\n Theory plus pratical Sec. Marks", paper1, paper2, paper3, praticalExam,
-							 * theoryExam, subjectToFind, examTotal, theoryInternalSecMarks,
-							 * theoryInternalMaxMark, testCaseName);
-							 * 
-							 * // Use the value } catch (NumberFormatException e) {
-							 * 
-							 * // Handle gracefully, e.g., assign default value or log an error
-							 * System.out.println("\nThe Following a Registration number " + Regno +
-							 * " Theory plus Pratical Sec. Marks is: " + theoryPracticalSecMarks);
-							 * 
-							 */ }
+							}}
+							
+							  try { 
+									if (!praticalSecMarks.equals("NA")||!praticalSecMarks.equals("AB")||!praticalSecMarks.equals("NE") ||!  praticalSecMarks.equals("NE (AT)")) {
+								  theoryMaxMark = Double.parseDouble(praticalMaxMarks); 
+								  paper2Mark =  Double.parseDouble(praticalSecMarks);
+									}
+							  //Check Theory (Univ) Sec. Marks 
+							  
+							  checkMarks(Regno, "Theory (Univ) Sec. Marks", paper1, paper2, paper3, praticalExam, theoryExam,
+							  subjectToFind, examTotal, praticalSecMarks, theoryMaxMark,
+							 testCaseName);
+							  
+							  // Use the value 
+							 } catch (NumberFormatException e) {
+									if (praticalSecMarks.equals("AB") || 
+											praticalSecMarks.equals("NE") || 
+											praticalSecMarks.equals("NE") || 
+											praticalSecMarks.equals("NE (AT)")) {
+										paper2Mark = 0.0;
+										Paper2 = 0.0;
+										System.out.println(paper1Mark);
+
+									ExtentTest testCaseScenario = testCaseName.createNode("Theory internal sec. marks validation for the subject " + subject +" Test case has started running");
+									
+									testCaseScenario.log(Status.PASS,"\nThe Following Registration number " + Regno +
+											  " Therory Univ Sec. Marks:" + praticalSecMarks);
+						
+									 System.out.println("\nThe Following Registration number " + Regno +
+											  " Therory Univ Sec. Marks:" + praticalSecMarks); // Handle gracefully,
+											 
+								}}
+					
+							 
+							// e.g., assign default value or log an error
+							  
+							 
+							  
+							  try {
+									if (!vivaSecMarks.equals("NA")||!vivaSecMarks.equals("AB")||!vivaSecMarks.equals("NE") ||!  vivaSecMarks.equals("NE (AT)")) {
+								  
+								  praticalMaxMark = Double.parseDouble(vivaMaxMarks);
+							  paper3Mark = Double.parseDouble(vivaSecMarks); // Use the value
+									}
+							  
+							  //  Check pratical internal Sec. Marks 
+							  checkMarks (Regno, "Pratical Internal Sec. Marks", paper1, paper2, paper3, praticalExam,
+							  theoryExam, subjectToFind, examTotal, vivaSecMarks,
+							  praticalMaxMark, testCaseName);
+							  
+							  }
+							  catch (NumberFormatException e) {
+									if (vivaSecMarks.equals("AB") || 
+											vivaSecMarks.equals("NE") || 
+											vivaSecMarks.equals("NE") || 
+											vivaSecMarks.equals("NE (AT)")) {
+										paper3Mark = 0.0;
+										Paper3 = 0.0;
+										System.out.println(paper3Mark);
+									}
+									ExtentTest testCaseScenario = testCaseName.createNode("Theory internal sec. marks validation for the subject " + subject +" Test case has started running");
+									
+									testCaseScenario.log(Status.PASS,"\nThe Following Registration number " + Regno +
+											  " Pratical Internal Sec. Marks: " + vivaSecMarks);
+			
+								  System.out.println("\nThe Following Registration number " + Regno +
+							  " Pratical Internal Sec. Marks: " + vivaSecMarks); // Handle
+					//		  gracefully, e.g., assign default value or log an error
+							  
+							  }
+							 
+							 try { 
+								 
+									if (!grandTotalSecMarks.equals("NA")||!grandTotalSecMarks.equals("AB")||!grandTotalSecMarks.equals("NE") ||!  grandTotalSecMarks.equals("NE (AT)")) {
+										  
+								 
+								 
+								 grandTotalMaxMark = Double.parseDouble(grandTotalMaxMarks);
+							 ExamTotalScore = Double.parseDouble(grandTotalSecMarks);
+									}
+							 //Check Grand Total Sec. Marks (assumed max marks as 200) 
+							 
+							 checkMarks(Regno," Theory plus pratical Sec. Marks", paper1, paper2, paper3, praticalExam,
+							 theoryExam, subjectToFind, examTotal, grandTotalSecMarks,
+							 grandTotalMaxMark, testCaseName);
+							 
+							 }
+							 // Use the value } 
+							 
+							 catch (NumberFormatException e) {
+							 
+									if (grandTotalSecMarks.equals("AB") || 
+											grandTotalSecMarks.equals("NE") || 
+											grandTotalSecMarks.equals("NA") || 
+											grandTotalSecMarks.equals("NE (AT)")) {
+										ExamTotalScore = 0.0;
+										System.out.println(ExamTotalScore);
+									}
+									ExtentTest testCaseScenario = testCaseName.createNode("Theory internal sec. marks validation for the subject " + subject +" Test case has started running");
+									
+									testCaseScenario.log(Status.PASS,"\nThe Following a Registration number " + Regno +
+											  " Theory plus Pratical Sec. Marks is: " + theoryPracticalSecMarks);
+			
+									  System.out.println("\nThe Following a Registration number " + Regno +
+											  " Theory plus Pratical Sec. Marks is: " + theoryPracticalSecMarks);
+											  
+											  }
+						
+								 
+							//  Handle gracefully, e.g., assign default value or log an error
+							
 
 						// Check Theory Internal Sec. Marks
 
@@ -1348,13 +1429,15 @@ public class ReportEnrollmentPage extends BasicFunctions {
 
 			}
 
-		}
+			}}
 
 		// Check for invalid marks before parsing
 
-//	    System.out.println("==============");
-//     	securedMarks(Regno,examTotal,testCaseName);
-//        System.out.println("==============");
+		/*
+		 * System.out.println("==============");
+		 * securedMarks(Regno,examTotal,testCaseName);
+		 * System.out.println("==============");
+		 */
 	}
 
 	private boolean extractAndPrintSingleSubject(String text, String subjectToFind) {
@@ -3391,7 +3474,7 @@ public class ReportEnrollmentPage extends BasicFunctions {
 			try {
 
 				if ((status.equals("Pass") || status.equals("Fail")) &&
-					    (markName.contains("Theory Internal Sec. Marks") || markName.contains("Theory Total Sec. Marks"))) {
+					    (markName.equals("Theory Internal Sec Marks") || markName.equals("Theory Total Sec. Marks") || markName.equals("Internal Sec. Marks") ||markName.equals("Theory Sec Marks") )) {
 
 					
 					theoryInternalSecMarks(regno, markName, paper1, subjectToFind, testCaseName);
