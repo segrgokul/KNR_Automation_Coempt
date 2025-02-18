@@ -25,6 +25,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import browsers.BrowserManager;
 import dataProcessing.ReadPdfData;
+import dataProcessing.ReadPdfDataFiles;
 import pageModules.AttendanceTheoryPage;
 import pageModules.DashboardPage;
 import pageModules.LoginPage;
@@ -52,7 +53,7 @@ private static boolean isTestCaseEnrollSet1 = false;
 	 ExtentSparkReporter report ;
 	 ExtentTest testCaseName;
 
-	 
+	 ReadPdfDataFiles ReadPdf = new ReadPdfDataFiles();
 	 
 	 
 	LoginPage login = new LoginPage();
@@ -461,7 +462,13 @@ public void testReadPdfData() {
 
 	        try {
 	            System.out.println("Starting PDF Data Read Test...");
-	            ReadPdfData.readPdfData();
+	       //     ReadPdfData.readPdfData();
+	            
+	            System.out.println("=====================");
+	            
+	            ReadPdf.readPdfData();
+	            
+	            
 	            System.out.println("PDF Data Read Test Completed.");
 	        } catch (IOException e) {
 	            System.err.println("Error during PDF Data Read Test: " + e.getMessage());
