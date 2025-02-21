@@ -6,9 +6,9 @@
       <class name="runner_Execution.Exceution">
         <methods>
           <include name="beforeClass"/>
+          <include name="testCase3"/>
           <include name="beforeMethod"/>
           <include name="afterClass"/>
-          <include name="testReadPdfData"/>
           <include name="afterTest"/>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>

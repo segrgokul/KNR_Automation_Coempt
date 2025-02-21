@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="runner_Execution.Exceution" time="230.067" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="runner_Execution.Exceution" time="90.848" tests="2" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="jpda.address" value="58436"/>
+    <property name="jpda.address" value="65063"/>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
@@ -18,7 +18,7 @@
     <property name="user.country" value="IN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire18186757210595379509\surefirebooter-20250217123508773_3.jar C:\Users\User\AppData\Local\Temp\surefire18186757210595379509 2025-02-17T12-35-08_582-jvmRun1 surefire-20250217123508773_1tmp surefire_0-20250217123508773_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire14672594915966201508\surefirebooter-20250219144541098_3.jar C:\Users\User\AppData\Local\Temp\surefire14672594915966201508 2025-02-19T14-45-40_753-jvmRun1 surefire-20250219144541098_1tmp surefire_0-20250219144541098_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="runner_Execution.Exceution"/>
     <property name="surefire.test.class.path" value="D:\Coempt_Automation\coempt_automation\target\test-classes;D:\Coempt_Automation\coempt_automation\target\classes;C:\Users\User\.m2\repository\io\github\bonigarcia\webdrivermanager\5.9.1\webdrivermanager-5.9.1.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-api\2.0.13\slf4j-api-2.0.13.jar;C:\Users\User\.m2\repository\com\google\code\gson\gson\2.11.0\gson-2.11.0.jar;C:\Users\User\.m2\repository\com\google\errorprone\error_prone_annotations\2.27.0\error_prone_annotations-2.27.0.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java\3.3.6\docker-java-3.3.6.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-core\3.3.6\docker-java-core-3.3.6.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-api\3.3.6\docker-java-api-3.3.6.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\User\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.6\docker-java-transport-httpclient5-3.3.6.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-transport\3.3.6\docker-java-transport-3.3.6.jar;C:\Users\User\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\User\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-lang3\3.14.0\commons-lang3-3.14.0.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-compress\1.26.2\commons-compress-1.26.2.jar;C:\Users\User\.m2\repository\commons-codec\commons-codec\1.17.0\commons-codec-1.17.0.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-simple\2.0.9\slf4j-simple-2.0.9.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-java\4.26.0\selenium-java-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-api\4.26.0\selenium-api-4.26.0.jar;C:\Users\User\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.26.0\selenium-chrome-driver-4.26.0.jar;C:\Users\User\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.26.0\selenium-chromium-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-json\4.26.0\selenium-json-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.26.0\selenium-manager-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v128\4.26.0\selenium-devtools-v128-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v129\4.26.0\selenium-devtools-v129-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v130\4.26.0\selenium-devtools-v130-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.26.0\selenium-devtools-v85-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.26.0\selenium-edge-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.26.0\selenium-firefox-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-http\4.26.0\selenium-http-4.26.0.jar;C:\Users\User\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.26.0\selenium-ie-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.26.0\selenium-remote-driver-4.26.0.jar;C:\Users\User\.m2\repository\com\google\guava\guava\33.3.1-jre\guava-33.3.1-jre.jar;C:\Users\User\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\User\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\User\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\User\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar;C:\Users\User\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-api\1.43.0\opentelemetry-api-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-context\1.43.0\opentelemetry-context-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.43.0\opentelemetry-exporter-logging-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.43.0\opentelemetry-sdk-common-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.43.0\opentelemetry-sdk-extension-autoconfigure-spi-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.43.0\opentelemetry-sdk-extension-autoconfigure-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.43.0-alpha\opentelemetry-api-incubator-1.43.0-alpha.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.43.0\opentelemetry-sdk-trace-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.43.0\opentelemetry-sdk-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.43.0\opentelemetry-sdk-metrics-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.43.0\opentelemetry-sdk-logs-1.43.0.jar;C:\Users\User\.m2\repository\net\bytebuddy\byte-buddy\1.15.7\byte-buddy-1.15.7.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-os\4.26.0\selenium-os-4.26.0.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.26.0\selenium-safari-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-support\4.26.0\selenium-support-4.26.0.jar;C:\Users\User\.m2\repository\org\testng\testng\7.10.1\testng-7.10.1.jar;C:\Users\User\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\User\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\User\.m2\repository\net\sourceforge\jexcelapi\jxl\2.6.12\jxl-2.6.12.jar;C:\Users\User\.m2\repository\log4j\log4j\1.2.14\log4j-1.2.14.jar;C:\Users\User\.m2\repository\org\freemarker\freemarker\2.3.34\freemarker-2.3.34.jar;C:\Users\User\.m2\repository\org\mongodb\bson\5.3.0\bson-5.3.0.jar;C:\Users\User\.m2\repository\com\aventstack\extentreports\5.1.2\extentreports-5.1.2.jar;C:\Users\User\.m2\repository\io\reactivex\rxjava3\rxjava\3.1.6\rxjava-3.1.6.jar;C:\Users\User\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\User\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;C:\Users\User\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar;C:\Users\User\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\User\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\User\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.3\poi-ooxml-lite-5.2.3.jar;C:\Users\User\.m2\repository\org\apache\xmlbeans\xmlbeans\5.1.1\xmlbeans-5.1.1.jar;C:\Users\User\.m2\repository\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar;C:\Users\User\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar;C:\Users\User\.m2\repository\org\apache\logging\log4j\log4j-api\2.18.0\log4j-api-2.18.0.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\User\.m2\repository\org\apache\logging\log4j\log4j-core\2.24.3\log4j-core-2.24.3.jar;C:\Users\User\.m2\repository\org\apache\pdfbox\pdfbox\2.0.29\pdfbox-2.0.29.jar;C:\Users\User\.m2\repository\org\apache\pdfbox\fontbox\2.0.29\fontbox-2.0.29.jar;C:\Users\User\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;"/>
@@ -34,7 +34,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire18186757210595379509\surefirebooter-20250217123508773_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire14672594915966201508\surefirebooter-20250219144541098_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.5+9-LTS-239"/>
@@ -64,9 +64,9 @@
     <property name="java.vm.version" value="21.0.5+9-LTS-239"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
-    <property name="maven.surefire.debug" value="-agentlib:jdwp=transport=dt_socket,server=n,address=58436"/>
+    <property name="maven.surefire.debug" value="-agentlib:jdwp=transport=dt_socket,server=n,address=65063"/>
   </properties>
-  <testcase name="testCase3" classname="runner_Execution.Exceution" time="2.932">
+  <testcase name="testCase3" classname="runner_Execution.Exceution" time="2.895">
     <system-out><![CDATA[This will execute first before the Test Suite
 Login name: test
 This will execute second before the Test and after the before test suite
@@ -79,525 +79,462 @@ The Admin Login Page has login and the landing page of KNRUHS is displayed
 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\User\.cache\selenium\geckodriver\win64\0.35.0\geckodriver.exe
 ]]></system-err>
   </testcase>
-  <testcase name="testCase[2310771009, Dec-24, UG PARAMEDICAL, I Semester, 2022, Supplementary, 20, 18, NA, NA, 38, 0, Communicative English, NA, NA, NA](1)" classname="runner_Execution.Exceution" time="43.548">
+  <testcase name="testReadPdfData" classname="runner_Execution.Exceution" time="75.294">
     <system-out><![CDATA[This will execute after every Method
 This will execute foruth before every Method and after the before class
-=========================
-This is a Normal Test Case5
-Starting testCase5 execution for the reg: 2310771009 for the Subject: Communicative English
-=========================
-PDF opened successfully: file:///C:/Users/User/Downloads/BscNursingSemIBacklogRC-360.pdf
-=========================
-Pattern matched: Bsc nusing patterns detected.
-Total Pages: 1
+Starting PDF Data Read Test...
+=====================
+Downloads folder: C:\Users\User/Downloads
+Total Pages: 292
 ---------------------------------------------------
+Subject Cr
+Assessment Parameters End Sem 
+Exam (60)
+Semester I
+Sr.
+No Sub Code T/P ST(5) QT(5) AS(5) MTE(25) To(40)
+TO
+(100) TM Grade
+1 Engineering Mathematics - I 20BTTBS101 3 T 5 5 4 25 - - - 39 60 99 100 O
+2 Engineering Physics 20BTTBS102 3 T 5 5 5 23 - - - 38 59 97 100 O
+3 Basic Electrical Engineering 20BTTES101 2 T 4 5 5 19 - - - 33 56 89 100 E
+4 Basics of Mechanical Engineering 20BTTES103 2 T 5 5 5 21 - - - 36 50 86 100 E
+5 Communicative English 20BTTHS101 2 T 5 5 4 23 - - - 37 54 91 100 O
+EPE
+(20)
+RI(30) R(30) UVE(20) To(100) 100
+6 Engineering Physics Lab 20BTPBS101 1 P 19 28 28 18 - - - 93 - 93 100 O
+7 Basic Electrical Engineering Lab 20BTPES101 1 P 17 28 27 16 - - - 88 - 88 100 E
+8 Basics of Mechanical Engineering Lab 20BTPES103 1 P 18 28 28 18 - - - 92 - 92 100 O
+9 English Language Lab 20BTPHS101 1 P 18 28 30 20 - - - 96 - 96 100 O
+10 Induction Training 20BTPMC10
+1
+0 P 20 28 28 20 - - - 96 - 96 100 O
+QRVV
+(20)
+UJRT
+(30)
+QJ
+(50)
+To(100) 100
+11 Workshop Practice 20BTPES106 2 P 18 27 46 - - - - 91 - 91 100 O
+1018 11009.729.7218Total Credit : SGPA: CGPA: Total:
+Subject Cr
+Assessment Parameters End Sem 
+Exam (60)
+Semester II
+Sr.
+No Sub Code T/P ST(5) QT(5) AS(5) MTE(25) To(40)
+TO
+(100) TM Grade
+1 Engineering Mathematics - II 20BTTBS204 3 T 4 5 5 21 - - - 35 33 68 100 B
+2 Engineering Chemistry 20BTTBS203 3 T 5 5 4 25 - - - 39 60 99 100 O
+3 Engineering Mechanics 20BTTES205 3 T 5 5 5 25 - - - 40 45 85 100 E
+4 Programming for problem solving using C 20BTTES206 3 T 5 5 5 23 - - - 38 55 93 100 O
+5 Basic Electronics Engineering 20BTTES202 2 T 5 5 4 25 - - - 39 60 99 100 O
+6 Basics of Civil Engineering 20BTTES204 2 T 5 4 4 25 - - - 38 60 98 100 O
+7 Business Communication and Life Skills 20BTTHS202 2 T 5 5 5 21 - - - 36 56 92 100 O
+EPE
+(20)
+RI(30) R(30) UVE(20) To(100) 100
+8 Engineering Chemistry Lab 20BTPBS202 1 P 20 30 30 20 - - - 100 - 100 100 O
+9 Programming for problem solving using C 
+Lab
+20BTPES207 2 P 19 29 28 19 - - - 95 - 95 100 O
+10 Basic Electronics Engineering Lab 20BTPES202 1 P 19 29 30 19 - - - 97 - 97 100 O
+11 Basics of Civil Engineering Lab 20BTPES204 1 P 17 27 27 18 - - - 89 - 89 100 E
+12 NCC / NSS / Yoga 20BTPMC20
+2
+0 P 15 25 22 14 - - - 76 - 76 100 A
+QRVV
+(20)
+UJRT
+(30)
+QJ
+(50)
+To(100) 100
+13 Engineering Graphics & Design Lab 20BTPES205 2 P 10 30 50 - - - - 90 - 90 100 O
+2001287025Reg  No :
+1181 13009.589.4825Total Credit : SGPA: CGPA: Total:
+Subject Cr
+Assessment Parameters End Sem 
+Exam (60)
+Semester III
+Sr.
+No Sub Code T/P ST(5) QT(5) AS(5) MTE(25) To(40)
+TO
+(100) TM Grade
+1 Engineering Mathematics - III 20BTTBS305 3 T 4 5 4 22 - - - 35 52 87 100 E
+2 Engineering Economics & Costing 20BTTHS304 2 T 5 5 5 21 - - - 36 30 66 100 B
+3 Universal Human Values 20BTTHS305 2 T 3 4 4 23 - - - 34 48 82 100 E
+4 Data Structure using C 20BTTES307 3 T 3 3 5 22 - - - 33 53 86 100 E
+5 Object Oriented Programming Using JAVA 20BTCSETP
+C301
+3 T 5 5 5 23 - - - 38 54 92 100 O
+6 Computer Organization & Architecture 20BTCSETP
+C302
+3 T 5 5 4 18 - - - 32 53 85 100 E
+7 Environmental Science 20BTTMC301 0 T 3 4 4 23 - - - 34 46 80 100 E
+EPE
+(20)
+RI(30) R(30) UVE(20) To(100) 100
+8 Data Structures using C Lab 20BTPES308 1 P 18 27 27 19 - - - 91 - 91 100 O
+9 Object Oriented Programming Using JAVA 
+Lab
+20BTCSEPP
+C301
+1 P 18 26 28 19 - - - 91 - 91 100 O
+10 Computer Organization & Architecture Lab 20BTCSEPP
+C302
+1 P 20 25 27 20 - - - 92 - 92 100 O
+11 Employability Skill - I 20BTCSEPP
+C303
+1 P 15 18 20 15 - - - 68 - 68 100 B
+2001287025Reg  No :
+920 11009.409.0020Total Credit : SGPA: CGPA: Total:
+ABHISHEK BARIK
+Bachelor of Technology in Computer Science and Engineering
+2001287025Reg  No :
+College Name :
+Name of the Student :
+Course                      
+GITA AUTONOMOUS COLLEGE, BHUBANESWAR
+(Affiliated to Biju Pattnaik University of Technology, Odisha)
+Final Tabulation Register (Student wise) for passing out year 2023-24
+GITA Autonomous College, BhubaneswarCollege Code            :     287
+:
+
 Page 1:
 ---------------------------------------------------
-SGPA Found: 7.5
-Match found Course: B.Sc. 
-Result: Pass
-Pass
-==============
-subject: Communicative English
-Credits: 2.0
-Internal Max Mark: 25
-Internal Sec Mark:20
-Univ Max Marks:25
-Univ Sec Marks:18
-Total Max Marks:50
-Total Sec Marks:38
-Grade Secured Percentage:38
-Grade Letters:A
-Grade Points:8.0
-------------------------
-Internal is running
-20
-Both Excel 20.0 and Pdf 20.0 for the following Register 2310771009 number data are same for Theory Internal Sec mark
-The following Registration number 2310771009 is passed in Theory Internal Sec exam with marks in PDF: 20.0 and in Excel: 20.0
-univ is running
-18
-18
-Both Excel 18.0 and Pdf 18.0 for the following Register 2310771009 number data are same for Theory Univ Sec Marks
-The following Registration number 2310771009 is passed in Theory Univ Sec mark exam with marks in PDF: 18.0 and in Excel: 18.0
-Grand total is running
-38
-25.0
-38.0
-Both Excel 38.0 and Pdf 38.0 for the following Register 2310771009 number data are same for Theory Plus Practical Sec Mark
-The following Registration number 2310771009 is passed in Theory Exam with total marks in PDF: 38.0 and in Excel: 38.0
-Paper1Mark:20.0
-Paper2Mark:18.0
-Paper3Mark:0.0
-Pratical total mark:0.0
-grandTotal:38.0
-Paper1:20.0
-Paper2:18.0
-Paper3:0.0
-PraticalExamTotal0.0
-TheoryExam:38.0
-
- Both PDF file total value 38.0 and Excel file total value  38.0 for the following Register 2310771009 number data are same for Theory plus practical total sec mark in PDF file
-Both Excel file total value 38.0 and PDF file total value  38.0 for the following Register 2310771009 number data are same for Theory plus practical total sec mark in Excel file
-Grand garde total is running
-Percentage: 76.0%, Grade: A
-38
-Both grade letter from PDF file A and excel file NA for the following Register 2310771009 number data are not same
-checkGradePointValidation
-==============
-subject: Applied Anatomy & Applied Physiology
-Credits: 2.0
-Internal Max Mark: 25
-Internal Sec Mark:16
-Univ Max Marks:75
-Univ Sec Marks:49
-Total Max Marks:100
-Total Sec Marks:65
-Grade Secured Percentage:65
-Grade Letters:B+
-Grade Points:8.0
-------------------------
-==============
-subject: Applied Sociology & Applied Psychology
-Credits: 6.0
-Internal Max Mark: 25
-Internal Sec Mark:17
-Univ Max Marks:75
-Univ Sec Marks:59
-Total Max Marks:100
-Total Sec Marks:76
-Grade Secured Percentage:76
-Grade Letters:A
-Grade Points:8.0
-------------------------
-==============
-==============
-=====================
-Reached end of testCase5 execution for: 2310771009 and subject: Communicative English
+Latest PDF file found: TR (CSE) (1 to 100) B.Tech. 20-24 (1).pdf
+=================
+studentRegno :2001287025
+regnoList: [2001287025]
+=================
+=================
+studentRegno :2001287025
+regnoList: [2001287025]
+=================
+=================
+studentRegno :2001287025
+regnoList: [2001287025]
+=================
+=================
+Student sem :Semester I
+=================
+=================
+Student sem :Semester II
+=================
+=================
+Student sem :Semester III
+=================
+Serial No: 1
+Subject Name: Engineering Mathematics - I
+Subject Code: 20BTTBS101
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 4
+MTE (25): 25
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 39
+End Sem Exam (60): 60
+TO (100): 99
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 2
+Subject Name: Engineering Physics
+Subject Code: 20BTTBS102
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 38
+End Sem Exam (60): 59
+TO (100): 97
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 3
+Subject Name: Basic Electrical Engineering
+Subject Code: 20BTTES101
+Cr: 2
+Type (T/P): T
+ST (5): 4
+QT (5): 5
+AS (5): 5
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 33
+End Sem Exam (60): 56
+TO (100): 89
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 4
+Subject Name: Basics of Mechanical Engineering
+Subject Code: 20BTTES103
+Cr: 2
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 21
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 36
+End Sem Exam (60): 50
+TO (100): 86
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 5
+Subject Name: Communicative English
+Subject Code: 20BTTHS101
+Cr: 2
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 4
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 37
+End Sem Exam (60): 54
+TO (100): 91
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 1
+Subject Name: Engineering Mathematics - II
+Subject Code: 20BTTBS204
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 5
+AS (5): 5
+MTE (25): 21
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 35
+End Sem Exam (60): 33
+TO (100): 68
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 2
+Subject Name: Engineering Chemistry
+Subject Code: 20BTTBS203
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 4
+MTE (25): 25
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 39
+End Sem Exam (60): 60
+TO (100): 99
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 3
+Subject Name: Engineering Mechanics
+Subject Code: 20BTTES205
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 25
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 40
+End Sem Exam (60): 45
+TO (100): 85
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 4
+Subject Name: Programming for problem solving using C
+Subject Code: 20BTTES206
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 38
+End Sem Exam (60): 55
+TO (100): 93
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 5
+Subject Name: Basic Electronics Engineering
+Subject Code: 20BTTES202
+Cr: 2
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 4
+MTE (25): 25
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 39
+End Sem Exam (60): 60
+TO (100): 99
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 6
+Subject Name: Basics of Civil Engineering
+Subject Code: 20BTTES204
+Cr: 2
+Type (T/P): T
+ST (5): 5
+QT (5): 4
+AS (5): 4
+MTE (25): 25
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 38
+End Sem Exam (60): 60
+TO (100): 98
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 7
+Subject Name: Business Communication and Life Skills
+Subject Code: 20BTTHS202
+Cr: 2
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 21
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 36
+End Sem Exam (60): 56
+TO (100): 92
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 1
+Subject Name: Engineering Mathematics - III
+Subject Code: 20BTTBS305
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 5
+AS (5): 4
+MTE (25): 22
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 35
+End Sem Exam (60): 52
+TO (100): 87
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 3
+Subject Name: Universal Human Values
+Subject Code: 20BTTHS305
+Cr: 2
+Type (T/P): T
+ST (5): 3
+QT (5): 4
+AS (5): 4
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 34
+End Sem Exam (60): 48
+TO (100): 82
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 4
+Subject Name: Data Structure using C
+Subject Code: 20BTTES307
+Cr: 3
+Type (T/P): T
+ST (5): 3
+QT (5): 3
+AS (5): 5
+MTE (25): 22
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 33
+End Sem Exam (60): 53
+TO (100): 86
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+----------------------------------------------------
+Serial No: 7
+Subject Name: Environmental Science
+Subject Code: 20BTTMC301
+Cr: 0
+Type (T/P): T
+ST (5): 3
+QT (5): 4
+AS (5): 4
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 34
+End Sem Exam (60): 46
+TO (100): 80
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+----------------------------------------------------
+PDF Data Read Test Completed.
 ]]></system-out>
     <system-err><![CDATA[ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
 ]]></system-err>
-  </testcase>
-  <testcase name="testCase[2310771009, Dec-24, UG PARAMEDICAL, I Semester, 2022, Supplementary, 16, 49, NA, NA, 65, 0, Applied Anatomy &amp; Applied Physiology, NA, NA, NA](2)" classname="runner_Execution.Exceution" time="34.867">
-    <system-out><![CDATA[This will execute after every Method
-This will execute foruth before every Method and after the before class
-=========================
-This is a Normal Test Case5
-Starting testCase5 execution for the reg: 2310771009 for the Subject: Applied Anatomy & Applied Physiology
-=========================
-PDF opened successfully: file:///C:/Users/User/Downloads/BscNursingSemIBacklogRC-362.pdf
-=========================
-Pattern matched: Bsc nusing patterns detected.
-Total Pages: 1
----------------------------------------------------
-Page 1:
----------------------------------------------------
-SGPA Found: 7.5
-Match found Course: B.Sc. 
-Result: Pass
-Pass
-==============
-subject: Communicative English
-Credits: 2.0
-Internal Max Mark: 25
-Internal Sec Mark:20
-Univ Max Marks:25
-Univ Sec Marks:18
-Total Max Marks:50
-Total Sec Marks:38
-Grade Secured Percentage:38
-Grade Letters:A
-Grade Points:8.0
-------------------------
-==============
-subject: Applied Anatomy & Applied Physiology
-Credits: 6.0
-Internal Max Mark: 25
-Internal Sec Mark:16
-Univ Max Marks:75
-Univ Sec Marks:49
-Total Max Marks:100
-Total Sec Marks:65
-Grade Secured Percentage:65
-Grade Letters:B+
-Grade Points:7.0
-------------------------
-Internal is running
-16
-Both Excel 16.0 and Pdf 16.0 for the following Register 2310771009 number data are same for Theory Internal Sec mark
-The following Registration number 2310771009 is passed in Theory Internal Sec exam with marks in PDF: 16.0 and in Excel: 16.0
-univ is running
-49
-49
-Both Excel 49.0 and Pdf 49.0 for the following Register 2310771009 number data are same for Theory Univ Sec Marks
-The following Registration number 2310771009 is passed in Theory Univ Sec mark exam with marks in PDF: 49.0 and in Excel: 49.0
-Grand total is running
-65
-50.0
-65.0
-Both Excel 65.0 and Pdf 65.0 for the following Register 2310771009 number data are same for Theory Plus Practical Sec Mark
-The following Registration number 2310771009 is passed in Theory Exam with total marks in PDF: 65.0 and in Excel: 65.0
-Paper1Mark:16.0
-Paper2Mark:49.0
-Paper3Mark:0.0
-Pratical total mark:0.0
-grandTotal:65.0
-Paper1:16.0
-Paper2:49.0
-Paper3:0.0
-PraticalExamTotal0.0
-TheoryExam:65.0
-
- Both PDF file total value 65.0 and Excel file total value  65.0 for the following Register 2310771009 number data are same for Theory plus practical total sec mark in PDF file
-Both Excel file total value 65.0 and PDF file total value  65.0 for the following Register 2310771009 number data are same for Theory plus practical total sec mark in Excel file
-Grand garde total is running
-Percentage: 65.0%, Grade: B+
-65
-Both grade letter from PDF file B+ and excel file NA for the following Register 2310771009 number data are not same
-checkGradePointValidation
-creditsList:[]
-sgpa7.5
-cgpa0.0
-Both PDF SGPA value 7.5and Calculated SGPA 0.0 are not same for the following Register 2310771009 number
-==============
-subject: Applied Sociology & Applied Psychology
-Credits: 6.0
-Internal Max Mark: 25
-Internal Sec Mark:17
-Univ Max Marks:75
-Univ Sec Marks:59
-Total Max Marks:100
-Total Sec Marks:76
-Grade Secured Percentage:76
-Grade Letters:A
-Grade Points:8.0
-------------------------
-==============
-==============
-=====================
-Reached end of testCase5 execution for: 2310771009 and subject: Applied Anatomy & Applied Physiology
-]]></system-out>
-  </testcase>
-  <testcase name="testCase[2310771009, Dec-24, UG PARAMEDICAL, I Semester, 2022, Supplementary, 17, 59, NA, NA, 76, 0, Applied Sociology &amp; Applied Psychology, NA, NA, NA](3)" classname="runner_Execution.Exceution" time="33.774">
-    <system-out><![CDATA[This will execute after every Method
-This will execute foruth before every Method and after the before class
-=========================
-This is a Normal Test Case5
-Starting testCase5 execution for the reg: 2310771009 for the Subject: Applied Sociology & Applied Psychology
-=========================
-PDF opened successfully: file:///C:/Users/User/Downloads/BscNursingSemIBacklogRC-363.pdf
-=========================
-Pattern matched: Bsc nusing patterns detected.
-Total Pages: 1
----------------------------------------------------
-Page 1:
----------------------------------------------------
-SGPA Found: 7.5
-Match found Course: B.Sc. 
-Result: Pass
-Pass
-==============
-subject: Communicative English
-Credits: 2.0
-Internal Max Mark: 25
-Internal Sec Mark:20
-Univ Max Marks:25
-Univ Sec Marks:18
-Total Max Marks:50
-Total Sec Marks:38
-Grade Secured Percentage:38
-Grade Letters:A
-Grade Points:8.0
-------------------------
-==============
-subject: Applied Anatomy & Applied Physiology
-Credits: 6.0
-Internal Max Mark: 25
-Internal Sec Mark:16
-Univ Max Marks:75
-Univ Sec Marks:49
-Total Max Marks:100
-Total Sec Marks:65
-Grade Secured Percentage:65
-Grade Letters:B+
-Grade Points:7.0
-------------------------
-==============
-subject: Applied Sociology & Applied Psychology
-Credits: 6.0
-Internal Max Mark: 25
-Internal Sec Mark:17
-Univ Max Marks:75
-Univ Sec Marks:59
-Total Max Marks:100
-Total Sec Marks:76
-Grade Secured Percentage:76
-Grade Letters:A
-Grade Points:8.0
-------------------------
-Internal is running
-17
-Both Excel 17.0 and Pdf 17.0 for the following Register 2310771009 number data are same for Theory Internal Sec mark
-The following Registration number 2310771009 is passed in Theory Internal Sec exam with marks in PDF: 17.0 and in Excel: 17.0
-univ is running
-59
-59
-Both Excel 59.0 and Pdf 59.0 for the following Register 2310771009 number data are same for Theory Univ Sec Marks
-The following Registration number 2310771009 is passed in Theory Univ Sec mark exam with marks in PDF: 59.0 and in Excel: 59.0
-Grand total is running
-76
-50.0
-76.0
-Both Excel 76.0 and Pdf 76.0 for the following Register 2310771009 number data are same for Theory Plus Practical Sec Mark
-The following Registration number 2310771009 is passed in Theory Exam with total marks in PDF: 76.0 and in Excel: 76.0
-Paper1Mark:17.0
-Paper2Mark:59.0
-Paper3Mark:0.0
-Pratical total mark:0.0
-grandTotal:76.0
-Paper1:17.0
-Paper2:59.0
-Paper3:0.0
-PraticalExamTotal0.0
-TheoryExam:76.0
-
- Both PDF file total value 76.0 and Excel file total value  76.0 for the following Register 2310771009 number data are same for Theory plus practical total sec mark in PDF file
-Both Excel file total value 76.0 and PDF file total value  76.0 for the following Register 2310771009 number data are same for Theory plus practical total sec mark in Excel file
-Grand garde total is running
-Percentage: 76.0%, Grade: A
-76
-Both grade letter from PDF file A and excel file NA for the following Register 2310771009 number data are not same
-checkGradePointValidation
-creditsList:[]
-sgpa7.5
-cgpa0.0
-Both PDF SGPA value 7.5and Calculated SGPA 0.0 are not same for the following Register 2310771009 number
-==============
-==============
-=====================
-Reached end of testCase5 execution for: 2310771009 and subject: Applied Sociology & Applied Psychology
-]]></system-out>
-  </testcase>
-  <testcase name="testCase[2310442035, Dec-24, UG PARAMEDICAL, I Semester, 2022, Supplementary, 16, AB, NA, NA, 16, 0, Applied Anatomy &amp; Applied Physiology, NA, NA, NA](4)" classname="runner_Execution.Exceution" time="35.001">
-    <system-out><![CDATA[This will execute after every Method
-This will execute foruth before every Method and after the before class
-=========================
-This is a Normal Test Case5
-Starting testCase5 execution for the reg: 2310442035 for the Subject: Applied Anatomy & Applied Physiology
-=========================
-PDF opened successfully: file:///C:/Users/User/Downloads/BscNursingSemIBacklogRC-364.pdf
-=========================
-Pattern matched: Bsc nusing patterns detected.
-Total Pages: 1
----------------------------------------------------
-Page 1:
----------------------------------------------------
-SGPA Found: 0.0
-Match found Course: B.Sc. 
-Result: Fail
-Fail
-==============
-subject: Communicative English
-Credits: 2.0
-Internal Max Mark: 25
-Internal Sec Mark:16
-Univ Max Marks:25
-Univ Sec Marks:17
-Total Max Marks:50
-Total Sec Marks:33
-Grade Secured Percentage:33
-Grade Letters:B+
-Grade Points:7.0
-------------------------
-==============
-subject: Applied Anatomy & Applied Physiology
-Credits: 6.0
-Internal Max Mark: 25
-Internal Sec Mark:16
-Univ Max Marks:75
-Univ Sec Marks:AB
-Total Max Marks:100
-Total Sec Marks:16
-Grade Secured Percentage:16
-Grade Letters:F
-Grade Points:0.0
-------------------------
-Internal is running
-16
-Both Excel 16.0 and Pdf 16.0 for the following Register 2310442035 number data are same for Theory Internal Sec mark
-The following Registration number 2310442035 is passed in Theory Internal Sec exam with marks in PDF: 16.0 and in Excel: 16.0
-univ is running
-0.0
-
-The Following Registration number 2310442035 Therory Univ Sec. Marks is: AB
-Grand total is running
-16
-50.0
-16.0
-Both Excel 16.0 and Pdf 16.0 for the following Register 2310442035 number data are same for Theory Plus Practical Sec Mark
-The following Registration number 2310442035 is failed in Theory Exam with total marks in PDF: 16.0 and in Excel: 16.0
-Paper1Mark:16.0
-Paper2Mark:0.0
-Paper3Mark:0.0
-Pratical total mark:0.0
-grandTotal:16.0
-Paper1:16.0
-Paper2:0.0
-Paper3:0.0
-PraticalExamTotal0.0
-TheoryExam:16.0
-
- Both PDF file total value 16.0 and Excel file total value  16.0 for the following Register 2310442035 number data are same for Theory plus practical total sec mark in PDF file
-Both Excel file total value 16.0 and PDF file total value  16.0 for the following Register 2310442035 number data are same for Theory plus practical total sec mark in Excel file
-Grand garde total is running
-Percentage: 16.0%, Grade: F
-16
-Both grade letter from PDF file F and excel file NA for the following Register 2310442035 number data are not same
-checkGradePointValidation
-creditsList:[]
-sgpa0.0
-cgpa0.0
-Both PDF SGPA value 0.0and Calculated SGPA 0.0 are same for the following Register 2310442035 number
-==============
-subject: Applied Sociology & Applied Psychology
-Credits: 6.0
-Internal Max Mark: 25
-Internal Sec Mark:16
-Univ Max Marks:75
-Univ Sec Marks:AB
-Total Max Marks:100
-Total Sec Marks:16
-Grade Secured Percentage:16
-Grade Letters:F
-Grade Points:0.0
-------------------------
-==============
-==============
-=====================
-Reached end of testCase5 execution for: 2310442035 and subject: Applied Anatomy & Applied Physiology
-]]></system-out>
-  </testcase>
-  <testcase name="testCase[2310400060, Dec-24, UG PARAMEDICAL, I Semester, 2022, Supplementary, AP, AP, NA, NA, AP, 0, Applied Sociology &amp; Applied Psychology, AP, NA, NA](5)" classname="runner_Execution.Exceution" time="34.522">
-    <system-out><![CDATA[This will execute after every Method
-This will execute foruth before every Method and after the before class
-=========================
-This is a Normal Test Case5
-Starting testCase5 execution for the reg: 2310400060 for the Subject: Applied Sociology & Applied Psychology
-=========================
-PDF opened successfully: file:///C:/Users/User/Downloads/BscNursingSemIBacklogRC-366.pdf
-=========================
-Pattern matched: Bsc nusing patterns detected.
-Total Pages: 1
----------------------------------------------------
-Page 1:
----------------------------------------------------
-SGPA Found: 5.5
-Match found Course: B.Sc. 
-Result: Pass
-Pass
-==============
-subject: Applied Anatomy & Applied Physiology
-Credits: 6.0
-Internal Max Mark: 25
-Internal Sec Mark:17
-Univ Max Marks:75
-Univ Sec Marks:38
-Total Max Marks:100
-Total Sec Marks:55
-Grade Secured Percentage:55
-Grade Letters:C
-Grade Points:5.0
-------------------------
-==============
-==============
-=====================
-Reached end of testCase5 execution for: 2310400060 and subject: Applied Sociology & Applied Psychology
-]]></system-out>
-  </testcase>
-  <testcase name="testCase[2210400012, Dec-24, UG PARAMEDICAL, I Semester, 2022, Supplementary, 19, 46, NA, NA, 65, 0, Applied Sociology &amp; Applied Psychology, 0, NE, 5](6)" classname="runner_Execution.Exceution" time="34.294">
-    <system-out><![CDATA[This will execute after every Method
-This will execute foruth before every Method and after the before class
-=========================
-This is a Normal Test Case5
-Starting testCase5 execution for the reg: 2210400012 for the Subject: Applied Sociology & Applied Psychology
-=========================
-PDF opened successfully: file:///C:/Users/User/Downloads/BscNursingSemIBacklogRC-368.pdf
-=========================
-Pattern matched: Bsc nusing patterns detected.
-Total Pages: 1
----------------------------------------------------
-Page 1:
----------------------------------------------------
-SGPA Found: 6.5
-Match found Course: B.Sc. 
-Result: Pass
-Pass
-==============
-subject: Applied Anatomy & Applied Physiology
-Credits: 6.0
-Internal Max Mark: 25
-Internal Sec Mark:19
-Univ Max Marks:75
-Univ Sec Marks:44
-Total Max Marks:100
-Total Sec Marks:63
-Grade Secured Percentage:63
-Grade Letters:B
-Grade Points:6.0
-------------------------
-==============
-subject: Applied Sociology & Applied Psychology
-Credits: 6.0
-Internal Max Mark: 25
-Internal Sec Mark:19
-Univ Max Marks:75
-Univ Sec Marks:46
-Total Max Marks:100
-Total Sec Marks:65
-Grade Secured Percentage:65
-Grade Letters:B+
-Grade Points:7.0
-------------------------
-Internal is running
-19
-Both Excel 19.0 and Pdf 19.0 for the following Register 2210400012 number data are same for Theory Internal Sec mark
-The following Registration number 2210400012 is passed in Theory Internal Sec exam with marks in PDF: 19.0 and in Excel: 19.0
-univ is running
-46
-46
-Both Excel 46.0 and Pdf 46.0 for the following Register 2210400012 number data are same for Theory Univ Sec Marks
-The following Registration number 2210400012 is passed in Theory Univ Sec mark exam with marks in PDF: 46.0 and in Excel: 46.0
-Grand total is running
-65
-50.0
-65.0
-Both Excel 65.0 and Pdf 65.0 for the following Register 2210400012 number data are same for Theory Plus Practical Sec Mark
-The following Registration number 2210400012 is passed in Theory Exam with total marks in PDF: 65.0 and in Excel: 65.0
-Paper1Mark:19.0
-Paper2Mark:46.0
-Paper3Mark:0.0
-Pratical total mark:0.0
-grandTotal:65.0
-Paper1:19.0
-Paper2:46.0
-Paper3:0.0
-PraticalExamTotal0.0
-TheoryExam:65.0
-
- Both PDF file total value 65.0 and Excel file total value  65.0 for the following Register 2210400012 number data are same for Theory plus practical total sec mark in PDF file
-Both Excel file total value 65.0 and PDF file total value  65.0 for the following Register 2210400012 number data are same for Theory plus practical total sec mark in Excel file
-Grand garde total is running
-Percentage: 65.0%, Grade: B+
-65
-Both grade letter from PDF file B+ and excel file NE for the following Register 2210400012 number data are not same
-checkGradePointValidation
-creditsList:[]
-sgpa6.5
-cgpa0.0
-Both PDF SGPA value 6.5and Calculated SGPA 0.0 are not same for the following Register 2210400012 number
-==============
-==============
-=====================
-Reached end of testCase5 execution for: 2210400012 and subject: Applied Sociology & Applied Psychology
-]]></system-out>
   </testcase>
 </testsuite>

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: runner_Execution.Exceution
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 230.1 s -- in runner_Execution.Exceution
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 90.85 s -- in runner_Execution.Exceution
