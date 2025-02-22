@@ -6,14 +6,14 @@
       <class name="runner_Execution.Exceution">
         <methods>
           <include name="beforeClass"/>
-          <include name="testCase5" invocation-numbers="1"/>
+          <include name="testCase3"/>
           <include name="beforeMethod"/>
           <include name="afterClass"/>
           <include name="afterTest"/>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
-          <include name="afterMethod"/>
           <include name="beforeTest"/>
+          <include name="afterMethod"/>
         </methods>
       </class> <!-- runner_Execution.Exceution -->
     </classes>

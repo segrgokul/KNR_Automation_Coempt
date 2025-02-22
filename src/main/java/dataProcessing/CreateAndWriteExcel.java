@@ -47,44 +47,44 @@ public class CreateAndWriteExcel {
     	    writeExcelDatas();
     	}
 
-    	public static void writeExcelSemesterData(String studentSemester) throws IOException {
+    	public static void writeExcelSemesterData(int rowIndex ,String studentSemester) throws IOException {
     		
     		
     	  
 
-    	    XSSFRow firstrow = sheet.getRow(0);
-    	    
-    	    String[] studentSemesters = { studentSemester};
-    	    
-    	    
+    		Row datasRow = sheet.createRow(0);
+            String[] datavalues = {studentSemester};
+
+            for (int i = 0; i < datavalues.length; i++) {
+            	datasRow.createCell(i).setCellValue(datavalues[i]);
+            }
+        
+            XSSFRow firstrow = sheet.getRow(0);
     	    if (firstrow == null) {
     	        firstrow = sheet.createRow(0);
     	    }
+    	    
+    	   firstrow.createCell(0).setCellValue("studentRegno");
+            
+        // Create a new row based on the rowIndex from the loop
+    		  Row Datarow = sheet.createRow(rowIndex); 
 
-    	    // Ensure we do not overwrite existing cell values
-    	    XSSFCell semesterHeaderCell = firstrow.getCell(1);
-    	    if (semesterHeaderCell == null) {
-    	        semesterHeaderCell = firstrow.createCell(1);
-    	    }
-    	    semesterHeaderCell.setCellValue("Semester");
-
-    	    // Get or create second row
-    	    XSSFRow secondRow = sheet.getRow(1);
-    	    if (secondRow == null) {
-    	        secondRow = sheet.createRow(1);
-    	    }
-
-    	    XSSFCell semesterCell = secondRow.getCell(1);
-    	    if (semesterCell == null) {
-    	        semesterCell = secondRow.createCell(1);
-    	    }
-    	    semesterCell.setCellValue(studentSemester);
-
+        // Write each value in the correct column
+ //       Datarow.createCell(0).setCellValue(serialNo);
+  //      Datarow.createCell(1).setCellValue(subjectNames);
+    		  
+    		  
+    System.out.println("-------------------------------------------------------------------------");
+    		     System.out.println("Written: " + studentSemester + " in row " + rowIndex);		  
+    
+        
+        Datarow.createCell(1).setCellValue(studentSemester);
+        
     	    // Ensure changes are written
     	    writeExcelDatas();
     	}
 
-    public static void writeExcelData(int rowIndex,String serialNo,String subjectNames,String subjectCode,String extraSubjectCode,String credit,String type,String st,String qt,String as,String mte,String emptyColumn1,String emptyColumn2,String emptyColumn3,String to40,String endSemExam,
+    public static void writeExcelData(int rowIndex,String studentRegno,String studentSemester,String serialNo,String subjectNames,String subjectCode,String extraSubjectCode,String credit,String type,String st,String qt,String as,String mte,String emptyColumn1,String emptyColumn2,String emptyColumn3,String to40,String endSemExam,
     	String	to100,String totalMarks,String grade) throws IOException {
         
     
@@ -93,7 +93,7 @@ public class CreateAndWriteExcel {
     	           
     	                // Create a header row if the file is newly created
     	                Row datasRow = sheet.createRow(0);
-    	                String[] datavalues = { serialNo, subjectNames,subjectCode,extraSubjectCode,credit,type,st,qt,as,mte,emptyColumn1,emptyColumn2,emptyColumn3,to40,endSemExam
+    	                String[] datavalues = { serialNo,studentRegno,studentSemester, subjectNames,subjectCode,extraSubjectCode,credit,type,st,qt,as,mte,emptyColumn1,emptyColumn2,emptyColumn3,to40,endSemExam
     	                		,to100,totalMarks,grade};
 
     	                for (int i = 0; i < datavalues.length; i++) {
@@ -105,29 +105,32 @@ public class CreateAndWriteExcel {
     	        	        firstrow = sheet.createRow(0);
     	        	    }
     	        	    
-    	        	    firstrow.createCell(0).setCellValue("Register Number");
-    	        	    firstrow.createCell(1).setCellValue("subjectNames");
+    	        	   firstrow.createCell(0).setCellValue("studentRegno");
+    	        	   
+    	        	   firstrow.createCell(1).setCellValue("Semesters");
+    	        	   
+    	        	    firstrow.createCell(2).setCellValue("subjectNames");
     	          
-    	        		firstrow.createCell(2).setCellValue("subjectCode");
-    	        		firstrow.createCell(3).setCellValue("Dummydata"); 
+    	        		firstrow.createCell(3).setCellValue("subjectCode");
+    	        		firstrow.createCell(4).setCellValue("Dummydata"); 
     	        		
-    	        		firstrow.createCell(4).setCellValue("credit");
+    	        		firstrow.createCell(5).setCellValue("credit");
     	        		 
-    	        		 firstrow.createCell(5).setCellValue("type");
-    	        		 firstrow.createCell(6).setCellValue("ST(5)");
-    	        		  firstrow.createCell(7).setCellValue("QT(5)");
-    	        		  firstrow.createCell(8).setCellValue("AS(5)");
+    	        		 firstrow.createCell(6).setCellValue("type");
+    	        		 firstrow.createCell(7).setCellValue("ST(5)");
+    	        		  firstrow.createCell(8).setCellValue("QT(5)");
+    	        		  firstrow.createCell(9).setCellValue("AS(5)");
     	        		  
-    	        		  firstrow.createCell(9).setCellValue("MTE(25)");
+    	        		  firstrow.createCell(10).setCellValue("MTE(25)");
     	        		  
-    	        		  firstrow.createCell(10).setCellValue("emptyColumn1");
-    	        		  firstrow.createCell(11).setCellValue("emptyColumn2");
-    	        		  firstrow.createCell(12).setCellValue("emptyColumn3");
-    	        		  firstrow.createCell(13).setCellValue("To(40)");
-    	        		  firstrow.createCell(14).setCellValue("EndSemExam(60)");
-    	        		  firstrow.createCell(15).setCellValue("TO(100)");
-    	        		  firstrow.createCell(16).setCellValue("TM");  
-    	        		  firstrow.createCell(17).setCellValue("Grade");  
+    	        		  firstrow.createCell(11).setCellValue("emptyColumn1");
+    	        		  firstrow.createCell(12).setCellValue("emptyColumn2");
+    	        		  firstrow.createCell(13).setCellValue("emptyColumn3");
+    	        		  firstrow.createCell(14).setCellValue("To(40)");
+    	        		  firstrow.createCell(15).setCellValue("EndSemExam(60)");
+    	        		  firstrow.createCell(16).setCellValue("TO(100)");
+    	        		  firstrow.createCell(17).setCellValue("TM");  
+    	        		  firstrow.createCell(18).setCellValue("Grade");  
     	                
     	            // Create a new row based on the rowIndex from the loop
     	        		  Row Datarow = sheet.createRow(rowIndex); 
@@ -139,25 +142,28 @@ public class CreateAndWriteExcel {
     	        		  
     	        System.out.println("-------------------------------------------------------------------------");
     	        		     System.out.println("Written: " + subjectNames + " in row " + rowIndex);		  
-//    	            Datarow.createCell(0).setCellValue(studentRegno);
-    	        	Datarow.createCell(1).setCellValue(subjectNames);
+    	            Datarow.createCell(0).setCellValue(studentRegno);
     	            
-    	            Datarow.createCell(2).setCellValue(subjectCode);
-    	            Datarow.createCell(3).setCellValue(extraSubjectCode);
-    	            Datarow.createCell(4).setCellValue(credit);
-    	            Datarow.createCell(5).setCellValue(type);
-    	            Datarow.createCell(6).setCellValue(st);
-    	            Datarow.createCell(7).setCellValue(qt);
-    	            Datarow.createCell(8).setCellValue(as);
-    	            Datarow.createCell(9).setCellValue(mte);
-    	            Datarow.createCell(10).setCellValue(emptyColumn1);
-    	            Datarow.createCell(11).setCellValue(emptyColumn2);
-    	            Datarow.createCell(12).setCellValue(emptyColumn3);
-    	            Datarow.createCell(13).setCellValue(to40);
-    	            Datarow.createCell(14).setCellValue(endSemExam);
-    	            Datarow.createCell(15).setCellValue(to100);
-    	            Datarow.createCell(16).setCellValue(totalMarks);
-    	            Datarow.createCell(17).setCellValue(grade);
+    	            Datarow.createCell(1).setCellValue(studentSemester);
+    	            
+    	        	Datarow.createCell(2).setCellValue(subjectNames);
+    	            
+    	            Datarow.createCell(3).setCellValue(subjectCode);
+    	            Datarow.createCell(4).setCellValue(extraSubjectCode);
+    	            Datarow.createCell(5).setCellValue(credit);
+    	            Datarow.createCell(6).setCellValue(type);
+    	            Datarow.createCell(7).setCellValue(st);
+    	            Datarow.createCell(8).setCellValue(qt);
+    	            Datarow.createCell(9).setCellValue(as);
+    	            Datarow.createCell(10).setCellValue(mte);
+    	            Datarow.createCell(11).setCellValue(emptyColumn1);
+    	            Datarow.createCell(12).setCellValue(emptyColumn2);
+    	            Datarow.createCell(13).setCellValue(emptyColumn3);
+    	            Datarow.createCell(14).setCellValue(to40);
+    	            Datarow.createCell(15).setCellValue(endSemExam);
+    	            Datarow.createCell(16).setCellValue(to100);
+    	            Datarow.createCell(17).setCellValue(totalMarks);
+    	            Datarow.createCell(18).setCellValue(grade);
         	        System.out.println("-------------------------------------------------------------------------"); 
     	            // Write changes back to file
     	        
@@ -311,7 +317,7 @@ public class CreateAndWriteExcel {
 	        
 	public static void writeExcelDatas() throws IOException {		  
 			  
-	        FileOutputStream excelfile = new FileOutputStream("D:\\Coempt_Automation\\coempt_automation\\src\\test\\resources\\ExcelFiles\\Test2.xlsx");
+	        FileOutputStream excelfile = new FileOutputStream("D:\\Coempt_Automation\\coempt_automation\\src\\test\\resources\\ExcelFiles\\Test4.xlsx");
 	        
 	        workbook.write(excelfile);
 		

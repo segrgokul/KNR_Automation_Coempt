@@ -9,11 +9,19 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Surefire suite</th></tr>
-<tr><td><a href="#t0">Surefire test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">78,276</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Surefire test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">599,479</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">runner_Execution.Exceution</td><td><a href="#m0">testCase3</a></td><td rowspan="1">1739956554926</td><td rowspan="1">2893</td></tr><tr class="passedeven"><td><a href="#m1">testReadPdfData</a></td><td rowspan="1">1739956557827</td><td rowspan="1">75294</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">runner_Execution.Exceution</td><td><a href="#m0">afterSuite</a></td><td rowspan="1">1740200833516</td><td rowspan="1">379</td></tr><tr><th colspan="4">Surefire test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">runner_Execution.Exceution</td><td><a href="#m1">testCase3</a></td><td rowspan="1">1740200234040</td><td rowspan="1">17</td></tr><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">runner_Execution.Exceution</td><td><a href="#m2">testReadPdfData</a></td><td rowspan="1">1740200234070</td><td rowspan="1">599397</td></tr></tbody>
 </table>
-<h2>Surefire test</h2><h3 id="m0">runner_Execution.Exceution#testCase3</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">runner_Execution.Exceution#testReadPdfData</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Surefire test</h2><h3 id="m0">runner_Execution.Exceution#afterSuite</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.quit()&quot; because &quot;runner_Execution.Exceution.driver&quot; is null
+	at runner_Execution.Exceution.afterSuite(Exceution.java:661)
+... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">runner_Execution.Exceution#testCase3</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.manage()&quot; because &quot;base.BasicFunctions.driver&quot; is null
+	at base.BasicFunctions.implicitWait(BasicFunctions.java:75)
+	at pageModules.LoginPage.Login(LoginPage.java:148)
+	at runner_Execution.Exceution.testCase3(Exceution.java:193)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">runner_Execution.Exceution#testReadPdfData</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

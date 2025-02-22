@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="runner_Execution.Exceution" time="90.848" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="runner_Execution.Exceution" time="601.483" tests="3" errors="0" skipped="0" failures="2">
   <properties>
-    <property name="jpda.address" value="65063"/>
+    <property name="jpda.address" value="58628"/>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.class.path" value="D:\Coempt_Automation\coempt_automation\target\test-classes;D:\Coempt_Automation\coempt_automation\target\classes;C:\Users\User\.m2\repository\io\github\bonigarcia\webdrivermanager\5.9.1\webdrivermanager-5.9.1.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-api\2.0.13\slf4j-api-2.0.13.jar;C:\Users\User\.m2\repository\com\google\code\gson\gson\2.11.0\gson-2.11.0.jar;C:\Users\User\.m2\repository\com\google\errorprone\error_prone_annotations\2.27.0\error_prone_annotations-2.27.0.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java\3.3.6\docker-java-3.3.6.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-core\3.3.6\docker-java-core-3.3.6.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-api\3.3.6\docker-java-api-3.3.6.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\User\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.6\docker-java-transport-httpclient5-3.3.6.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-transport\3.3.6\docker-java-transport-3.3.6.jar;C:\Users\User\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\User\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-lang3\3.14.0\commons-lang3-3.14.0.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-compress\1.26.2\commons-compress-1.26.2.jar;C:\Users\User\.m2\repository\commons-codec\commons-codec\1.17.0\commons-codec-1.17.0.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-simple\2.0.9\slf4j-simple-2.0.9.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-java\4.26.0\selenium-java-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-api\4.26.0\selenium-api-4.26.0.jar;C:\Users\User\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.26.0\selenium-chrome-driver-4.26.0.jar;C:\Users\User\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.26.0\selenium-chromium-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-json\4.26.0\selenium-json-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.26.0\selenium-manager-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v128\4.26.0\selenium-devtools-v128-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v129\4.26.0\selenium-devtools-v129-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v130\4.26.0\selenium-devtools-v130-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.26.0\selenium-devtools-v85-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.26.0\selenium-edge-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.26.0\selenium-firefox-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-http\4.26.0\selenium-http-4.26.0.jar;C:\Users\User\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.26.0\selenium-ie-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.26.0\selenium-remote-driver-4.26.0.jar;C:\Users\User\.m2\repository\com\google\guava\guava\33.3.1-jre\guava-33.3.1-jre.jar;C:\Users\User\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\User\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\User\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\User\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar;C:\Users\User\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-api\1.43.0\opentelemetry-api-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-context\1.43.0\opentelemetry-context-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.43.0\opentelemetry-exporter-logging-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.43.0\opentelemetry-sdk-common-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.43.0\opentelemetry-sdk-extension-autoconfigure-spi-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.43.0\opentelemetry-sdk-extension-autoconfigure-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.43.0-alpha\opentelemetry-api-incubator-1.43.0-alpha.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.43.0\opentelemetry-sdk-trace-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.43.0\opentelemetry-sdk-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.43.0\opentelemetry-sdk-metrics-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.43.0\opentelemetry-sdk-logs-1.43.0.jar;C:\Users\User\.m2\repository\net\bytebuddy\byte-buddy\1.15.7\byte-buddy-1.15.7.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-os\4.26.0\selenium-os-4.26.0.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.26.0\selenium-safari-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-support\4.26.0\selenium-support-4.26.0.jar;C:\Users\User\.m2\repository\org\testng\testng\7.10.1\testng-7.10.1.jar;C:\Users\User\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\User\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\User\.m2\repository\net\sourceforge\jexcelapi\jxl\2.6.12\jxl-2.6.12.jar;C:\Users\User\.m2\repository\log4j\log4j\1.2.14\log4j-1.2.14.jar;C:\Users\User\.m2\repository\org\freemarker\freemarker\2.3.34\freemarker-2.3.34.jar;C:\Users\User\.m2\repository\org\mongodb\bson\5.3.0\bson-5.3.0.jar;C:\Users\User\.m2\repository\com\aventstack\extentreports\5.1.2\extentreports-5.1.2.jar;C:\Users\User\.m2\repository\io\reactivex\rxjava3\rxjava\3.1.6\rxjava-3.1.6.jar;C:\Users\User\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\User\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;C:\Users\User\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar;C:\Users\User\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\User\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\User\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.3\poi-ooxml-lite-5.2.3.jar;C:\Users\User\.m2\repository\org\apache\xmlbeans\xmlbeans\5.1.1\xmlbeans-5.1.1.jar;C:\Users\User\.m2\repository\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar;C:\Users\User\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar;C:\Users\User\.m2\repository\org\apache\logging\log4j\log4j-api\2.18.0\log4j-api-2.18.0.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\User\.m2\repository\org\apache\logging\log4j\log4j-core\2.24.3\log4j-core-2.24.3.jar;C:\Users\User\.m2\repository\org\apache\pdfbox\pdfbox\2.0.29\pdfbox-2.0.29.jar;C:\Users\User\.m2\repository\org\apache\pdfbox\fontbox\2.0.29\fontbox-2.0.29.jar;C:\Users\User\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;"/>
-    <property name="sun.awt.enableExtraMouseButtons" value="true"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -18,7 +17,7 @@
     <property name="user.country" value="IN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire14672594915966201508\surefirebooter-20250219144541098_3.jar C:\Users\User\AppData\Local\Temp\surefire14672594915966201508 2025-02-19T14-45-40_753-jvmRun1 surefire-20250219144541098_1tmp surefire_0-20250219144541098_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire10401842546402676771\surefirebooter-20250222102710840_3.jar C:\Users\User\AppData\Local\Temp\surefire10401842546402676771 2025-02-22T10-27-10_610-jvmRun1 surefire-20250222102710840_1tmp surefire_0-20250222102710840_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="runner_Execution.Exceution"/>
     <property name="surefire.test.class.path" value="D:\Coempt_Automation\coempt_automation\target\test-classes;D:\Coempt_Automation\coempt_automation\target\classes;C:\Users\User\.m2\repository\io\github\bonigarcia\webdrivermanager\5.9.1\webdrivermanager-5.9.1.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-api\2.0.13\slf4j-api-2.0.13.jar;C:\Users\User\.m2\repository\com\google\code\gson\gson\2.11.0\gson-2.11.0.jar;C:\Users\User\.m2\repository\com\google\errorprone\error_prone_annotations\2.27.0\error_prone_annotations-2.27.0.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java\3.3.6\docker-java-3.3.6.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-core\3.3.6\docker-java-core-3.3.6.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-api\3.3.6\docker-java-api-3.3.6.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\User\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.6\docker-java-transport-httpclient5-3.3.6.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-transport\3.3.6\docker-java-transport-3.3.6.jar;C:\Users\User\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\User\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-lang3\3.14.0\commons-lang3-3.14.0.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-compress\1.26.2\commons-compress-1.26.2.jar;C:\Users\User\.m2\repository\commons-codec\commons-codec\1.17.0\commons-codec-1.17.0.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-simple\2.0.9\slf4j-simple-2.0.9.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-java\4.26.0\selenium-java-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-api\4.26.0\selenium-api-4.26.0.jar;C:\Users\User\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.26.0\selenium-chrome-driver-4.26.0.jar;C:\Users\User\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.26.0\selenium-chromium-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-json\4.26.0\selenium-json-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.26.0\selenium-manager-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v128\4.26.0\selenium-devtools-v128-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v129\4.26.0\selenium-devtools-v129-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v130\4.26.0\selenium-devtools-v130-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.26.0\selenium-devtools-v85-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.26.0\selenium-edge-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.26.0\selenium-firefox-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-http\4.26.0\selenium-http-4.26.0.jar;C:\Users\User\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.26.0\selenium-ie-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.26.0\selenium-remote-driver-4.26.0.jar;C:\Users\User\.m2\repository\com\google\guava\guava\33.3.1-jre\guava-33.3.1-jre.jar;C:\Users\User\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\User\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\User\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\User\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar;C:\Users\User\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-api\1.43.0\opentelemetry-api-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-context\1.43.0\opentelemetry-context-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.43.0\opentelemetry-exporter-logging-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.43.0\opentelemetry-sdk-common-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.43.0\opentelemetry-sdk-extension-autoconfigure-spi-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.43.0\opentelemetry-sdk-extension-autoconfigure-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.43.0-alpha\opentelemetry-api-incubator-1.43.0-alpha.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.43.0\opentelemetry-sdk-trace-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.43.0\opentelemetry-sdk-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.43.0\opentelemetry-sdk-metrics-1.43.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.43.0\opentelemetry-sdk-logs-1.43.0.jar;C:\Users\User\.m2\repository\net\bytebuddy\byte-buddy\1.15.7\byte-buddy-1.15.7.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-os\4.26.0\selenium-os-4.26.0.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.26.0\selenium-safari-driver-4.26.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-support\4.26.0\selenium-support-4.26.0.jar;C:\Users\User\.m2\repository\org\testng\testng\7.10.1\testng-7.10.1.jar;C:\Users\User\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\User\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\User\.m2\repository\net\sourceforge\jexcelapi\jxl\2.6.12\jxl-2.6.12.jar;C:\Users\User\.m2\repository\log4j\log4j\1.2.14\log4j-1.2.14.jar;C:\Users\User\.m2\repository\org\freemarker\freemarker\2.3.34\freemarker-2.3.34.jar;C:\Users\User\.m2\repository\org\mongodb\bson\5.3.0\bson-5.3.0.jar;C:\Users\User\.m2\repository\com\aventstack\extentreports\5.1.2\extentreports-5.1.2.jar;C:\Users\User\.m2\repository\io\reactivex\rxjava3\rxjava\3.1.6\rxjava-3.1.6.jar;C:\Users\User\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\User\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;C:\Users\User\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar;C:\Users\User\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\User\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\User\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.3\poi-ooxml-lite-5.2.3.jar;C:\Users\User\.m2\repository\org\apache\xmlbeans\xmlbeans\5.1.1\xmlbeans-5.1.1.jar;C:\Users\User\.m2\repository\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar;C:\Users\User\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar;C:\Users\User\.m2\repository\org\apache\logging\log4j\log4j-api\2.18.0\log4j-api-2.18.0.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\User\.m2\repository\org\apache\logging\log4j\log4j-core\2.24.3\log4j-core-2.24.3.jar;C:\Users\User\.m2\repository\org\apache\pdfbox\pdfbox\2.0.29\pdfbox-2.0.29.jar;C:\Users\User\.m2\repository\org\apache\pdfbox\fontbox\2.0.29\fontbox-2.0.29.jar;C:\Users\User\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;"/>
@@ -34,7 +33,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire14672594915966201508\surefirebooter-20250219144541098_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire10401842546402676771\surefirebooter-20250222102710840_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.5+9-LTS-239"/>
@@ -53,7 +52,6 @@
     <property name="java.version" value="21.0.5"/>
     <property name="user.dir" value="D:\Coempt_Automation\coempt_automation"/>
     <property name="os.arch" value="amd64"/>
-    <property name="webdriver.gecko.driver" value="C:\Users\User\.cache\selenium\geckodriver\win64\0.35.0\geckodriver.exe"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
@@ -64,173 +62,73 @@
     <property name="java.vm.version" value="21.0.5+9-LTS-239"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
-    <property name="maven.surefire.debug" value="-agentlib:jdwp=transport=dt_socket,server=n,address=65063"/>
+    <property name="maven.surefire.debug" value="-agentlib:jdwp=transport=dt_socket,server=n,address=58628"/>
   </properties>
-  <testcase name="testCase3" classname="runner_Execution.Exceution" time="2.895">
+  <testcase name="testCase3" classname="runner_Execution.Exceution" time="0.02">
+    <failure message="Cannot invoke &quot;org.openqa.selenium.WebDriver.manage()&quot; because &quot;base.BasicFunctions.driver&quot; is null" type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.manage()" because "base.BasicFunctions.driver" is null
+	at base.BasicFunctions.implicitWait(BasicFunctions.java:75)
+	at pageModules.LoginPage.Login(LoginPage.java:148)
+	at runner_Execution.Exceution.testCase3(Exceution.java:193)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></failure>
     <system-out><![CDATA[This will execute first before the Test Suite
-Login name: test
 This will execute second before the Test and after the before test suite
 This will execute third before the Class and after the befortest
 This will execute foruth before every Method and after the before class
 This is a Normal Test Case2
-The Admin Login Page has login and the landing page of KNRUHS is displayed
 ]]></system-out>
-    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.35.0 (resolved driver for Firefox 135)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\User\.cache\selenium\geckodriver\win64\0.35.0\geckodriver.exe
-]]></system-err>
   </testcase>
-  <testcase name="testReadPdfData" classname="runner_Execution.Exceution" time="75.294">
+  <testcase name="testReadPdfData" classname="runner_Execution.Exceution" time="599.393">
     <system-out><![CDATA[This will execute after every Method
 This will execute foruth before every Method and after the before class
 Starting PDF Data Read Test...
 =====================
 Downloads folder: C:\Users\User/Downloads
-Total Pages: 292
+Total Pages: 6
 ---------------------------------------------------
-Subject Cr
-Assessment Parameters End Sem 
-Exam (60)
-Semester I
-Sr.
-No Sub Code T/P ST(5) QT(5) AS(5) MTE(25) To(40)
-TO
-(100) TM Grade
-1 Engineering Mathematics - I 20BTTBS101 3 T 5 5 4 25 - - - 39 60 99 100 O
-2 Engineering Physics 20BTTBS102 3 T 5 5 5 23 - - - 38 59 97 100 O
-3 Basic Electrical Engineering 20BTTES101 2 T 4 5 5 19 - - - 33 56 89 100 E
-4 Basics of Mechanical Engineering 20BTTES103 2 T 5 5 5 21 - - - 36 50 86 100 E
-5 Communicative English 20BTTHS101 2 T 5 5 4 23 - - - 37 54 91 100 O
-EPE
-(20)
-RI(30) R(30) UVE(20) To(100) 100
-6 Engineering Physics Lab 20BTPBS101 1 P 19 28 28 18 - - - 93 - 93 100 O
-7 Basic Electrical Engineering Lab 20BTPES101 1 P 17 28 27 16 - - - 88 - 88 100 E
-8 Basics of Mechanical Engineering Lab 20BTPES103 1 P 18 28 28 18 - - - 92 - 92 100 O
-9 English Language Lab 20BTPHS101 1 P 18 28 30 20 - - - 96 - 96 100 O
-10 Induction Training 20BTPMC10
-1
-0 P 20 28 28 20 - - - 96 - 96 100 O
-QRVV
-(20)
-UJRT
-(30)
-QJ
-(50)
-To(100) 100
-11 Workshop Practice 20BTPES106 2 P 18 27 46 - - - - 91 - 91 100 O
-1018 11009.729.7218Total Credit : SGPA: CGPA: Total:
-Subject Cr
-Assessment Parameters End Sem 
-Exam (60)
-Semester II
-Sr.
-No Sub Code T/P ST(5) QT(5) AS(5) MTE(25) To(40)
-TO
-(100) TM Grade
-1 Engineering Mathematics - II 20BTTBS204 3 T 4 5 5 21 - - - 35 33 68 100 B
-2 Engineering Chemistry 20BTTBS203 3 T 5 5 4 25 - - - 39 60 99 100 O
-3 Engineering Mechanics 20BTTES205 3 T 5 5 5 25 - - - 40 45 85 100 E
-4 Programming for problem solving using C 20BTTES206 3 T 5 5 5 23 - - - 38 55 93 100 O
-5 Basic Electronics Engineering 20BTTES202 2 T 5 5 4 25 - - - 39 60 99 100 O
-6 Basics of Civil Engineering 20BTTES204 2 T 5 4 4 25 - - - 38 60 98 100 O
-7 Business Communication and Life Skills 20BTTHS202 2 T 5 5 5 21 - - - 36 56 92 100 O
-EPE
-(20)
-RI(30) R(30) UVE(20) To(100) 100
-8 Engineering Chemistry Lab 20BTPBS202 1 P 20 30 30 20 - - - 100 - 100 100 O
-9 Programming for problem solving using C 
-Lab
-20BTPES207 2 P 19 29 28 19 - - - 95 - 95 100 O
-10 Basic Electronics Engineering Lab 20BTPES202 1 P 19 29 30 19 - - - 97 - 97 100 O
-11 Basics of Civil Engineering Lab 20BTPES204 1 P 17 27 27 18 - - - 89 - 89 100 E
-12 NCC / NSS / Yoga 20BTPMC20
-2
-0 P 15 25 22 14 - - - 76 - 76 100 A
-QRVV
-(20)
-UJRT
-(30)
-QJ
-(50)
-To(100) 100
-13 Engineering Graphics & Design Lab 20BTPES205 2 P 10 30 50 - - - - 90 - 90 100 O
-2001287025Reg  No :
-1181 13009.589.4825Total Credit : SGPA: CGPA: Total:
-Subject Cr
-Assessment Parameters End Sem 
-Exam (60)
-Semester III
-Sr.
-No Sub Code T/P ST(5) QT(5) AS(5) MTE(25) To(40)
-TO
-(100) TM Grade
-1 Engineering Mathematics - III 20BTTBS305 3 T 4 5 4 22 - - - 35 52 87 100 E
-2 Engineering Economics & Costing 20BTTHS304 2 T 5 5 5 21 - - - 36 30 66 100 B
-3 Universal Human Values 20BTTHS305 2 T 3 4 4 23 - - - 34 48 82 100 E
-4 Data Structure using C 20BTTES307 3 T 3 3 5 22 - - - 33 53 86 100 E
-5 Object Oriented Programming Using JAVA 20BTCSETP
-C301
-3 T 5 5 5 23 - - - 38 54 92 100 O
-6 Computer Organization & Architecture 20BTCSETP
-C302
-3 T 5 5 4 18 - - - 32 53 85 100 E
-7 Environmental Science 20BTTMC301 0 T 3 4 4 23 - - - 34 46 80 100 E
-EPE
-(20)
-RI(30) R(30) UVE(20) To(100) 100
-8 Data Structures using C Lab 20BTPES308 1 P 18 27 27 19 - - - 91 - 91 100 O
-9 Object Oriented Programming Using JAVA 
-Lab
-20BTCSEPP
-C301
-1 P 18 26 28 19 - - - 91 - 91 100 O
-10 Computer Organization & Architecture Lab 20BTCSEPP
-C302
-1 P 20 25 27 20 - - - 92 - 92 100 O
-11 Employability Skill - I 20BTCSEPP
-C303
-1 P 15 18 20 15 - - - 68 - 68 100 B
-2001287025Reg  No :
-920 11009.409.0020Total Credit : SGPA: CGPA: Total:
-ABHISHEK BARIK
-Bachelor of Technology in Computer Science and Engineering
-2001287025Reg  No :
-College Name :
-Name of the Student :
-Course                      
-GITA AUTONOMOUS COLLEGE, BHUBANESWAR
-(Affiliated to Biju Pattnaik University of Technology, Odisha)
-Final Tabulation Register (Student wise) for passing out year 2023-24
-GITA Autonomous College, BhubaneswarCollege Code            :     287
-:
-
+Latest PDF file found: TR (CSE) (1 to 100) B.Tech. 20-24 (2)_removed.pdf
 Page 1:
 ---------------------------------------------------
-Latest PDF file found: TR (CSE) (1 to 100) B.Tech. 20-24 (1).pdf
 =================
-studentRegno :2001287025
-regnoList: [2001287025]
-=================
-=================
-studentRegno :2001287025
-regnoList: [2001287025]
+studentRegno :Semester I
+1136
 =================
 =================
-studentRegno :2001287025
-regnoList: [2001287025]
-=================
-=================
-Student sem :Semester I
-=================
-=================
-Student sem :Semester II
-=================
-=================
-Student sem :Semester III
-=================
+studentSemester: Semester I
 Serial No: 1
 Subject Name: Engineering Mathematics - I
 Subject Code: 20BTTBS101
+Extra Subject Code: null
 Cr: 3
 Type (T/P): T
 ST (5): 5
@@ -246,10 +144,17 @@ TO (100): 99
 Total Marks: 100
 Grade: O
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Mathematics - I in row 1
+-------------------------------------------------------------------------
+Processing rowIndex: 1
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 2
 Subject Name: Engineering Physics
 Subject Code: 20BTTBS102
+Extra Subject Code: null
 Cr: 3
 Type (T/P): T
 ST (5): 5
@@ -265,10 +170,17 @@ TO (100): 97
 Total Marks: 100
 Grade: O
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Physics in row 2
+-------------------------------------------------------------------------
+Processing rowIndex: 2
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 3
 Subject Name: Basic Electrical Engineering
 Subject Code: 20BTTES101
+Extra Subject Code: null
 Cr: 2
 Type (T/P): T
 ST (5): 4
@@ -284,10 +196,17 @@ TO (100): 89
 Total Marks: 100
 Grade: E
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basic Electrical Engineering in row 3
+-------------------------------------------------------------------------
+Processing rowIndex: 3
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 4
 Subject Name: Basics of Mechanical Engineering
 Subject Code: 20BTTES103
+Extra Subject Code: null
 Cr: 2
 Type (T/P): T
 ST (5): 5
@@ -303,10 +222,17 @@ TO (100): 86
 Total Marks: 100
 Grade: E
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basics of Mechanical Engineering in row 4
+-------------------------------------------------------------------------
+Processing rowIndex: 4
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 5
 Subject Name: Communicative English
 Subject Code: 20BTTHS101
+Extra Subject Code: null
 Cr: 2
 Type (T/P): T
 ST (5): 5
@@ -322,10 +248,174 @@ TO (100): 91
 Total Marks: 100
 Grade: O
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Communicative English in row 5
+-------------------------------------------------------------------------
+Processing rowIndex: 5
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 6
+Subject Name: Engineering Physics Lab
+Subject Code: 20BTPBS101
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 19
+QT (5): 28
+AS (5): 28
+MTE (25): 18
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 93
+End Sem Exam (60): -
+TO (100): 93
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Physics Lab in row 6
+-------------------------------------------------------------------------
+Processing rowIndex: 6
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 7
+Subject Name: Basic Electrical Engineering Lab
+Subject Code: 20BTPES101
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 17
+QT (5): 28
+AS (5): 27
+MTE (25): 16
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 88
+End Sem Exam (60): -
+TO (100): 88
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basic Electrical Engineering Lab in row 7
+-------------------------------------------------------------------------
+Processing rowIndex: 7
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 8
+Subject Name: Basics of Mechanical Engineering Lab
+Subject Code: 20BTPES103
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 18
+QT (5): 28
+AS (5): 28
+MTE (25): 18
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 92
+End Sem Exam (60): -
+TO (100): 92
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basics of Mechanical Engineering Lab in row 8
+-------------------------------------------------------------------------
+Processing rowIndex: 8
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 9
+Subject Name: English Language Lab
+Subject Code: 20BTPHS101
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 18
+QT (5): 28
+AS (5): 30
+MTE (25): 20
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 96
+End Sem Exam (60): -
+TO (100): 96
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: English Language Lab in row 9
+-------------------------------------------------------------------------
+Processing rowIndex: 9
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 10
+Subject Name: Induction Training
+Subject Code: 20BTPMC10
+1
+Extra Subject Code: null
+Cr: 0
+Type (T/P): P
+ST (5): 20
+QT (5): 28
+AS (5): 28
+MTE (25): 20
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 96
+End Sem Exam (60): -
+TO (100): 96
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Induction Training in row 10
+-------------------------------------------------------------------------
+Processing rowIndex: 10
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 11
+Subject Name: Workshop Practice
+Subject Code: 20BTPES106
+Extra Subject Code: null
+Cr: 2
+Type (T/P): P
+ST (5): 18
+QT (5): 27
+AS (5): 46
+MTE (25): -
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 91
+End Sem Exam (60): -
+TO (100): 91
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Workshop Practice in row 11
+-------------------------------------------------------------------------
+Processing rowIndex: 11
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 1
 Subject Name: Engineering Mathematics - II
 Subject Code: 20BTTBS204
+Extra Subject Code: null
 Cr: 3
 Type (T/P): T
 ST (5): 4
@@ -341,10 +431,17 @@ TO (100): 68
 Total Marks: 100
 Grade: B
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Mathematics - II in row 12
+-------------------------------------------------------------------------
+Processing rowIndex: 12
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 2
 Subject Name: Engineering Chemistry
 Subject Code: 20BTTBS203
+Extra Subject Code: null
 Cr: 3
 Type (T/P): T
 ST (5): 5
@@ -360,10 +457,17 @@ TO (100): 99
 Total Marks: 100
 Grade: O
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Chemistry in row 13
+-------------------------------------------------------------------------
+Processing rowIndex: 13
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 3
 Subject Name: Engineering Mechanics
 Subject Code: 20BTTES205
+Extra Subject Code: null
 Cr: 3
 Type (T/P): T
 ST (5): 5
@@ -379,10 +483,17 @@ TO (100): 85
 Total Marks: 100
 Grade: E
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Mechanics in row 14
+-------------------------------------------------------------------------
+Processing rowIndex: 14
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 4
 Subject Name: Programming for problem solving using C
 Subject Code: 20BTTES206
+Extra Subject Code: null
 Cr: 3
 Type (T/P): T
 ST (5): 5
@@ -398,10 +509,17 @@ TO (100): 93
 Total Marks: 100
 Grade: O
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Programming for problem solving using C in row 15
+-------------------------------------------------------------------------
+Processing rowIndex: 15
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 5
 Subject Name: Basic Electronics Engineering
 Subject Code: 20BTTES202
+Extra Subject Code: null
 Cr: 2
 Type (T/P): T
 ST (5): 5
@@ -417,10 +535,17 @@ TO (100): 99
 Total Marks: 100
 Grade: O
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basic Electronics Engineering in row 16
+-------------------------------------------------------------------------
+Processing rowIndex: 16
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 6
 Subject Name: Basics of Civil Engineering
 Subject Code: 20BTTES204
+Extra Subject Code: null
 Cr: 2
 Type (T/P): T
 ST (5): 5
@@ -436,10 +561,17 @@ TO (100): 98
 Total Marks: 100
 Grade: O
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basics of Civil Engineering in row 17
+-------------------------------------------------------------------------
+Processing rowIndex: 17
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 7
 Subject Name: Business Communication and Life Skills
 Subject Code: 20BTTHS202
+Extra Subject Code: null
 Cr: 2
 Type (T/P): T
 ST (5): 5
@@ -455,10 +587,176 @@ TO (100): 92
 Total Marks: 100
 Grade: O
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Business Communication and Life Skills in row 18
+-------------------------------------------------------------------------
+Processing rowIndex: 18
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 8
+Subject Name: Engineering Chemistry Lab
+Subject Code: 20BTPBS202
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 20
+QT (5): 30
+AS (5): 30
+MTE (25): 20
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 100
+End Sem Exam (60): -
+TO (100): 100
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Chemistry Lab in row 19
+-------------------------------------------------------------------------
+Processing rowIndex: 19
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 9
+Subject Name: Programming for problem solving using C 
+Lab
+Subject Code: 20BTPES207
+Extra Subject Code: null
+Cr: 2
+Type (T/P): P
+ST (5): 19
+QT (5): 29
+AS (5): 28
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 95
+End Sem Exam (60): -
+TO (100): 95
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Programming for problem solving using C 
+Lab in row 20
+-------------------------------------------------------------------------
+Processing rowIndex: 20
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 10
+Subject Name: Basic Electronics Engineering Lab
+Subject Code: 20BTPES202
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 19
+QT (5): 29
+AS (5): 30
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 97
+End Sem Exam (60): -
+TO (100): 97
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basic Electronics Engineering Lab in row 21
+-------------------------------------------------------------------------
+Processing rowIndex: 21
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 11
+Subject Name: Basics of Civil Engineering Lab
+Subject Code: 20BTPES204
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 17
+QT (5): 27
+AS (5): 27
+MTE (25): 18
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 89
+End Sem Exam (60): -
+TO (100): 89
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basics of Civil Engineering Lab in row 22
+-------------------------------------------------------------------------
+Processing rowIndex: 22
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 12
+Subject Name: NCC / NSS / Yoga
+Subject Code: 20BTPMC20
+2
+Extra Subject Code: null
+Cr: 0
+Type (T/P): P
+ST (5): 15
+QT (5): 25
+AS (5): 22
+MTE (25): 14
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 76
+End Sem Exam (60): -
+TO (100): 76
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: NCC / NSS / Yoga in row 23
+-------------------------------------------------------------------------
+Processing rowIndex: 23
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 13
+Subject Name: Engineering Graphics & Design Lab
+Subject Code: 20BTPES205
+Extra Subject Code: null
+Cr: 2
+Type (T/P): P
+ST (5): 10
+QT (5): 30
+AS (5): 50
+MTE (25): -
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 90
+End Sem Exam (60): -
+TO (100): 90
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Graphics & Design Lab in row 24
+-------------------------------------------------------------------------
+Processing rowIndex: 24
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 1
 Subject Name: Engineering Mathematics - III
 Subject Code: 20BTTBS305
+Extra Subject Code: null
 Cr: 3
 Type (T/P): T
 ST (5): 4
@@ -474,10 +772,43 @@ TO (100): 87
 Total Marks: 100
 Grade: E
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Mathematics - III in row 25
+-------------------------------------------------------------------------
+Processing rowIndex: 25
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 2
+Subject Name: Engineering Economics & Costing
+Subject Code: 20BTTHS304
+Extra Subject Code: null
+Cr: 2
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 21
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 36
+End Sem Exam (60): 30
+TO (100): 66
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Economics & Costing in row 26
+-------------------------------------------------------------------------
+Processing rowIndex: 26
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 3
 Subject Name: Universal Human Values
 Subject Code: 20BTTHS305
+Extra Subject Code: null
 Cr: 2
 Type (T/P): T
 ST (5): 3
@@ -493,10 +824,17 @@ TO (100): 82
 Total Marks: 100
 Grade: E
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Universal Human Values in row 27
+-------------------------------------------------------------------------
+Processing rowIndex: 27
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 4
 Subject Name: Data Structure using C
 Subject Code: 20BTTES307
+Extra Subject Code: null
 Cr: 3
 Type (T/P): T
 ST (5): 3
@@ -512,10 +850,71 @@ TO (100): 86
 Total Marks: 100
 Grade: E
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Data Structure using C in row 28
+-------------------------------------------------------------------------
+Processing rowIndex: 28
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 5
+Subject Name: Object Oriented Programming Using JAVA
+Subject Code: 20BTCSETP
+C301
+Extra Subject Code: C301
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 38
+End Sem Exam (60): 54
+TO (100): 92
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Object Oriented Programming Using JAVA in row 29
+-------------------------------------------------------------------------
+Processing rowIndex: 29
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 6
+Subject Name: Computer Organization & Architecture
+Subject Code: 20BTCSETP
+C302
+Extra Subject Code: C302
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 4
+MTE (25): 18
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 32
+End Sem Exam (60): 53
+TO (100): 85
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Computer Organization & Architecture in row 30
+-------------------------------------------------------------------------
+Processing rowIndex: 30
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
 Serial No: 7
 Subject Name: Environmental Science
 Subject Code: 20BTTMC301
+Extra Subject Code: null
 Cr: 0
 Type (T/P): T
 ST (5): 3
@@ -531,10 +930,3680 @@ TO (100): 80
 Total Marks: 100
 Grade: E
 ----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Environmental Science in row 31
+-------------------------------------------------------------------------
+Processing rowIndex: 31
 ----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 8
+Subject Name: Data Structures using C Lab
+Subject Code: 20BTPES308
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 18
+QT (5): 27
+AS (5): 27
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 91
+End Sem Exam (60): -
+TO (100): 91
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Data Structures using C Lab in row 32
+-------------------------------------------------------------------------
+Processing rowIndex: 32
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 9
+Subject Name: Object Oriented Programming Using JAVA 
+Lab
+Subject Code: 20BTCSEPP
+C301
+Extra Subject Code: C301
+Cr: 1
+Type (T/P): P
+ST (5): 18
+QT (5): 26
+AS (5): 28
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 91
+End Sem Exam (60): -
+TO (100): 91
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Object Oriented Programming Using JAVA 
+Lab in row 33
+-------------------------------------------------------------------------
+Processing rowIndex: 33
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 10
+Subject Name: Computer Organization & Architecture Lab
+Subject Code: 20BTCSEPP
+C302
+Extra Subject Code: C302
+Cr: 1
+Type (T/P): P
+ST (5): 20
+QT (5): 25
+AS (5): 27
+MTE (25): 20
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 92
+End Sem Exam (60): -
+TO (100): 92
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Computer Organization & Architecture Lab in row 34
+-------------------------------------------------------------------------
+Processing rowIndex: 34
+----------------------------------------------------
+Page wise no:1
+studentSemester: Semester I
+Serial No: 11
+Subject Name: Employability Skill - I
+Subject Code: 20BTCSEPP
+C303
+Extra Subject Code: C303
+Cr: 1
+Type (T/P): P
+ST (5): 15
+QT (5): 18
+AS (5): 20
+MTE (25): 15
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 68
+End Sem Exam (60): -
+TO (100): 68
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Employability Skill - I in row 35
+-------------------------------------------------------------------------
+Processing rowIndex: 35
+----------------------------------------------------
+Page wise no:1
+Latest PDF file found: TR (CSE) (1 to 100) B.Tech. 20-24 (2)_removed.pdf
+Page 2:
+---------------------------------------------------
+=================
+studentRegno :Semester IV
+1330
+=================
+=================
+studentSemester: Semester IV
+Serial No: 1
+Subject Name: Discrete Mathematical Structure
+Subject Code: 20BTTBS406
+Extra Subject Code: null
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 25
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 40
+End Sem Exam (60): 58
+TO (100): 98
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Discrete Mathematical Structure in row 36
+-------------------------------------------------------------------------
+Processing rowIndex: 36
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 2
+Subject Name: Organisational Behaviour
+Subject Code: 20BTTHS403
+Extra Subject Code: null
+Cr: 2
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 24
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 39
+End Sem Exam (60): 53
+TO (100): 92
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Organisational Behaviour in row 37
+-------------------------------------------------------------------------
+Processing rowIndex: 37
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 3
+Subject Name: Design & Analysis of Algorithms
+Subject Code: 20BTCSETP
+C403
+Extra Subject Code: C403
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 4
+AS (5): 5
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 37
+End Sem Exam (60): 58
+TO (100): 95
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Design & Analysis of Algorithms in row 38
+-------------------------------------------------------------------------
+Processing rowIndex: 38
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 4
+Subject Name: Data Base Engineering
+Subject Code: 20BTCSETP
+C404
+Extra Subject Code: C404
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 22
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 37
+End Sem Exam (60): 52
+TO (100): 89
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Data Base Engineering in row 39
+-------------------------------------------------------------------------
+Processing rowIndex: 39
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 5
+Subject Name: Programming and Problem Solving using 
+Python
+Subject Code: 20BTCSETP
+C405
+Extra Subject Code: C405
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 4
+MTE (25): 17
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 29
+End Sem Exam (60): 52
+TO (100): 81
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Programming and Problem Solving using 
+Python in row 40
+-------------------------------------------------------------------------
+Processing rowIndex: 40
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 6
+Subject Name: Advanced Computer Architecture
+Subject Code: 20BTCSETP
+E401
+Extra Subject Code: E401
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 4
+AS (5): 5
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 37
+End Sem Exam (60): 51
+TO (100): 88
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Advanced Computer Architecture in row 41
+-------------------------------------------------------------------------
+Processing rowIndex: 41
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 7
+Subject Name: Constitution of India
+Subject Code: 20BTTMC402
+Extra Subject Code: null
+Cr: 0
+Type (T/P): T
+ST (5): 5
+QT (5): 4
+AS (5): 5
+MTE (25): 20
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 34
+End Sem Exam (60): 48
+TO (100): 82
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Constitution of India in row 42
+-------------------------------------------------------------------------
+Processing rowIndex: 42
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 8
+Subject Name: Design & Analysis of Algorithms Lab
+Subject Code: 20BTCSEPP
+C404
+Extra Subject Code: C404
+Cr: 1
+Type (T/P): P
+ST (5): 19
+QT (5): 27
+AS (5): 26
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 91
+End Sem Exam (60): -
+TO (100): 91
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Design & Analysis of Algorithms Lab in row 43
+-------------------------------------------------------------------------
+Processing rowIndex: 43
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 9
+Subject Name: Database Engineering Lab
+Subject Code: 20BTCSEPP
+C405
+Extra Subject Code: C405
+Cr: 1
+Type (T/P): P
+ST (5): 19
+QT (5): 27
+AS (5): 28
+MTE (25): 16
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 90
+End Sem Exam (60): -
+TO (100): 90
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Database Engineering Lab in row 44
+-------------------------------------------------------------------------
+Processing rowIndex: 44
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 10
+Subject Name: Programming and Problem Solving using 
+Python Lab
+Subject Code: 20BTCSEPP
+C406
+Extra Subject Code: C406
+Cr: 1
+Type (T/P): P
+ST (5): 15
+QT (5): 25
+AS (5): 26
+MTE (25): 16
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 82
+End Sem Exam (60): -
+TO (100): 82
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Programming and Problem Solving using 
+Python Lab in row 45
+-------------------------------------------------------------------------
+Processing rowIndex: 45
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 11
+Subject Name: Employability Skill - II
+Subject Code: 20BTCSEPP
+C407
+Extra Subject Code: C407
+Cr: 1
+Type (T/P): P
+ST (5): 17
+QT (5): 27
+AS (5): 27
+MTE (25): 18
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 89
+End Sem Exam (60): -
+TO (100): 89
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Employability Skill - II in row 46
+-------------------------------------------------------------------------
+Processing rowIndex: 46
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 12
+Subject Name: Mini Project - I
+Subject Code: 20BTCSEPP
+SI401
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 10
+QT (5): 10
+AS (5): 10
+MTE (25): 10
+Empty Column1: 12
+Empty Column2: 17
+Empty Column3: 16
+TO (40): 85
+End Sem Exam (60): -
+TO (100): 85
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Mini Project - I in row 47
+-------------------------------------------------------------------------
+Processing rowIndex: 47
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 1
+Subject Name: Operating System
+Subject Code: 20BTCSETP
+C506
+Extra Subject Code: C506
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 4
+MTE (25): 20
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 34
+End Sem Exam (60): 49
+TO (100): 83
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Operating System in row 48
+-------------------------------------------------------------------------
+Processing rowIndex: 48
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 2
+Subject Name: Formal Language & Automata Theory
+Subject Code: 20BTCSETP
+C507
+Extra Subject Code: C507
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 24
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 39
+End Sem Exam (60): 60
+TO (100): 99
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Formal Language & Automata Theory in row 49
+-------------------------------------------------------------------------
+Processing rowIndex: 49
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 3
+Subject Name: Advanced Java
+Subject Code: 20BTCSETP
+C508
+Extra Subject Code: C508
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 24
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 39
+End Sem Exam (60): 57
+TO (100): 96
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Advanced Java in row 50
+-------------------------------------------------------------------------
+Processing rowIndex: 50
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 4
+Subject Name: Machine Learning
+Subject Code: 20BTCSETP
+E504
+Extra Subject Code: E504
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 20
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 35
+End Sem Exam (60): 44
+TO (100): 79
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Machine Learning in row 51
+-------------------------------------------------------------------------
+Processing rowIndex: 51
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 5
+Subject Name: Micro Processor & Micro Controller
+Subject Code: 20BTCSETO
+E501
+Extra Subject Code: E501
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 21
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 36
+End Sem Exam (60): 49
+TO (100): 85
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Micro Processor & Micro Controller in row 52
+-------------------------------------------------------------------------
+Processing rowIndex: 52
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 6
+Subject Name: Operating System Lab
+Subject Code: 20BTCSEPP
+C508
+Extra Subject Code: C508
+Cr: 1
+Type (T/P): P
+ST (5): 19
+QT (5): 27
+AS (5): 26
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 91
+End Sem Exam (60): -
+TO (100): 91
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Operating System Lab in row 53
+-------------------------------------------------------------------------
+Processing rowIndex: 53
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 7
+Subject Name: Advanced Java Lab
+Subject Code: 20BTCSEPP
+C509
+Extra Subject Code: C509
+Cr: 1
+Type (T/P): P
+ST (5): 19
+QT (5): 27
+AS (5): 26
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 91
+End Sem Exam (60): -
+TO (100): 91
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Advanced Java Lab in row 54
+-------------------------------------------------------------------------
+Processing rowIndex: 54
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 8
+Subject Name: Web Technology Lab
+Subject Code: 20BTCSEPP
+C510
+Extra Subject Code: C510
+Cr: 1
+Type (T/P): P
+ST (5): 19
+QT (5): 27
+AS (5): 26
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 91
+End Sem Exam (60): -
+TO (100): 91
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Web Technology Lab in row 55
+-------------------------------------------------------------------------
+Processing rowIndex: 55
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 9
+Subject Name: Employability Skill - III
+Subject Code: 20BTCSEPP
+C511
+Extra Subject Code: C511
+Cr: 1
+Type (T/P): P
+ST (5): 16
+QT (5): 25
+AS (5): 24
+MTE (25): 16
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 81
+End Sem Exam (60): -
+TO (100): 81
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Employability Skill - III in row 56
+-------------------------------------------------------------------------
+Processing rowIndex: 56
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 10
+Subject Name: Summer Internship - I
+Subject Code: 20BTCSEPP
+SI502
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 9
+QT (5): 9
+AS (5): 9
+MTE (25): 9
+Empty Column1: 19
+Empty Column2: 18
+Empty Column3: 18
+TO (40): 91
+End Sem Exam (60): -
+TO (100): 91
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Summer Internship - I in row 57
+-------------------------------------------------------------------------
+Processing rowIndex: 57
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 11
+Subject Name: Mini Project - II
+Subject Code: 20BTCSEPP
+SI503
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 9
+QT (5): 9
+AS (5): 9
+MTE (25): 9
+Empty Column1: 19
+Empty Column2: 18
+Empty Column3: 18
+TO (40): 91
+End Sem Exam (60): -
+TO (100): 91
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Mini Project - II in row 58
+-------------------------------------------------------------------------
+Processing rowIndex: 58
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 1
+Subject Name: Software Engineering
+Subject Code: 20BTCSETP
+C609
+Extra Subject Code: C609
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 21
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 36
+End Sem Exam (60): 50
+TO (100): 86
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Software Engineering in row 59
+-------------------------------------------------------------------------
+Processing rowIndex: 59
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 2
+Subject Name: Data Communication & Computer Networks
+Subject Code: 20BTCSETP
+C610
+Extra Subject Code: C610
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 5
+AS (5): 4
+MTE (25): 20
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 33
+End Sem Exam (60): 46
+TO (100): 79
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Data Communication & Computer Networks in row 60
+-------------------------------------------------------------------------
+Processing rowIndex: 60
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 3
+Subject Name: Internet of Things
+Subject Code: 20BTCSETP
+E607
+Extra Subject Code: E607
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 4
+MTE (25): 15
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 29
+End Sem Exam (60): 49
+TO (100): 78
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Internet of Things in row 61
+-------------------------------------------------------------------------
+Processing rowIndex: 61
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 4
+Subject Name: Cloud Computing
+Subject Code: 20BTCSETP
+E610
+Extra Subject Code: E610
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 34
+End Sem Exam (60): 46
+TO (100): 80
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Cloud Computing in row 62
+-------------------------------------------------------------------------
+Processing rowIndex: 62
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 5
+Subject Name: Compiler Design
+Subject Code: 20BTCSETO
+E604
+Extra Subject Code: E604
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 4
+MTE (25): 22
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 34
+End Sem Exam (60): 44
+TO (100): 78
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Compiler Design in row 63
+-------------------------------------------------------------------------
+Processing rowIndex: 63
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 6
+Subject Name: Essence of Indian Knowledge and Tradition
+Subject Code: 20BTTMC603
+Extra Subject Code: null
+Cr: 0
+Type (T/P): T
+ST (5): 4
+QT (5): 5
+AS (5): 5
+MTE (25): 18
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 32
+End Sem Exam (60): 54
+TO (100): 86
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Essence of Indian Knowledge and Tradition in row 64
+-------------------------------------------------------------------------
+Processing rowIndex: 64
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 7
+Subject Name: Employability Skill - IV
+Subject Code: 20BTCSEPP
+C615
+Extra Subject Code: C615
+Cr: 1
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 4
+MTE (25): 18
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 32
+End Sem Exam (60): 47
+TO (100): 79
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Employability Skill - IV in row 65
+-------------------------------------------------------------------------
+Processing rowIndex: 65
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 8
+Subject Name: Software Engineering Lab
+Subject Code: 20BTCSEPP
+C612
+Extra Subject Code: C612
+Cr: 1
+Type (T/P): P
+ST (5): 20
+QT (5): 30
+AS (5): 28
+MTE (25): 18
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 96
+End Sem Exam (60): -
+TO (100): 96
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Software Engineering Lab in row 66
+-------------------------------------------------------------------------
+Processing rowIndex: 66
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 9
+Subject Name: Computer Networking Lab
+Subject Code: 20BTCSEPP
+C613
+Extra Subject Code: C613
+Cr: 1
+Type (T/P): P
+ST (5): 20
+QT (5): 30
+AS (5): 29
+MTE (25): 20
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 99
+End Sem Exam (60): -
+TO (100): 99
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Computer Networking Lab in row 67
+-------------------------------------------------------------------------
+Processing rowIndex: 67
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 10
+Subject Name: Java & Python Programming Practice Lab
+Subject Code: 20BTCSEPP
+C614
+Extra Subject Code: C614
+Cr: 1
+Type (T/P): P
+ST (5): 18
+QT (5): 28
+AS (5): 27
+MTE (25): 18
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 91
+End Sem Exam (60): -
+TO (100): 91
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Java & Python Programming Practice Lab in row 68
+-------------------------------------------------------------------------
+Processing rowIndex: 68
+----------------------------------------------------
+Page wise no:2
+studentSemester: Semester IV
+Serial No: 11
+Subject Name: Seminar
+Subject Code: 20BTCSEPP
+SI604
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 30
+QT (5): 28
+AS (5): 18
+MTE (25): 17
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 93
+End Sem Exam (60): -
+TO (100): 93
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Seminar in row 69
+-------------------------------------------------------------------------
+Processing rowIndex: 69
+----------------------------------------------------
+Page wise no:2
+Latest PDF file found: TR (CSE) (1 to 100) B.Tech. 20-24 (2)_removed.pdf
+Page 3:
+---------------------------------------------------
+=================
+studentRegno :Semester VII
+1076
+=================
+=================
+studentSemester: Semester VII
+Serial No: 1
+Subject Name: Artificial Intelligence
+Subject Code: 20BTCSETO
+E707
+Extra Subject Code: E707
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 5
+MTE (25): 18
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 31
+End Sem Exam (60): 45
+TO (100): 76
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Artificial Intelligence in row 70
+-------------------------------------------------------------------------
+Processing rowIndex: 70
+----------------------------------------------------
+Page wise no:3
+studentSemester: Semester VII
+Serial No: 2
+Subject Name: Computer Graphics
+Subject Code: 20BTCSETP
+E717
+Extra Subject Code: E717
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 38
+End Sem Exam (60): 48
+TO (100): 86
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Computer Graphics in row 71
+-------------------------------------------------------------------------
+Processing rowIndex: 71
+----------------------------------------------------
+Page wise no:3
+studentSemester: Semester VII
+Serial No: 3
+Subject Name: Cryptography & Network Security
+Subject Code: 20BTCSETP
+E713
+Extra Subject Code: E713
+Cr: 3
+Type (T/P): T
+ST (5): 3
+QT (5): 4
+AS (5): 4
+MTE (25): 15
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 26
+End Sem Exam (60): 39
+TO (100): 65
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Cryptography & Network Security in row 72
+-------------------------------------------------------------------------
+Processing rowIndex: 72
+----------------------------------------------------
+Page wise no:3
+studentSemester: Semester VII
+Serial No: 4
+Subject Name: Data Analytics
+Subject Code: 20BTCSETO
+E710
+Extra Subject Code: E710
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 3
+AS (5): 4
+MTE (25): 24
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 35
+End Sem Exam (60): 56
+TO (100): 91
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Data Analytics in row 73
+-------------------------------------------------------------------------
+Processing rowIndex: 73
+----------------------------------------------------
+Page wise no:3
+studentSemester: Semester VII
+Serial No: 5
+Subject Name: Real Time System
+Subject Code: 20BTCSETO
+E709
+Extra Subject Code: E709
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 5
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 36
+End Sem Exam (60): 51
+TO (100): 87
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Real Time System in row 74
+-------------------------------------------------------------------------
+Processing rowIndex: 74
+----------------------------------------------------
+Page wise no:3
+studentSemester: Semester VII
+Serial No: 6
+Subject Name: Entrepreneurship Development
+Subject Code: 20BTTHS706
+Extra Subject Code: null
+Cr: 2
+Type (T/P): T
+ST (5): 4
+QT (5): 5
+AS (5): 5
+MTE (25): 16
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 30
+End Sem Exam (60): 42
+TO (100): 72
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Entrepreneurship Development in row 75
+-------------------------------------------------------------------------
+Processing rowIndex: 75
+----------------------------------------------------
+Page wise no:3
+studentSemester: Semester VII
+Serial No: 7
+Subject Name: Industrial Lecture & Visit
+Subject Code: 20BTCSEPP
+SI708
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): -
+QT (5): -
+AS (5): -
+MTE (25): -
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 92
+End Sem Exam (60): -
+TO (100): 92
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Industrial Lecture & Visit in row 76
+-------------------------------------------------------------------------
+Processing rowIndex: 76
+----------------------------------------------------
+Page wise no:3
+studentSemester: Semester VII
+Serial No: 8
+Subject Name: Grand Viva
+Subject Code: 20BTCSEPP
+SI707
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): -
+QT (5): -
+AS (5): -
+MTE (25): -
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 92
+End Sem Exam (60): -
+TO (100): 92
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Grand Viva in row 77
+-------------------------------------------------------------------------
+Processing rowIndex: 77
+----------------------------------------------------
+Page wise no:3
+studentSemester: Semester VII
+Serial No: 9
+Subject Name: Minor Project
+Subject Code: 20BTCSEPP
+SI705
+Extra Subject Code: null
+Cr: 3
+Type (T/P): P
+ST (5): 9
+QT (5): 9
+AS (5): 9
+MTE (25): 9
+Empty Column1: 19
+Empty Column2: 18
+Empty Column3: 19
+TO (40): 92
+End Sem Exam (60): -
+TO (100): 92
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Minor Project in row 78
+-------------------------------------------------------------------------
+Processing rowIndex: 78
+----------------------------------------------------
+Page wise no:3
+studentSemester: Semester VII
+Serial No: 10
+Subject Name: Summer Internship - II
+Subject Code: 20BTCSEPP
+SI706
+Extra Subject Code: null
+Cr: 2
+Type (T/P): P
+ST (5): 8
+QT (5): 8
+AS (5): 8
+MTE (25): 8
+Empty Column1: 15
+Empty Column2: 16
+Empty Column3: 16
+TO (40): 79
+End Sem Exam (60): -
+TO (100): 79
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Summer Internship - II in row 79
+-------------------------------------------------------------------------
+Processing rowIndex: 79
+----------------------------------------------------
+Page wise no:3
+studentSemester: Semester VII
+Serial No: 1
+Subject Name: Grand Viva
+Subject Code: 20BTCSEPP
+SI810
+Extra Subject Code: null
+Cr: 2
+Type (T/P): P
+ST (5): -
+QT (5): -
+AS (5): -
+MTE (25): -
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 85
+End Sem Exam (60): -
+TO (100): 85
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Grand Viva in row 80
+-------------------------------------------------------------------------
+Processing rowIndex: 80
+----------------------------------------------------
+Page wise no:3
+studentSemester: Semester VII
+Serial No: 2
+Subject Name: Internship
+Subject Code: 20BTCSEPP
+SI809
+Extra Subject Code: null
+Cr: 8
+Type (T/P): P
+ST (5): 8
+QT (5): 8
+AS (5): 8
+MTE (25): 8
+Empty Column1: 16
+Empty Column2: 16
+Empty Column3: 16
+TO (40): 80
+End Sem Exam (60): -
+TO (100): 80
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Internship in row 81
+-------------------------------------------------------------------------
+Processing rowIndex: 81
+----------------------------------------------------
+Page wise no:3
+studentSemester: Semester VII
+Serial No: 3
+Subject Name: Major Project
+Subject Code: 20BTCSEPP
+SI811
+Extra Subject Code: null
+Cr: 8
+Type (T/P): P
+ST (5): 8
+QT (5): 8
+AS (5): 8
+MTE (25): 8
+Empty Column1: 16
+Empty Column2: 16
+Empty Column3: 17
+TO (40): 81
+End Sem Exam (60): -
+TO (100): 81
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Major Project in row 82
+-------------------------------------------------------------------------
+Processing rowIndex: 82
+----------------------------------------------------
+Page wise no:3
+Latest PDF file found: TR (CSE) (1 to 100) B.Tech. 20-24 (2)_removed.pdf
+Page 4:
+---------------------------------------------------
+=================
+studentRegno :Semester I
+1135
+=================
+=================
+studentSemester: Semester I
+Serial No: 1
+Subject Name: Engineering Mathematics - I
+Subject Code: 20BTTBS101
+Extra Subject Code: null
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 25
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 40
+End Sem Exam (60): 52
+TO (100): 92
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Mathematics - I in row 83
+-------------------------------------------------------------------------
+Processing rowIndex: 83
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 2
+Subject Name: Engineering Physics
+Subject Code: 20BTTBS102
+Extra Subject Code: null
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 24
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 39
+End Sem Exam (60): 42
+TO (100): 81
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Physics in row 84
+-------------------------------------------------------------------------
+Processing rowIndex: 84
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 3
+Subject Name: Basic Electrical Engineering
+Subject Code: 20BTTES101
+Extra Subject Code: null
+Cr: 2
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 3
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 34
+End Sem Exam (60): 24
+TO (100): 58
+Total Marks: 100
+Grade: C
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basic Electrical Engineering in row 85
+-------------------------------------------------------------------------
+Processing rowIndex: 85
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 4
+Subject Name: Basics of Mechanical Engineering
+Subject Code: 20BTTES103
+Extra Subject Code: null
+Cr: 2
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 38
+End Sem Exam (60): 42
+TO (100): 80
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basics of Mechanical Engineering in row 86
+-------------------------------------------------------------------------
+Processing rowIndex: 86
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 5
+Subject Name: Communicative English
+Subject Code: 20BTTHS101
+Extra Subject Code: null
+Cr: 2
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 38
+End Sem Exam (60): 34
+TO (100): 72
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Communicative English in row 87
+-------------------------------------------------------------------------
+Processing rowIndex: 87
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 6
+Subject Name: Engineering Physics Lab
+Subject Code: 20BTPBS101
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 20
+QT (5): 29
+AS (5): 25
+MTE (25): 16
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 90
+End Sem Exam (60): -
+TO (100): 90
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Physics Lab in row 88
+-------------------------------------------------------------------------
+Processing rowIndex: 88
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 7
+Subject Name: Basic Electrical Engineering Lab
+Subject Code: 20BTPES101
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 16
+QT (5): 25
+AS (5): 24
+MTE (25): 17
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 82
+End Sem Exam (60): -
+TO (100): 82
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basic Electrical Engineering Lab in row 89
+-------------------------------------------------------------------------
+Processing rowIndex: 89
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 8
+Subject Name: Basics of Mechanical Engineering Lab
+Subject Code: 20BTPES103
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 18
+QT (5): 27
+AS (5): 27
+MTE (25): 18
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 90
+End Sem Exam (60): -
+TO (100): 90
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basics of Mechanical Engineering Lab in row 90
+-------------------------------------------------------------------------
+Processing rowIndex: 90
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 9
+Subject Name: English Language Lab
+Subject Code: 20BTPHS101
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 15
+QT (5): 24
+AS (5): 25
+MTE (25): 16
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 80
+End Sem Exam (60): -
+TO (100): 80
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: English Language Lab in row 91
+-------------------------------------------------------------------------
+Processing rowIndex: 91
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 10
+Subject Name: Induction Training
+Subject Code: 20BTPMC10
+1
+Extra Subject Code: null
+Cr: 0
+Type (T/P): P
+ST (5): 19
+QT (5): 28
+AS (5): 27
+MTE (25): 20
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 94
+End Sem Exam (60): -
+TO (100): 94
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Induction Training in row 92
+-------------------------------------------------------------------------
+Processing rowIndex: 92
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 11
+Subject Name: Workshop Practice
+Subject Code: 20BTPES106
+Extra Subject Code: null
+Cr: 2
+Type (T/P): P
+ST (5): 16
+QT (5): 21
+AS (5): 37
+MTE (25): -
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 74
+End Sem Exam (60): -
+TO (100): 74
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Workshop Practice in row 93
+-------------------------------------------------------------------------
+Processing rowIndex: 93
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 1
+Subject Name: Engineering Mathematics - II
+Subject Code: 20BTTBS204
+Extra Subject Code: null
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 4
+AS (5): 4
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 32
+End Sem Exam (60): 57
+TO (100): 89
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Mathematics - II in row 94
+-------------------------------------------------------------------------
+Processing rowIndex: 94
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 2
+Subject Name: Engineering Chemistry
+Subject Code: 20BTTBS203
+Extra Subject Code: null
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 38
+End Sem Exam (60): 54
+TO (100): 92
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Chemistry in row 95
+-------------------------------------------------------------------------
+Processing rowIndex: 95
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 3
+Subject Name: Engineering Mechanics
+Subject Code: 20BTTES205
+Extra Subject Code: null
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 4
+MTE (25): 21
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 33
+End Sem Exam (60): 38
+TO (100): 71
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Mechanics in row 96
+-------------------------------------------------------------------------
+Processing rowIndex: 96
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 4
+Subject Name: Programming for problem solving using C
+Subject Code: 20BTTES206
+Extra Subject Code: null
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 4
+MTE (25): 21
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 35
+End Sem Exam (60): 41
+TO (100): 76
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Programming for problem solving using C in row 97
+-------------------------------------------------------------------------
+Processing rowIndex: 97
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 5
+Subject Name: Basic Electronics Engineering
+Subject Code: 20BTTES202
+Extra Subject Code: null
+Cr: 2
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 22
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 37
+End Sem Exam (60): 57
+TO (100): 94
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basic Electronics Engineering in row 98
+-------------------------------------------------------------------------
+Processing rowIndex: 98
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 6
+Subject Name: Basics of Civil Engineering
+Subject Code: 20BTTES204
+Extra Subject Code: null
+Cr: 2
+Type (T/P): T
+ST (5): 4
+QT (5): 3
+AS (5): -
+MTE (25): 21
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 28
+End Sem Exam (60): 60
+TO (100): 88
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basics of Civil Engineering in row 99
+-------------------------------------------------------------------------
+Processing rowIndex: 99
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 7
+Subject Name: Business Communication and Life Skills
+Subject Code: 20BTTHS202
+Extra Subject Code: null
+Cr: 2
+Type (T/P): T
+ST (5): 5
+QT (5): 4
+AS (5): 4
+MTE (25): 24
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 37
+End Sem Exam (60): 58
+TO (100): 95
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Business Communication and Life Skills in row 100
+-------------------------------------------------------------------------
+Processing rowIndex: 100
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 8
+Subject Name: Engineering Chemistry Lab
+Subject Code: 20BTPBS202
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 20
+QT (5): 30
+AS (5): 28
+MTE (25): 18
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 96
+End Sem Exam (60): -
+TO (100): 96
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Chemistry Lab in row 101
+-------------------------------------------------------------------------
+Processing rowIndex: 101
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 9
+Subject Name: Programming for problem solving using C 
+Lab
+Subject Code: 20BTPES207
+Extra Subject Code: null
+Cr: 2
+Type (T/P): P
+ST (5): 15
+QT (5): 20
+AS (5): 20
+MTE (25): 15
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 70
+End Sem Exam (60): -
+TO (100): 70
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Programming for problem solving using C 
+Lab in row 102
+-------------------------------------------------------------------------
+Processing rowIndex: 102
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 10
+Subject Name: Basic Electronics Engineering Lab
+Subject Code: 20BTPES202
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 19
+QT (5): 26
+AS (5): 26
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 90
+End Sem Exam (60): -
+TO (100): 90
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basic Electronics Engineering Lab in row 103
+-------------------------------------------------------------------------
+Processing rowIndex: 103
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 11
+Subject Name: Basics of Civil Engineering Lab
+Subject Code: 20BTPES204
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 18
+QT (5): 25
+AS (5): 26
+MTE (25): 16
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 85
+End Sem Exam (60): -
+TO (100): 85
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Basics of Civil Engineering Lab in row 104
+-------------------------------------------------------------------------
+Processing rowIndex: 104
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 12
+Subject Name: NCC / NSS / Yoga
+Subject Code: 20BTPMC20
+2
+Extra Subject Code: null
+Cr: 0
+Type (T/P): P
+ST (5): 16
+QT (5): 24
+AS (5): 23
+MTE (25): 15
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 78
+End Sem Exam (60): -
+TO (100): 78
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: NCC / NSS / Yoga in row 105
+-------------------------------------------------------------------------
+Processing rowIndex: 105
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 13
+Subject Name: Engineering Graphics & Design Lab
+Subject Code: 20BTPES205
+Extra Subject Code: null
+Cr: 2
+Type (T/P): P
+ST (5): 1
+QT (5): 0
+AS (5): 50
+MTE (25): -
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 51
+End Sem Exam (60): -
+TO (100): 51
+Total Marks: 100
+Grade: C
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Graphics & Design Lab in row 106
+-------------------------------------------------------------------------
+Processing rowIndex: 106
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 1
+Subject Name: Engineering Mathematics - III
+Subject Code: 20BTTBS305
+Extra Subject Code: null
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 23
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 38
+End Sem Exam (60): 42
+TO (100): 80
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Mathematics - III in row 107
+-------------------------------------------------------------------------
+Processing rowIndex: 107
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 2
+Subject Name: Engineering Economics & Costing
+Subject Code: 20BTTHS304
+Extra Subject Code: null
+Cr: 2
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 10
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 25
+End Sem Exam (60): 45
+TO (100): 70
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Engineering Economics & Costing in row 108
+-------------------------------------------------------------------------
+Processing rowIndex: 108
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 3
+Subject Name: Universal Human Values
+Subject Code: 20BTTHS305
+Extra Subject Code: null
+Cr: 2
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 4
+MTE (25): 22
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 34
+End Sem Exam (60): 39
+TO (100): 73
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Universal Human Values in row 109
+-------------------------------------------------------------------------
+Processing rowIndex: 109
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 4
+Subject Name: Data Structure using C
+Subject Code: 20BTTES307
+Extra Subject Code: null
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 12
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 27
+End Sem Exam (60): 25
+TO (100): 52
+Total Marks: 100
+Grade: C
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Data Structure using C in row 110
+-------------------------------------------------------------------------
+Processing rowIndex: 110
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 5
+Subject Name: Object Oriented Programming Using JAVA
+Subject Code: 20BTCSETP
+C301
+Extra Subject Code: C301
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 4
+MTE (25): 15
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 27
+End Sem Exam (60): 27
+TO (100): 54
+Total Marks: 100
+Grade: C
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Object Oriented Programming Using JAVA in row 111
+-------------------------------------------------------------------------
+Processing rowIndex: 111
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 6
+Subject Name: Computer Organization & Architecture
+Subject Code: 20BTCSETP
+C302
+Extra Subject Code: C302
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 3
+MTE (25): 11
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 22
+End Sem Exam (60): 33
+TO (100): 55
+Total Marks: 100
+Grade: C
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Computer Organization & Architecture in row 112
+-------------------------------------------------------------------------
+Processing rowIndex: 112
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 7
+Subject Name: Environmental Science
+Subject Code: 20BTTMC301
+Extra Subject Code: null
+Cr: 0
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 4
+MTE (25): 22
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 34
+End Sem Exam (60): 25
+TO (100): 59
+Total Marks: 100
+Grade: C
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Environmental Science in row 113
+-------------------------------------------------------------------------
+Processing rowIndex: 113
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 8
+Subject Name: Data Structures using C Lab
+Subject Code: 20BTPES308
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 15
+QT (5): 18
+AS (5): 20
+MTE (25): 17
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 70
+End Sem Exam (60): -
+TO (100): 70
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Data Structures using C Lab in row 114
+-------------------------------------------------------------------------
+Processing rowIndex: 114
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 9
+Subject Name: Object Oriented Programming Using JAVA 
+Lab
+Subject Code: 20BTCSEPP
+C301
+Extra Subject Code: C301
+Cr: 1
+Type (T/P): P
+ST (5): 12
+QT (5): 18
+AS (5): 17
+MTE (25): 16
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 63
+End Sem Exam (60): -
+TO (100): 63
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Object Oriented Programming Using JAVA 
+Lab in row 115
+-------------------------------------------------------------------------
+Processing rowIndex: 115
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 10
+Subject Name: Computer Organization & Architecture Lab
+Subject Code: 20BTCSEPP
+C302
+Extra Subject Code: C302
+Cr: 1
+Type (T/P): P
+ST (5): 16
+QT (5): 21
+AS (5): 17
+MTE (25): 16
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 70
+End Sem Exam (60): -
+TO (100): 70
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Computer Organization & Architecture Lab in row 116
+-------------------------------------------------------------------------
+Processing rowIndex: 116
+----------------------------------------------------
+Page wise no:4
+studentSemester: Semester I
+Serial No: 11
+Subject Name: Employability Skill - I
+Subject Code: 20BTCSEPP
+C303
+Extra Subject Code: C303
+Cr: 1
+Type (T/P): P
+ST (5): 15
+QT (5): 17
+AS (5): 18
+MTE (25): 16
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 66
+End Sem Exam (60): -
+TO (100): 66
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Employability Skill - I in row 117
+-------------------------------------------------------------------------
+Processing rowIndex: 117
+----------------------------------------------------
+Page wise no:4
+Latest PDF file found: TR (CSE) (1 to 100) B.Tech. 20-24 (2)_removed.pdf
+Page 5:
+---------------------------------------------------
+=================
+studentRegno :Semester IV
+1325
+=================
+=================
+studentSemester: Semester IV
+Serial No: 1
+Subject Name: Discrete Mathematical Structure
+Subject Code: 20BTTBS406
+Extra Subject Code: null
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 3
+MTE (25): 15
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 26
+End Sem Exam (60): 36
+TO (100): 62
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Discrete Mathematical Structure in row 118
+-------------------------------------------------------------------------
+Processing rowIndex: 118
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 2
+Subject Name: Organisational Behaviour
+Subject Code: 20BTTHS403
+Extra Subject Code: null
+Cr: 2
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 9
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 24
+End Sem Exam (60): 29
+TO (100): 53
+Total Marks: 100
+Grade: C
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Organisational Behaviour in row 119
+-------------------------------------------------------------------------
+Processing rowIndex: 119
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 3
+Subject Name: Design & Analysis of Algorithms
+Subject Code: 20BTCSETP
+C403
+Extra Subject Code: C403
+Cr: 3
+Type (T/P): T
+ST (5): 2
+QT (5): 2
+AS (5): 3
+MTE (25): 14
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 21
+End Sem Exam (60): 45
+TO (100): 66
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Design & Analysis of Algorithms in row 120
+-------------------------------------------------------------------------
+Processing rowIndex: 120
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 4
+Subject Name: Data Base Engineering
+Subject Code: 20BTCSETP
+C404
+Extra Subject Code: C404
+Cr: 3
+Type (T/P): T
+ST (5): 3
+QT (5): 3
+AS (5): 3
+MTE (25): 11
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 20
+End Sem Exam (60): 43
+TO (100): 63
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Data Base Engineering in row 121
+-------------------------------------------------------------------------
+Processing rowIndex: 121
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 5
+Subject Name: Programming and Problem Solving using 
+Python
+Subject Code: 20BTCSETP
+C405
+Extra Subject Code: C405
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 4
+AS (5): 4
+MTE (25): 7
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 20
+End Sem Exam (60): 30
+TO (100): 50
+Total Marks: 100
+Grade: C
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Programming and Problem Solving using 
+Python in row 122
+-------------------------------------------------------------------------
+Processing rowIndex: 122
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 6
+Subject Name: Advanced Computer Architecture
+Subject Code: 20BTCSETP
+E401
+Extra Subject Code: E401
+Cr: 3
+Type (T/P): T
+ST (5): 2
+QT (5): 2
+AS (5): 3
+MTE (25): 14
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 21
+End Sem Exam (60): 25
+TO (100): 46
+Total Marks: 100
+Grade: D
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Advanced Computer Architecture in row 123
+-------------------------------------------------------------------------
+Processing rowIndex: 123
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 7
+Subject Name: Constitution of India
+Subject Code: 20BTTMC402
+Extra Subject Code: null
+Cr: 0
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 4
+MTE (25): 21
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 35
+End Sem Exam (60): 29
+TO (100): 64
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Constitution of India in row 124
+-------------------------------------------------------------------------
+Processing rowIndex: 124
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 8
+Subject Name: Design & Analysis of Algorithms Lab
+Subject Code: 20BTCSEPP
+C404
+Extra Subject Code: C404
+Cr: 1
+Type (T/P): P
+ST (5): 19
+QT (5): 22
+AS (5): 24
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 84
+End Sem Exam (60): -
+TO (100): 84
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Design & Analysis of Algorithms Lab in row 125
+-------------------------------------------------------------------------
+Processing rowIndex: 125
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 9
+Subject Name: Database Engineering Lab
+Subject Code: 20BTCSEPP
+C405
+Extra Subject Code: C405
+Cr: 1
+Type (T/P): P
+ST (5): 18
+QT (5): 25
+AS (5): 24
+MTE (25): 13
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 80
+End Sem Exam (60): -
+TO (100): 80
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Database Engineering Lab in row 126
+-------------------------------------------------------------------------
+Processing rowIndex: 126
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 10
+Subject Name: Programming and Problem Solving using 
+Python Lab
+Subject Code: 20BTCSEPP
+C406
+Extra Subject Code: C406
+Cr: 1
+Type (T/P): P
+ST (5): 12
+QT (5): 18
+AS (5): 20
+MTE (25): 12
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 62
+End Sem Exam (60): -
+TO (100): 62
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Programming and Problem Solving using 
+Python Lab in row 127
+-------------------------------------------------------------------------
+Processing rowIndex: 127
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 11
+Subject Name: Employability Skill - II
+Subject Code: 20BTCSEPP
+C407
+Extra Subject Code: C407
+Cr: 1
+Type (T/P): P
+ST (5): 16
+QT (5): 25
+AS (5): 24
+MTE (25): 17
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 82
+End Sem Exam (60): -
+TO (100): 82
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Employability Skill - II in row 128
+-------------------------------------------------------------------------
+Processing rowIndex: 128
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 12
+Subject Name: Mini Project - I
+Subject Code: 20BTCSEPP
+SI401
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 10
+QT (5): 5
+AS (5): 5
+MTE (25): 10
+Empty Column1: 12
+Empty Column2: 17
+Empty Column3: 16
+TO (40): 75
+End Sem Exam (60): -
+TO (100): 75
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Mini Project - I in row 129
+-------------------------------------------------------------------------
+Processing rowIndex: 129
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 1
+Subject Name: Operating System
+Subject Code: 20BTCSETP
+C506
+Extra Subject Code: C506
+Cr: 3
+Type (T/P): T
+ST (5): 3
+QT (5): 4
+AS (5): 4
+MTE (25): 10
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 21
+End Sem Exam (60): 24
+TO (100): 45
+Total Marks: 100
+Grade: D
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Operating System in row 130
+-------------------------------------------------------------------------
+Processing rowIndex: 130
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 2
+Subject Name: Formal Language & Automata Theory
+Subject Code: 20BTCSETP
+C507
+Extra Subject Code: C507
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 4
+MTE (25): 12
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 24
+End Sem Exam (60): 29
+TO (100): 53
+Total Marks: 100
+Grade: C
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Formal Language & Automata Theory in row 131
+-------------------------------------------------------------------------
+Processing rowIndex: 131
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 3
+Subject Name: Advanced Java
+Subject Code: 20BTCSETP
+C508
+Extra Subject Code: C508
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 4
+MTE (25): 12
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 24
+End Sem Exam (60): 27
+TO (100): 51
+Total Marks: 100
+Grade: C
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Advanced Java in row 132
+-------------------------------------------------------------------------
+Processing rowIndex: 132
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 4
+Subject Name: Machine Learning
+Subject Code: 20BTCSETP
+E504
+Extra Subject Code: E504
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 4
+MTE (25): 8
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 20
+End Sem Exam (60): 34
+TO (100): 54
+Total Marks: 100
+Grade: C
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Machine Learning in row 133
+-------------------------------------------------------------------------
+Processing rowIndex: 133
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 5
+Subject Name: Micro Processor & Micro Controller
+Subject Code: 20BTCSETO
+E501
+Extra Subject Code: E501
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 5
+MTE (25): 7
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 20
+End Sem Exam (60): 25
+TO (100): 45
+Total Marks: 100
+Grade: D
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Micro Processor & Micro Controller in row 134
+-------------------------------------------------------------------------
+Processing rowIndex: 134
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 6
+Subject Name: Operating System Lab
+Subject Code: 20BTCSEPP
+C508
+Extra Subject Code: C508
+Cr: 1
+Type (T/P): P
+ST (5): 19
+QT (5): 22
+AS (5): 24
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 84
+End Sem Exam (60): -
+TO (100): 84
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Operating System Lab in row 135
+-------------------------------------------------------------------------
+Processing rowIndex: 135
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 7
+Subject Name: Advanced Java Lab
+Subject Code: 20BTCSEPP
+C509
+Extra Subject Code: C509
+Cr: 1
+Type (T/P): P
+ST (5): 19
+QT (5): 22
+AS (5): 24
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 84
+End Sem Exam (60): -
+TO (100): 84
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Advanced Java Lab in row 136
+-------------------------------------------------------------------------
+Processing rowIndex: 136
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 8
+Subject Name: Web Technology Lab
+Subject Code: 20BTCSEPP
+C510
+Extra Subject Code: C510
+Cr: 1
+Type (T/P): P
+ST (5): 19
+QT (5): 22
+AS (5): 24
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 84
+End Sem Exam (60): -
+TO (100): 84
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Web Technology Lab in row 137
+-------------------------------------------------------------------------
+Processing rowIndex: 137
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 9
+Subject Name: Employability Skill - III
+Subject Code: 20BTCSEPP
+C511
+Extra Subject Code: C511
+Cr: 1
+Type (T/P): P
+ST (5): 14
+QT (5): 23
+AS (5): 21
+MTE (25): 16
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 74
+End Sem Exam (60): -
+TO (100): 74
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Employability Skill - III in row 138
+-------------------------------------------------------------------------
+Processing rowIndex: 138
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 10
+Subject Name: Summer Internship - I
+Subject Code: 20BTCSEPP
+SI502
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 8
+QT (5): 8
+AS (5): 8
+MTE (25): 8
+Empty Column1: 17
+Empty Column2: 17
+Empty Column3: 18
+TO (40): 84
+End Sem Exam (60): -
+TO (100): 84
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Summer Internship - I in row 139
+-------------------------------------------------------------------------
+Processing rowIndex: 139
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 11
+Subject Name: Mini Project - II
+Subject Code: 20BTCSEPP
+SI503
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 8
+QT (5): 8
+AS (5): 8
+MTE (25): 8
+Empty Column1: 17
+Empty Column2: 17
+Empty Column3: 18
+TO (40): 84
+End Sem Exam (60): -
+TO (100): 84
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Mini Project - II in row 140
+-------------------------------------------------------------------------
+Processing rowIndex: 140
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 1
+Subject Name: Software Engineering
+Subject Code: 20BTCSETP
+C609
+Extra Subject Code: C609
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 4
+MTE (25): 18
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 30
+End Sem Exam (60): 31
+TO (100): 61
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Software Engineering in row 141
+-------------------------------------------------------------------------
+Processing rowIndex: 141
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 2
+Subject Name: Data Communication & Computer Networks
+Subject Code: 20BTCSETP
+C610
+Extra Subject Code: C610
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 4
+MTE (25): 10
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 22
+End Sem Exam (60): 27
+TO (100): 49
+Total Marks: 100
+Grade: D
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Data Communication & Computer Networks in row 142
+-------------------------------------------------------------------------
+Processing rowIndex: 142
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 3
+Subject Name: Internet of Things
+Subject Code: 20BTCSETP
+E607
+Extra Subject Code: E607
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 4
+MTE (25): 16
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 28
+End Sem Exam (60): 40
+TO (100): 68
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Internet of Things in row 143
+-------------------------------------------------------------------------
+Processing rowIndex: 143
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 4
+Subject Name: Cloud Computing
+Subject Code: 20BTCSETP
+E610
+Extra Subject Code: E610
+Cr: 3
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 5
+MTE (25): 15
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 30
+End Sem Exam (60): 35
+TO (100): 65
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Cloud Computing in row 144
+-------------------------------------------------------------------------
+Processing rowIndex: 144
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 5
+Subject Name: Compiler Design
+Subject Code: 20BTCSETO
+E604
+Extra Subject Code: E604
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 5
+AS (5): 4
+MTE (25): 17
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 30
+End Sem Exam (60): 27
+TO (100): 57
+Total Marks: 100
+Grade: C
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Compiler Design in row 145
+-------------------------------------------------------------------------
+Processing rowIndex: 145
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 6
+Subject Name: Essence of Indian Knowledge and Tradition
+Subject Code: 20BTTMC603
+Extra Subject Code: null
+Cr: 0
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 4
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 33
+End Sem Exam (60): 44
+TO (100): 77
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Essence of Indian Knowledge and Tradition in row 146
+-------------------------------------------------------------------------
+Processing rowIndex: 146
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 7
+Subject Name: Employability Skill - IV
+Subject Code: 20BTCSEPP
+C615
+Extra Subject Code: C615
+Cr: 1
+Type (T/P): T
+ST (5): 5
+QT (5): 5
+AS (5): 4
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 33
+End Sem Exam (60): 39
+TO (100): 72
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Employability Skill - IV in row 147
+-------------------------------------------------------------------------
+Processing rowIndex: 147
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 8
+Subject Name: Software Engineering Lab
+Subject Code: 20BTCSEPP
+C612
+Extra Subject Code: C612
+Cr: 1
+Type (T/P): P
+ST (5): 18
+QT (5): 28
+AS (5): 30
+MTE (25): 20
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 96
+End Sem Exam (60): -
+TO (100): 96
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Software Engineering Lab in row 148
+-------------------------------------------------------------------------
+Processing rowIndex: 148
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 9
+Subject Name: Computer Networking Lab
+Subject Code: 20BTCSEPP
+C613
+Extra Subject Code: C613
+Cr: 1
+Type (T/P): P
+ST (5): 18
+QT (5): 27
+AS (5): 27
+MTE (25): 19
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 91
+End Sem Exam (60): -
+TO (100): 91
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Computer Networking Lab in row 149
+-------------------------------------------------------------------------
+Processing rowIndex: 149
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 10
+Subject Name: Java & Python Programming Practice Lab
+Subject Code: 20BTCSEPP
+C614
+Extra Subject Code: C614
+Cr: 1
+Type (T/P): P
+ST (5): 19
+QT (5): 27
+AS (5): 26
+MTE (25): 17
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 89
+End Sem Exam (60): -
+TO (100): 89
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Java & Python Programming Practice Lab in row 150
+-------------------------------------------------------------------------
+Processing rowIndex: 150
+----------------------------------------------------
+Page wise no:5
+studentSemester: Semester IV
+Serial No: 11
+Subject Name: Seminar
+Subject Code: 20BTCSEPP
+SI604
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): 28
+QT (5): 28
+AS (5): 17
+MTE (25): 17
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 90
+End Sem Exam (60): -
+TO (100): 90
+Total Marks: 100
+Grade: O
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Seminar in row 151
+-------------------------------------------------------------------------
+Processing rowIndex: 151
+----------------------------------------------------
+Page wise no:5
+Latest PDF file found: TR (CSE) (1 to 100) B.Tech. 20-24 (2)_removed.pdf
+Page 6:
+---------------------------------------------------
+=================
+studentRegno :Semester VII
+1075
+=================
+=================
+studentSemester: Semester VII
+Serial No: 1
+Subject Name: Artificial Intelligence
+Subject Code: 20BTCSETO
+E707
+Extra Subject Code: E707
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 4
+MTE (25): 17
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 29
+End Sem Exam (60): 34
+TO (100): 63
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Artificial Intelligence in row 152
+-------------------------------------------------------------------------
+Processing rowIndex: 152
+----------------------------------------------------
+Page wise no:6
+studentSemester: Semester VII
+Serial No: 2
+Subject Name: Computer Graphics
+Subject Code: 20BTCSETP
+E717
+Extra Subject Code: E717
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 5
+AS (5): 5
+MTE (25): 8
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 22
+End Sem Exam (60): 30
+TO (100): 52
+Total Marks: 100
+Grade: C
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Computer Graphics in row 153
+-------------------------------------------------------------------------
+Processing rowIndex: 153
+----------------------------------------------------
+Page wise no:6
+studentSemester: Semester VII
+Serial No: 3
+Subject Name: Cryptography & Network Security
+Subject Code: 20BTCSETP
+E713
+Extra Subject Code: E713
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 4
+MTE (25): 13
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 25
+End Sem Exam (60): 24
+TO (100): 49
+Total Marks: 100
+Grade: D
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Cryptography & Network Security in row 154
+-------------------------------------------------------------------------
+Processing rowIndex: 154
+----------------------------------------------------
+Page wise no:6
+studentSemester: Semester VII
+Serial No: 4
+Subject Name: Data Analytics
+Subject Code: 20BTCSETO
+E710
+Extra Subject Code: E710
+Cr: 3
+Type (T/P): T
+ST (5): 3
+QT (5): 4
+AS (5): 4
+MTE (25): 18
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 29
+End Sem Exam (60): 36
+TO (100): 65
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Data Analytics in row 155
+-------------------------------------------------------------------------
+Processing rowIndex: 155
+----------------------------------------------------
+Page wise no:6
+studentSemester: Semester VII
+Serial No: 5
+Subject Name: Real Time System
+Subject Code: 20BTCSETO
+E709
+Extra Subject Code: E709
+Cr: 3
+Type (T/P): T
+ST (5): 4
+QT (5): 4
+AS (5): 5
+MTE (25): 15
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 28
+End Sem Exam (60): 34
+TO (100): 62
+Total Marks: 100
+Grade: B
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Real Time System in row 156
+-------------------------------------------------------------------------
+Processing rowIndex: 156
+----------------------------------------------------
+Page wise no:6
+studentSemester: Semester VII
+Serial No: 6
+Subject Name: Entrepreneurship Development
+Subject Code: 20BTTHS706
+Extra Subject Code: null
+Cr: 2
+Type (T/P): T
+ST (5): 5
+QT (5): 4
+AS (5): 4
+MTE (25): 17
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 30
+End Sem Exam (60): 44
+TO (100): 74
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Entrepreneurship Development in row 157
+-------------------------------------------------------------------------
+Processing rowIndex: 157
+----------------------------------------------------
+Page wise no:6
+studentSemester: Semester VII
+Serial No: 7
+Subject Name: Industrial Lecture & Visit
+Subject Code: 20BTCSEPP
+SI708
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): -
+QT (5): -
+AS (5): -
+MTE (25): -
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 86
+End Sem Exam (60): -
+TO (100): 86
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Industrial Lecture & Visit in row 158
+-------------------------------------------------------------------------
+Processing rowIndex: 158
+----------------------------------------------------
+Page wise no:6
+studentSemester: Semester VII
+Serial No: 8
+Subject Name: Grand Viva
+Subject Code: 20BTCSEPP
+SI707
+Extra Subject Code: null
+Cr: 1
+Type (T/P): P
+ST (5): -
+QT (5): -
+AS (5): -
+MTE (25): -
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 85
+End Sem Exam (60): -
+TO (100): 85
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Grand Viva in row 159
+-------------------------------------------------------------------------
+Processing rowIndex: 159
+----------------------------------------------------
+Page wise no:6
+studentSemester: Semester VII
+Serial No: 9
+Subject Name: Minor Project
+Subject Code: 20BTCSEPP
+SI705
+Extra Subject Code: null
+Cr: 3
+Type (T/P): P
+ST (5): 9
+QT (5): 8
+AS (5): 9
+MTE (25): 9
+Empty Column1: 17
+Empty Column2: 17
+Empty Column3: 17
+TO (40): 86
+End Sem Exam (60): -
+TO (100): 86
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Minor Project in row 160
+-------------------------------------------------------------------------
+Processing rowIndex: 160
+----------------------------------------------------
+Page wise no:6
+studentSemester: Semester VII
+Serial No: 10
+Subject Name: Summer Internship - II
+Subject Code: 20BTCSEPP
+SI706
+Extra Subject Code: null
+Cr: 2
+Type (T/P): P
+ST (5): 7
+QT (5): 7
+AS (5): 7
+MTE (25): 6
+Empty Column1: 13
+Empty Column2: 15
+Empty Column3: 16
+TO (40): 71
+End Sem Exam (60): -
+TO (100): 71
+Total Marks: 100
+Grade: A
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Summer Internship - II in row 161
+-------------------------------------------------------------------------
+Processing rowIndex: 161
+----------------------------------------------------
+Page wise no:6
+studentSemester: Semester VII
+Serial No: 1
+Subject Name: Grand Viva
+Subject Code: 20BTCSEPP
+SI810
+Extra Subject Code: null
+Cr: 2
+Type (T/P): P
+ST (5): -
+QT (5): -
+AS (5): -
+MTE (25): -
+Empty Column1: -
+Empty Column2: -
+Empty Column3: -
+TO (40): 85
+End Sem Exam (60): -
+TO (100): 85
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Grand Viva in row 162
+-------------------------------------------------------------------------
+Processing rowIndex: 162
+----------------------------------------------------
+Page wise no:6
+studentSemester: Semester VII
+Serial No: 2
+Subject Name: Internship
+Subject Code: 20BTCSEPP
+SI809
+Extra Subject Code: null
+Cr: 8
+Type (T/P): P
+ST (5): 8
+QT (5): 8
+AS (5): 8
+MTE (25): 8
+Empty Column1: 16
+Empty Column2: 16
+Empty Column3: 16
+TO (40): 80
+End Sem Exam (60): -
+TO (100): 80
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Internship in row 163
+-------------------------------------------------------------------------
+Processing rowIndex: 163
+----------------------------------------------------
+Page wise no:6
+studentSemester: Semester VII
+Serial No: 3
+Subject Name: Major Project
+Subject Code: 20BTCSEPP
+SI811
+Extra Subject Code: null
+Cr: 8
+Type (T/P): P
+ST (5): 8
+QT (5): 8
+AS (5): 8
+MTE (25): 8
+Empty Column1: 17
+Empty Column2: 16
+Empty Column3: 16
+TO (40): 81
+End Sem Exam (60): -
+TO (100): 81
+Total Marks: 100
+Grade: E
+----------------------------------------------------
+-------------------------------------------------------------------------
+Written: Major Project in row 164
+-------------------------------------------------------------------------
+Processing rowIndex: 164
+----------------------------------------------------
+Page wise no:6
 PDF Data Read Test Completed.
 ]]></system-out>
     <system-err><![CDATA[ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+]]></system-err>
+  </testcase>
+  <testcase name="afterSuite" classname="runner_Execution.Exceution" time="599.823">
+    <failure message="Cannot invoke &quot;org.openqa.selenium.WebDriver.quit()&quot; because &quot;runner_Execution.Exceution.driver&quot; is null" type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.quit()" because "runner_Execution.Exceution.driver" is null
+	at runner_Execution.Exceution.afterSuite(Exceution.java:661)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:386)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></failure>
+    <system-out><![CDATA[This will execute after every Method
+This will execute after the Class
+This will execute after the Test
+This will execute after the Test Suite
+]]></system-out>
+    <system-err><![CDATA[log4j:WARN No appenders could be found for logger (freemarker.cache).
+log4j:WARN Please initialize the log4j system properly.
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.quit()" because "runner_Execution.Exceution.driver" is null
+	at runner_Execution.Exceution.afterSuite(Exceution.java:656)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:386)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 ]]></system-err>
   </testcase>
 </testsuite>

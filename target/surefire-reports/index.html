@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Surefire_suite" class="navigator-link">
-              <span class="suite-name border-passed">Surefire suite</span>
+              <span class="suite-name border-failed">Surefire suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods failed suite-Surefire_suite"> (hide)</a> <!-- hide-methods failed suite-Surefire_suite -->
+                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods failed suite-Surefire_suite"> (show)</a> <!-- show-methods failed suite-Surefire_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Surefire_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="runner_Execution.Exceution" class="method navigator-link" hash-for-method="testCase3">testCase3</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Surefire_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,11 +115,6 @@
                       <a href="#" panel-name="suite-Surefire_suite" class="show-methods passed suite-Surefire_suite"> (show)</a> <!-- show-methods passed suite-Surefire_suite -->
                     </span>
                     <div class="method-list-content passed suite-Surefire_suite">
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="runner_Execution.Exceution" class="method navigator-link" hash-for-method="testCase3">testCase3</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Surefire_suite" title="runner_Execution.Exceution" class="method navigator-link" hash-for-method="testReadPdfData">testReadPdfData</a> <!-- method navigator-link -->
@@ -123,9 +132,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Surefire_suite" class="panel Surefire_suite">
-          <div class="suite-Surefire_suite-class-passed">
+          <div class="suite-Surefire_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">runner_Execution.Exceution</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -134,8 +143,23 @@
                   <a name="testCase3">
                   </a> <!-- testCase3 -->
                   <span class="method-name">testCase3</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.manage()&quot; because &quot;base.BasicFunctions.driver&quot; is null
+	at base.BasicFunctions.implicitWait(BasicFunctions.java:75)
+	at pageModules.LoginPage.Login(LoginPage.java:148)
+	at runner_Execution.Exceution.testCase3(Exceution.java:193)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">runner_Execution.Exceution</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="testReadPdfData">
@@ -200,16 +224,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testReadPdfData')
 data.setCell(0, 2, 'runner_Execution.Exceution')
-data.setCell(0, 3, 75294);
+data.setCell(0, 3, 599397);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testCase3')
 data.setCell(1, 2, 'runner_Execution.Exceution')
-data.setCell(1, 3, 2893);
+data.setCell(1, 3, 17);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 9 minutes</span>
               <div id="times-div-Surefire_suite">
               </div> <!-- times-div-Surefire_suite -->
             </div> <!-- times-div -->
@@ -230,19 +254,19 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">runner_Execution.Exceution</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">compareExcelData</span>
+                <br/>
+                <span class="ignored-method-name">testCase2</span>
+                <br/>
+                <span class="ignored-method-name">testCasePaperMark</span>
+                <br/>
+                <span class="ignored-method-name">testCase1</span>
+                <br/>
                 <span class="ignored-method-name">testCase6</span>
                 <br/>
                 <span class="ignored-method-name">testCaseGrade</span>
                 <br/>
-                <span class="ignored-method-name">testCase2</span>
-                <br/>
-                <span class="ignored-method-name">testCase1</span>
-                <br/>
                 <span class="ignored-method-name">testCase4</span>
-                <br/>
-                <span class="ignored-method-name">testCasePaperMark</span>
-                <br/>
-                <span class="ignored-method-name">compareExcelData</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -261,47 +285,51 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
-                <span class="method-start">8758 ms</span>
+                <span class="method-start">462 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">8793 ms</span>
+                <span class="method-start">486 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">8817 ms</span>
+                <span class="method-start">502 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testCase3</span>
-                <span class="method-start">8823 ms</span>
+                <span class="method-start">504 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">11720 ms</span>
+                <span class="method-start">529 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">11723 ms</span>
+                <span class="method-start">533 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testReadPdfData</span>
-                <span class="method-start">11724 ms</span>
+                <span class="method-start">534 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">87020 ms</span>
+                <span class="method-start">599933 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">87021 ms</span>
+                <span class="method-start">599935 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">87024 ms</span>
+                <span class="method-start">599936 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">87058 ms</span>
+                <span class="method-start">599980 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -1,20 +1,22 @@
 package dataProcessing;
 
-import java.io.*;
-import java.util.*;
-import java.util.regex.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadPdfDataFiles {
 
     static String downloadsFolder = System.getProperty("user.home") + "/Downloads";
 
- 
+    String studentSemester;
 
     
     public void readPdfData() throws IOException {
@@ -33,16 +35,14 @@ public class ReadPdfDataFiles {
 
         				// Iterate through all pages and extract text
         		//		for (int page = 1; page <= totalPages; page++) {
-        	int page =1;
+        	
         	int rowIndex = 1;
-        	while(page<=totalPages) {
+        	int semIndex=1;
+        	int regIndex=1;
+        	for (int page = 1;page<=totalPages;page++) {
         			
         					
-        		  if(page ==4) {
-                  	
-                      break;
-                  	
-                  }				
+        		 			
         					stripper.setStartPage(page);
         					stripper.setEndPage(page);
 
@@ -68,13 +68,14 @@ public class ReadPdfDataFiles {
                    // Updated regex pattern
                   if(regnoMatcher.find()) {
                   	
-                  	String studentRegno = regnoMatcher.group();
-                  	System.out.println("=================");
+                	String studentRegno = regnoMatcher.group(0);
+                 	System.out.println("=================");
                   	
                   	System.out.println("studentRegno :"+studentRegno);
                   	
+            //  	CreateAndWriteExcel.writeExcelRegnoData(studentRegno);
                   	
-                  }
+                  
 
                   	
                 
@@ -82,18 +83,51 @@ public class ReadPdfDataFiles {
                 
                 
               	String sem = "Semester\\s*[IVXLCDM]+";
-              
-
+//              
+//
                 Pattern semPattern = Pattern.compile(sem);
                 Matcher semMatcher = semPattern.matcher(text);
-
-              //  List<String> studentSemesters = new ArrayList<>();
-
+//              
+//
                 System.out.println("=================");
-
-                while (semMatcher.find()) {  // Loop through all matches
-                  
-//                    studentSemesters.add(studentSemester);
+                
+                List<String> studentSemesterList = new ArrayList<>();
+//            
+             // Find and collect semesters for the page
+         
+            if (semMatcher.find()) {  
+            	  
+                   
+            	studentSemester = semMatcher.group();
+                studentSemesterList.add(studentSemester);
+                 
+                System.out.println("studentSemesterList" +studentSemesterList);
+            
+                System.out.println("-------------------------------");
+                
+               System.out.println("studentSemesterList" +studentSemester);
+               semIndex++;
+               
+            }
+//             
+               
+// 
+//                    studentSemesterList.add(studentSemester);
+//                    System.out.println("studentSemesterList:" +studentSemesterList);
+//                                      
+//                    // You can now add subjects to this list if needed
+//                    // Example: studentSemesterList.add("Mathematics");
+//
+//                    // Print semester
+//                    System.out.println("studentSemester:" +studentSemester);
+//                
+//             }/*
+//                	
+//                	
+              
+                
+                
+//                 }
                  
                 
                   String regex = "(\\d+)"                          // (1) Course Number
@@ -101,9 +135,17 @@ public class ReadPdfDataFiles {
                 		+  "\\s+([A-Za-z&\\s/\\-]+[A-Za-z])" //(2) subject name
 
 //correct code 
-
- +"\\s+([A-Z0-9]+(?:\\s+([CE]\\d{3}))?|\\d{2}[A-Z]+\\d+\\s*\\R?\\s*SI\\d{3}|\\d{2}BTCSEPP(?:\\s*\\R\\s*SI\\d{3})+|\\bSI\\d{3}\\b)" // (3) Subject Code
+//+"\\s+([A-Z0-9]+(?:\\s+([CE]\\d{3}))?|\\d{2}[A-Z]+\\d+\\r?\\n?\\d*|SI\\d{3}|\\d{2}BTCSEPP|\\bSI\\d{3}\\b)"// (3) Subject Code
   
+ +"\\s+([A-Z0-9]+(?:\\s+([CE]\\d{3}))?|\\d{2}[A-Z]+\\d+\\r?\\n?\\d*\\s*\\R?\\s*SI\\d{3}||\\d{2}[A-Z]+\\d+\\s*\\R?\\s*SI\\d{3}|SI\\d{3}\\d{2}BTCSEPP(?:\\s*\\R\\s*SI\\d{3})+|\\bSI\\d{3}\\b|\\d{2}BTCSE[A-Z]{2}\\sSI\\d{3}|\\d{2}BTPMC\\d+|\\b\\d\\b|\\d{2}[A-Z]+\\d+\\r?\\n?\\d*|SI\\d{3})" // (3) Subject Code
+ 
+
+//+"\\s+([A-Z0-9]+(?:\\s+([CE]\\d{3}))?|\\d{2}[A-Z]+\\d+\\r?\\n?\\d*||\\d{2}[A-Z]+\\d+\\s*\\R?\\s*SI\\d{3}|SI\\d{3}|\\d{2}BTCSEPP|\\bSI\\d{3}\\b)"// (3) Subject Code
+   
+
+
+ //+"\\s+([A-Z0-9]+(?:\\s+([CE]\\d{3}))?|\\d{2}[A-Z]+\\d+\\r?\\n?\\d*\\s*\\R?\\s*SI\\d{3}||\\d{2}[A-Z]+\\d+\\s*\\R?\\s*SI\\d{3}|SI\\d{3}\\d{2}BTCSEPP(?:\\s*\\R\\s*SI\\d{3})+|\\bSI\\d{3}\\b|\\d{2}BTCSE[A-Z]{2}\\sSI\\d{3})"
+
                 		
                           + "\\s+(\\d+)"                      // (4) Credit Hours
                           + "\\s+([TP])"                      // (5) Subject Type
@@ -128,12 +170,16 @@ public class ReadPdfDataFiles {
 
              
        
-              
+              // Flag to skip to the next semester
+//                int semesterIndex = 0; // Track semester for subjects  
+//                for (String studentSemester : studentSemesterList) {
+//                    System.out.println("Processing Semester: " + studentSemester);
+                
                 
                 // Start from row 1 (row 0 is header)  
                 while (matcher.find()) {
                 	
-                String studentSemester = semMatcher.group();	
+               
                 String	serialNo = matcher.group(1);
                 String     subjectNames = matcher.group(2).trim();
           
@@ -166,10 +212,9 @@ public class ReadPdfDataFiles {
                 	
                 	
                 
-//                System.out.println("studentRegno: " + studentRegno);
-//                System.out.println("studentSemester: " + studentSemester);	
-               
-                System.out.println("Student sem: " + studentSemester);
+                System.out.println("studentRegno: " + studentRegno);
+                 System.out.println("studentSemester: " + studentSemester);	
+      
        
                     System.out.println("Serial No: " + serialNo);
                     System.out.println("Subject Name: " + subjectNames);
@@ -205,70 +250,46 @@ public class ReadPdfDataFiles {
                     
                     System.out.println("----------------------------------------------------");
                   
-                    CreateAndWriteExcel.writeExcelData(rowIndex,serialNo,subjectNames,subjectCode,extraSubjectCode,credit,type,st,qt,as,mte,emptyColumn1,emptyColumn2,emptyColumn3,to40,endSemExam,to100,totalMarks,grade);
+                    CreateAndWriteExcel.writeExcelData(rowIndex,studentRegno,studentSemester,serialNo,subjectNames,subjectCode,extraSubjectCode,credit,type,st,qt,as,mte,emptyColumn1,emptyColumn2,emptyColumn3,to40,endSemExam,to100,totalMarks,grade);
                     
                     System.out.println("Processing rowIndex: " + rowIndex);
 
                     System.out.println("----------------------------------------------------");
+                 
                 
-                    
-                    
-                    
                     
                
                     
-                  
-                    
-                    
-                    
-                    rowIndex++;
-                  
                     System.out.println("Page wise no:" +page);
-                }
-              
-               
-                page++;
                 
-
-        				}
+                    rowIndex++;
+             
+                 
+                      
                   
-        	 }
-                        	/*
-				 * boolean isValid = validatePDF(latestPDF);
-				 * 
-				 * try (InputStream ip = new BufferedInputStream(new
-				 * FileInputStream(latestPDF)); PDDocument pdDocument = PDDocument.load(ip)) {
-				 * 
-				 * int pageCount = pdDocument.getNumberOfPages();
-				 * System.out.println("Page count: " + pageCount);
-				 * 
-				 * System.out.println("-------------------------------");
-				 * 
-				 * PDFTextStripper pdfStripper = new PDFTextStripper(); String pdfText =
-				 * pdfStripper.getText(pdDocument); System.out.println(pdfText);
-				 * 
-				 * System.out.println("-----------------------------------");
-				 * 
-				 * if (isValid) { System.out.println("The PDF is valid.");
-				 * 
-				 * 
-				 * 
-				 * 
-				 * 
-				 * // Extract and print text from PDF String text1 = pdfText; // Avoid reopening
-				 * the PDF
-				 * 
-				 * // Regex extraction String regex =
-				 * "(\\d+)\\s+Reg\\s+No\\s*:\\s*(\\d+)\\s*College\\s+Name\\s*:\\s*(.*?)\\s*Name\\s+of\\s+the\\s+Student\\s*:\\s*(.*?)\\s*Course\\s+(.*?)\\s*GITA\\s+AUTONOMOUS\\s+COLLEGE,\\s+BHUBANESWAR\\s*\\(Affiliated\\s+to\\s+Biju\\s+Pattnaik\\s+University\\s+of\\s+Technology,\\s+Odisha\\)\\s*Final\\s+Tabulation\\s+Register\\s+\\(Student\\s+wise\\)\\s+for\\s+passing\\s+out\\s+year\\s+(\\d{4}-\\d{2})\\s*GITA\\s+Autonomous\\s+College,\\s+Bhubaneswar\r\n";
-				 * Pattern pattern = Pattern.compile(regex); Matcher matcher =
-				 * pattern.matcher(text1);
-				 * 
-				 * if (matcher.find()) { String regNo = matcher.group(1);
-				 * System.out.println("Extracted Reg No: " + regNo); } else {
-				 * System.out.println("No match found."); } } else {
-				 * System.out.println("The PDF is invalid or corrupt."); } }
-				 */
-        				 }} else {
+
+          
+                }    
+            
+            }
+                
+                // Check for the total pattern
+                   
+                 
+             
+                
+                }//while loop for pattern
+              
+            
+                  
+     
+               
+
+            }//while loop for page
+                   
+        	
+        	
+        				 } else {
                 System.out.println("No PDF files found in the Downloads folder.");
             }
         } catch (Exception e) {
