@@ -1,9 +1,11 @@
 package dataProcessing;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
 
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -18,73 +20,8 @@ public class CreateAndWriteExcel {
      // Get the sheet by name
      static XSSFSheet sheet = workbook.createSheet();
 	
-     public static void writeExcelRegnoData(String studentRegno) throws IOException {
-    	    XSSFRow firstrow = sheet.getRow(0);
-    	    if (firstrow == null) {
-    	        firstrow = sheet.createRow(0);
-    	    }
 
-    	    // Ensure we do not overwrite existing cell values
-    	    XSSFCell regNoHeaderCell = firstrow.getCell(0);
-    	    if (regNoHeaderCell == null) {
-    	        regNoHeaderCell = firstrow.createCell(0);
-    	    }
-    	    regNoHeaderCell.setCellValue("Register number");
-
-    	    // Get or create second row
-    	    XSSFRow secondRow = sheet.getRow(1);
-    	    if (secondRow == null) {
-    	        secondRow = sheet.createRow(1);
-    	    }
-
-    	    XSSFCell regNoCell = secondRow.getCell(0);
-    	    if (regNoCell == null) {
-    	        regNoCell = secondRow.createCell(0);
-    	    }
-    	    regNoCell.setCellValue(studentRegno);
-
-    	    // Ensure changes are written
-    	    writeExcelDatas();
-    	}
-
-    	public static void writeExcelSemesterData(int rowIndex ,String studentSemester) throws IOException {
-    		
-    		
-    	  
-
-    		Row datasRow = sheet.createRow(0);
-            String[] datavalues = {studentSemester};
-
-            for (int i = 0; i < datavalues.length; i++) {
-            	datasRow.createCell(i).setCellValue(datavalues[i]);
-            }
-        
-            XSSFRow firstrow = sheet.getRow(0);
-    	    if (firstrow == null) {
-    	        firstrow = sheet.createRow(0);
-    	    }
-    	    
-    	   firstrow.createCell(0).setCellValue("studentRegno");
-            
-        // Create a new row based on the rowIndex from the loop
-    		  Row Datarow = sheet.createRow(rowIndex); 
-
-        // Write each value in the correct column
- //       Datarow.createCell(0).setCellValue(serialNo);
-  //      Datarow.createCell(1).setCellValue(subjectNames);
-    		  
-    		  
-    System.out.println("-------------------------------------------------------------------------");
-    		     System.out.println("Written: " + studentSemester + " in row " + rowIndex);		  
-    
-        
-        Datarow.createCell(1).setCellValue(studentSemester);
-        
-    	    // Ensure changes are written
-    	    writeExcelDatas();
-    	}
-
-    public static void writeExcelData(int rowIndex,String studentRegno,String studentSemester,String serialNo,String subjectNames,String subjectCode,String extraSubjectCode,String credit,String type,String st,String qt,String as,String mte,String emptyColumn1,String emptyColumn2,String emptyColumn3,String to40,String endSemExam,
+    public static void writeExcelData(int rowIndex,String studentRegno,String studentSemester,String serialNo,String subjectNames,String subjectCode,String credit,String type,String st,String qt,String as,String mte,String emptyColumn1,String emptyColumn2,String emptyColumn3,String to40,String endSemExam,
     	String	to100,String totalMarks,String grade) throws IOException {
         
     
@@ -93,9 +30,18 @@ public class CreateAndWriteExcel {
     	           
     	                // Create a header row if the file is newly created
     	                Row datasRow = sheet.createRow(0);
-    	                String[] datavalues = { serialNo,studentRegno,studentSemester, subjectNames,subjectCode,extraSubjectCode,credit,type,st,qt,as,mte,emptyColumn1,emptyColumn2,emptyColumn3,to40,endSemExam
+    	      
+//    	                since the serialNo is not need i just this below one to match extact no of columns
+    	                
+//    	                String[] datavalues = { serialNo,studentRegno,studentSemester, subjectNames,subjectCode,credit,type,st,qt,as,mte,emptyColumn1,emptyColumn2,emptyColumn3,to40,endSemExam
+//    	                		,to100,totalMarks,grade};
+
+    	                
+    	                
+    	                String[] datavalues = {studentRegno,studentSemester, subjectNames,subjectCode,credit,type,st,qt,as,mte,emptyColumn1,emptyColumn2,emptyColumn3,to40,endSemExam
     	                		,to100,totalMarks,grade};
 
+    	                
     	                for (int i = 0; i < datavalues.length; i++) {
     	                	datasRow.createCell(i).setCellValue(datavalues[i]);
     	                }
@@ -104,7 +50,9 @@ public class CreateAndWriteExcel {
     	        	    if (firstrow == null) {
     	        	        firstrow = sheet.createRow(0);
     	        	    }
-    	        	    
+    	  
+//    	        	  since seral no is no need i just commented it  
+		//				firstrow.createCell(0).setCellValue("serialNo");	
     	        	   firstrow.createCell(0).setCellValue("studentRegno");
     	        	   
     	        	   firstrow.createCell(1).setCellValue("Semesters");
@@ -112,25 +60,25 @@ public class CreateAndWriteExcel {
     	        	    firstrow.createCell(2).setCellValue("subjectNames");
     	          
     	        		firstrow.createCell(3).setCellValue("subjectCode");
-    	        		firstrow.createCell(4).setCellValue("Dummydata"); 
+    	        	//	firstrow.createCell(5).setCellValue("Dummydata"); 
     	        		
-    	        		firstrow.createCell(5).setCellValue("credit");
+    	        		firstrow.createCell(4).setCellValue("credit");
     	        		 
-    	        		 firstrow.createCell(6).setCellValue("type");
-    	        		 firstrow.createCell(7).setCellValue("ST(5)");
-    	        		  firstrow.createCell(8).setCellValue("QT(5)");
-    	        		  firstrow.createCell(9).setCellValue("AS(5)");
+    	        		 firstrow.createCell(5).setCellValue("type");
+    	        		 firstrow.createCell(6).setCellValue("ST(5)");
+    	        		  firstrow.createCell(7).setCellValue("QT(5)");
+    	        		  firstrow.createCell(8).setCellValue("AS(5)");
     	        		  
-    	        		  firstrow.createCell(10).setCellValue("MTE(25)");
+    	        		  firstrow.createCell(9).setCellValue("MTE(25)");
     	        		  
-    	        		  firstrow.createCell(11).setCellValue("emptyColumn1");
-    	        		  firstrow.createCell(12).setCellValue("emptyColumn2");
-    	        		  firstrow.createCell(13).setCellValue("emptyColumn3");
-    	        		  firstrow.createCell(14).setCellValue("To(40)");
-    	        		  firstrow.createCell(15).setCellValue("EndSemExam(60)");
-    	        		  firstrow.createCell(16).setCellValue("TO(100)");
-    	        		  firstrow.createCell(17).setCellValue("TM");  
-    	        		  firstrow.createCell(18).setCellValue("Grade");  
+    	        		  firstrow.createCell(10).setCellValue("emptyColumn1");
+    	        		  firstrow.createCell(11).setCellValue("emptyColumn2");
+    	        		  firstrow.createCell(12).setCellValue("emptyColumn3");
+    	        		  firstrow.createCell(13).setCellValue("To(40)");
+    	        		  firstrow.createCell(14).setCellValue("EndSemExam(60)");
+    	        		  firstrow.createCell(15).setCellValue("TO(100)");
+    	        		  firstrow.createCell(16).setCellValue("TM");  
+    	        		  firstrow.createCell(17).setCellValue("Grade");  
     	                
     	            // Create a new row based on the rowIndex from the loop
     	        		  Row Datarow = sheet.createRow(rowIndex); 
@@ -142,6 +90,10 @@ public class CreateAndWriteExcel {
     	        		  
     	        System.out.println("-------------------------------------------------------------------------");
     	        		     System.out.println("Written: " + subjectNames + " in row " + rowIndex);		  
+    	       
+    	        		     
+    	        //since sr.no is not need i commented it		     
+    	        //     Datarow.createCell(0).setCellValue(serialNo);
     	            Datarow.createCell(0).setCellValue(studentRegno);
     	            
     	            Datarow.createCell(1).setCellValue(studentSemester);
@@ -149,21 +101,25 @@ public class CreateAndWriteExcel {
     	        	Datarow.createCell(2).setCellValue(subjectNames);
     	            
     	            Datarow.createCell(3).setCellValue(subjectCode);
-    	            Datarow.createCell(4).setCellValue(extraSubjectCode);
-    	            Datarow.createCell(5).setCellValue(credit);
-    	            Datarow.createCell(6).setCellValue(type);
-    	            Datarow.createCell(7).setCellValue(st);
-    	            Datarow.createCell(8).setCellValue(qt);
-    	            Datarow.createCell(9).setCellValue(as);
-    	            Datarow.createCell(10).setCellValue(mte);
-    	            Datarow.createCell(11).setCellValue(emptyColumn1);
-    	            Datarow.createCell(12).setCellValue(emptyColumn2);
-    	            Datarow.createCell(13).setCellValue(emptyColumn3);
-    	            Datarow.createCell(14).setCellValue(to40);
-    	            Datarow.createCell(15).setCellValue(endSemExam);
-    	            Datarow.createCell(16).setCellValue(to100);
-    	            Datarow.createCell(17).setCellValue(totalMarks);
-    	            Datarow.createCell(18).setCellValue(grade);
+    	            
+    	//            Datarow.createCell(5).setCellValue(extraSubjectCode);// skipped because of extra code
+    	            
+    	            
+    	       
+    	            Datarow.createCell(4).setCellValue(credit);
+    	            Datarow.createCell(5).setCellValue(type);
+    	            Datarow.createCell(6).setCellValue(st);
+    	            Datarow.createCell(7).setCellValue(qt);
+    	            Datarow.createCell(8).setCellValue(as);
+    	            Datarow.createCell(9).setCellValue(mte);
+    	            Datarow.createCell(10).setCellValue(emptyColumn1);
+    	            Datarow.createCell(11).setCellValue(emptyColumn2);
+    	            Datarow.createCell(12).setCellValue(emptyColumn3);
+    	            Datarow.createCell(13).setCellValue(to40);
+    	            Datarow.createCell(14).setCellValue(endSemExam);
+    	            Datarow.createCell(15).setCellValue(to100);
+    	            Datarow.createCell(16).setCellValue(totalMarks);
+    	            Datarow.createCell(17).setCellValue(grade);
         	        System.out.println("-------------------------------------------------------------------------"); 
     	            // Write changes back to file
     	        
@@ -171,158 +127,33 @@ public class CreateAndWriteExcel {
     	       
 
   
-			 
-			 
-			 
-
-				/*
-				 * int startRow = 1; // Start writing from row index 1 int startColumn = 2; //
-				 * Start writing from column index 2
-				 * 
-				 * 
-				 * // String[] subjectNameList = new String[]{subjectNames};
-				 * 
-				 * 
-				 * System.out.println("subjectNameListsubjectNameListsubjectNameList: "
-				 * +subjectNameList);
-				 * 
-				 * // Get the row at startRow (only one row, since we are writing column-wise)
-				 * 
-				 * // Loop through each row in the subjectNameList
-				 * 
-				 * 
-				 * // Iterate over row indices to ensure rows exist for (int i = 0; i <
-				 * subjectNameList.length; i++) { int currentRowIndex = startRow + i; XSSFRow
-				 * row = sheet.getRow(currentRowIndex); if (row == null) { row =
-				 * sheet.createRow(currentRowIndex); }
-				 * 
-				 * 
-				 * // Iterate again to process the cells for (int j = 0; j <
-				 * subjectNameList.length; j++) { int currentRowIndex1 = startRow + j; XSSFRow
-				 * row1 = sheet.getRow(currentRowIndex1); // This will always be non-null now
-				 * 
-				 * System.out.println("Raw Data: " + subjectNameList[j]);
-				 * 
-				 * XSSFCell cell = row1.getCell(startColumn); if (cell == null) { cell =
-				 * row1.createCell(startColumn); }
-				 * 
-				 * cell.setCellValue(subjectNameList[j]); }
-				 * 
-				 * }
-				 */
-
-           // Ensure changes are written
            writeExcelDatas();
 
-  	    	
-		
-	
-		 /* firstrow.createCell(2).setCellValue("subjectNames");
-		 * firstrow.createCell(3).setCellValue("subjectCode");
-		 * firstrow.createCell(4).setCellValue("credit");
-		 * firstrow.createCell(5).setCellValue("type");
-		 * firstrow.createCell(6).setCellValue("st");
-		 * firstrow.createCell(7).setCellValue("qt");
-		 * firstrow.createCell(8).setCellValue("as");
-		 * 
-		 * firstrow.createCell(9).setCellValue("mte");
-		 * 
-		 * firstrow.createCell(10).setCellValue("emptyColumn1");
-		 * firstrow.createCell(11).setCellValue("emptyColumn2");
-		 * firstrow.createCell(12).setCellValue("emptyColumn3");
-		 * firstrow.createCell(13).setCellValue("to40");
-		 * firstrow.createCell(14).setCellValue("endSemExam");
-		 * firstrow.createCell(15).setCellValue("to100");
-		 * firstrow.createCell(16).setCellValue("totalMarks");
-		 * firstrow.createCell(17).setCellValue("grade"); // Assuming 'sheet' is an
-		 * instance of XSSFSheet or HSSFSheet //
-		 * CreateAndWriteExcel.writeExcelData(serialNo,subjectNames,subjectCode,credit,
-		 * type,st,qt,mte,emptyColumn1,emptyColumn2,emptyColumn3 //
-		 * ,to40,endSemExam,to100,totalMarks,grade);
-		 * 
-		 * // Creating the second row (index 1) XSSFRow secondRow = sheet.createRow(1);
-		 * 
-		 * // Adding data to the second row
-		 * 
-		 * 
-		 * // secondRow.createCell(1).setCellValue(serialNo);
-		 * secondRow.createCell(2).setCellValue(subjectNames);
-		 * secondRow.createCell(3).setCellValue(subjectCode);
-		 * secondRow.createCell(4).setCellValue(credit);
-		 * secondRow.createCell(5).setCellValue(type);
-		 * secondRow.createCell(6).setCellValue(st);
-		 * secondRow.createCell(7).setCellValue(qt);
-		 * secondRow.createCell(8).setCellValue(as);
-		 * secondRow.createCell(9).setCellValue(mte);
-		 * secondRow.createCell(10).setCellValue(emptyColumn1);
-		 * secondRow.createCell(11).setCellValue(emptyColumn2);
-		 * secondRow.createCell(12).setCellValue(emptyColumn3);
-		 * secondRow.createCell(13).setCellValue(to40);
-		 * secondRow.createCell(14).setCellValue(endSemExam);
-		 * secondRow.createCell(15).setCellValue(to100);
-		 * secondRow.createCell(16).setCellValue(totalMarks);
-		 * secondRow.createCell(17).setCellValue(grade);
-		 * 
-		 */
 			 
     }
-		// Sample data for multiple rows
-		/*  List<Object> rowData = Arrays.asList(
-		      new Object[]{serialNo, subjectNames, subjectCode, credit, type, st, qt, mte, emptyColumn1, emptyColumn2, emptyColumn3, to40, endSemExam, to100, totalMarks, grade}
-		      
-		*/      
-		      
-		      // Add more rows here if needed
-		 
-		  // Loop to create rows dynamically
-			/*
-			 for (int i = 0; i < rowData.size(); i++) { XSSFRow row = sheet.createRow(i +
-			 1); // Start from row index 1
-			 
-			 Object[] rowValues = (Object[]) rowData.get(i); for (int j = 0; j <
-			  rowValues.length; j++) { XSSFCell cell = row.createCell(j);
-			  // Check data type and set value accordingly
-			  
-			  if (rowValues[j] instanceof
-			 Integer) { cell.setCellValue((Integer) rowValues[j]); 
-			 
-			 } 
-			  else if (rowValues[j] 
-			 
-			  instanceof Double) { cell.setCellValue((Double) rowValues[j]);
-			  
-			  } 
-			  else if (rowValues[j] instanceof Boolean) { cell.setCellValue((Boolean)
-			  rowValues[j]); } else { cell.setCellValue(rowValues[j] != null ?
-			  rowValues[j].toString() : ""); // Handle nulls
-			  }  }}
-			 /*
-		  
-		  // Not adding anything to columns 8, 9, and 10 (they remain empty)
-
-		        
-	   
-	     
-	  //   CreateAndWriteExcel.writeExcelData(serialNo,subjectNames,subjectCode,credit,type,st,qt,mte,emptyColumn1,emptyColumn2,emptyColumn3,to40,endSemExam,to100,totalMarks,grade);
- 
-
-	        
-
-		/*
-		 * // Get the row and column count int rowCount =
-		 * sheet.getPhysicalNumberOfRows(); int columnCount =
-		 * sheet.getRow(0).getPhysicalNumberOfCells();
-		 */
-
-	        
-	public static void writeExcelDatas() throws IOException {		  
-			  
-	        FileOutputStream excelfile = new FileOutputStream("D:\\Coempt_Automation\\coempt_automation\\src\\test\\resources\\ExcelFiles\\Test4.xlsx");
-	        
-	        workbook.write(excelfile);
 		
+
+    public static void writeExcelDatas() throws IOException {
+        // Load properties file
+        Properties prop = new Properties();
+        try (FileInputStream input = new FileInputStream("src/main/resources/config.properties")) {
+            prop.load(input);
+        }
+
+        // Get the file path from properties
+        String filePath = prop.getProperty("excel.file.path");
+
+        if (filePath == null) {
+            throw new IllegalArgumentException("Excel file path is not set in config.properties");
+        }
+
+        // Write workbook data to the file
+        try (FileOutputStream excelfile = new FileOutputStream(filePath)) {
+            workbook.write(excelfile);
+        }
+    }
 	  
-	}
+	
 	public static void closeExcel() throws IOException {	
 	
 	      workbook.close();

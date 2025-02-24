@@ -458,7 +458,7 @@ public void testCasePaperMark(Object Regno, Object examdate, Object awardName, O
 
 @Test(priority = 8, enabled = true)
 
-public void testReadPdfData() {
+public void testReadPdfDataWriteExcel() {
 
 	        try {
 	            System.out.println("Starting PDF Data Read Test...");
@@ -620,7 +620,7 @@ public void compareExcelData(String regno, String subjectCode, String theoryMark
 	extentReport =new ExtentReports(); 
 	
 	
-	 report = new ExtentSparkReporter("D:\\Coempt_Automation\\coempt_automation\\src\\test\\resources\\reports\\ExtendReport.html");
+	 report = new ExtentSparkReporter("D:\\Coempt_PDF_reading_Excel_writing_Automation\\coempt_Automation_For_Read_PDF_Write_Excel\\src\\test\\resources\\reports\\ExtendReport.html");
 	
 
 	 
@@ -640,7 +640,7 @@ public void compareExcelData(String regno, String subjectCode, String theoryMark
 		extentReport.flush();
 		
 		try {
-		String path = "D:/Coempt_Automation/coempt_automation/src/test/resources/reports/ExtendReport.html";
+		String path = "D:/Coempt_PDF_reading_Excel_writing_Automation/coempt_Automation_For_Read_PDF_Write_Excel/src/test/resources/reports/ExtendReport.html";
 		
 		  // Open the report in default browser
 //        Desktop.getDesktop().browse(new URI("file:///D:Coempt_Automation\\coempt_automation\\src\\test\\resources\\reports\\ExtendReport.html")); 
@@ -653,7 +653,7 @@ public void compareExcelData(String regno, String subjectCode, String theoryMark
         
 		
 		
-		driver.quit();
+	//	driver.quit();
 	}
 		catch(Exception e) {
 			e.printStackTrace();
