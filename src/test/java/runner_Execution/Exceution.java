@@ -103,24 +103,33 @@ for (Object[] row : data2) {
 return data2;	
 	}	
 	
-	@Test(priority = 1, enabled = true,dataProvider = "excel")	
-	public void testCase11(Object regno, Object subjectName,Object finalMark) throws InterruptedException, IOException {
+	private static int totalPassed = 0;
+	private static int totalFailed = 0;
 
-		 if (testCaseName == null) {
-			 testCaseName = extentReport.createTest("Sevt Actions");
-				
-		    }
-		 
-		
-		System.out.println("This is a Normal Test Case1");
-		
-	   
+	@Test(priority = 1, enabled = true, dataProvider = "excel")
+	public void testCase11(Object regno, Object subjectName, Object finalMark) throws InterruptedException, IOException {
+	    if (testCaseName == null) {
+	        testCaseName = extentReport.createTest("Sevt Actions");
+	    }
 
-	  
-	    // Perform LoginPage Actions
-		ScteVt.DirectSignIn(regno, subjectName,finalMark,testCaseName);
-		    
+	    System.out.println("Starting testCase execution for the reg: " + regno);
+	    System.out.println("=========================");
+
+	    try {
+	        // Perform LoginPage Actions
+	        ScteVt.DirectSignIn(regno, subjectName, finalMark, testCaseName);
+
+	        // If no exception, count as pass
+	        totalPassed++;
+	    } catch (Exception e) {
+	        totalFailed++;
+	        testCaseName.fail("Test failed for reg: " + regno + " due to " + e.getMessage());
+	    }
+
+	    System.out.println("=========================");
+	    System.out.println("Ended testCase execution for the reg: " + regno);
 	}
+
 
 	
 //General login and logout
@@ -644,7 +653,7 @@ public void compareExcelData(String regno, String subjectCode, String theoryMark
 			  // Ensure the browser is closed after the test
 		
 	}
-
+	
 	@BeforeSuite
 	public void beforeSuite() {
 		System.out.println("This will execute first before the Test Suite");
@@ -667,31 +676,36 @@ public void compareExcelData(String regno, String subjectCode, String theoryMark
 	  	
 	}
 
+
 	@AfterSuite
 	public void afterSuite() throws IOException, URISyntaxException {
-		System.out.println("This will execute after the Test Suite");
-		extentReport.flush();
-		
-		try {
-		String path = "D:/Coempt_Automation/coempt_automation/src/test/resources/reports/ExtendReport.html";
-		
-		  // Open the report in default browser
-       Desktop.getDesktop().browse(new URI("file:///D:/Coempt_Automation/coempt_automation/src/test/resources/reports/ExtendReport1.html")); 
+	    System.out.println("This will execute after the Test Suite");
 
-        //Use File to Create URI
-		
-		File file = new File(path);
-        
-		Desktop.getDesktop().browse(file.toURI());
-        
-		
-		
-	//	driver.quit();
+	    // Determine final test execution status
+	    String overallStatus = (totalPassed > totalFailed) ? "Pass" : "Fail";
+	    System.out.println("Overall Test Execution Status: " + overallStatus);
+
+	    // Log final status in the Extent Report
+	    if (overallStatus.equals("Pass")) {
+	        extentReport.createTest("SCET&VT_SEM_5 Actions Final Status").pass("All tests executed successfully.");
+	    } else {
+	        extentReport.createTest("SCET&VT_SEM_5 Actions Final Status").fail("Some tests failed during execution.");
+	    }
+
+	    extentReport.flush();
+
+	    try {
+	        String path = "D:/Coempt_Automation/coempt_automation/src/test/resources/reports/ExtendReport.html";
+
+	        // Open the report in default browser
+	        Desktop.getDesktop().browse(new URI("file:///D:/Coempt_Automation/coempt_automation/src/test/resources/reports/ExtendReport1.html"));
+
+	        // Use File to Create URI
+	        File file = new File(path);
+	        Desktop.getDesktop().browse(file.toURI());
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
-		catch(Exception e) {
-			e.printStackTrace();
-			
-			driver.quit();	
-			
-		}
-}}
+
+}

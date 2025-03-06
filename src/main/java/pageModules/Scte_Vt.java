@@ -67,7 +67,7 @@ public class Scte_Vt  extends BasicFunctions {
 			
 			
 				
-				
+				 
 				 System.out.println(pom.getInstanceScte_VtXpaths().dobTB.isDisplayed());
 					
 				 pom.getInstanceScte_VtXpaths().dobTB.click();
@@ -119,16 +119,13 @@ public class Scte_Vt  extends BasicFunctions {
 		     	explicitWait(uiElement,50);
 		      	 
 		      	 String resultText = uiElement.getText();
-		      	System.out.println( uiElement );
 
-		      	 
-		      	 
 		      	String[] parts = resultText.split("\\s*:\\s*");
 		      	
 		      	
 		      	
 		      	if (parts.length > 1) {
-		      	    System.out.println("fdsdfsdfsdfs"+parts[1].trim()); 
+		      	    System.out.println("UI result: "+parts[1].trim()); 
 		      	    
 		      	    String uiBacklog =parts[1];
 		      	    
@@ -177,95 +174,106 @@ public class Scte_Vt  extends BasicFunctions {
 		      	        int totalSubjects = subjectRows.size();
 		      	        int absentCount = 0;
 
-		      	        for (WebElement row : subjectRows) {
-		      	            String subjectCode = row.findElement(By.xpath("./td[1]")).getText().trim(); // Subject code (e.g., TH1)
-		      	            String subjectNames = row.findElement(By.xpath("./td[2]")).getText().trim(); // Subject name (e.g., Mathematics)
-		      	            String marksText = row.findElement(By.xpath("./td[7]")).getText().trim(); // Marks
-		      	            
-		      	            String subjectDetails = subjectCode + " - " + subjectNames; // Format: TH1 - Mathematics
+		      	      for (WebElement row : subjectRows) {
+		      	        String subjectCode = row.findElement(By.xpath("./td[1]")).getText().trim(); // e.g., TH1 or PR1
+		      	        String subjectNames = row.findElement(By.xpath("./td[2]")).getText().trim(); // e.g., Mathematics
+		      	        String passMarksText = row.findElement(By.xpath("./td[6]")).getText().trim(); // Passing marks
+		      	        String marksTHText = row.findElement(By.xpath("./td[7]")).getText().trim(); // Theory marks
+		      	        String marksIAText = row.findElement(By.xpath("./td[8]")).getText().trim(); // Internal Assessment marks
+		      	        String marksTotalText = row.findElement(By.xpath("./td[9]")).getText().trim(); // Practical marks
 
-		      	            if (!marksText.isEmpty()) {
-		      	                if (marksText.equalsIgnoreCase("A")) {  
+		      	        String subjectDetails = subjectCode + " - " + subjectNames;
+
+		      	        if (!marksTotalText.isEmpty() && !passMarksText.isEmpty()) {
+		      	            if (marksTHText.equalsIgnoreCase("A") || marksIAText.equalsIgnoreCase("A") || marksTotalText.equalsIgnoreCase("A")) {  
+		      	                hasBacklog = true;
+		      	                absentCount++;
+		      	                backlogSubjects.append(subjectCode).append(",");
+		      	                System.out.println(subjectDetails + " : Absent");
+		      	                testCaseScenario.log(Status.FAIL, subjectDetails + " : Absent");
+		      	            } else {
+		      	                int passMarks = Integer.parseInt(passMarksText);
+		      	                int totalSubjectMarks;
+
+		      	              if (subjectCode.contains("PR")) {
+		      	                // Practical subject: Compare PR marks directly with pass marks
+		      	                totalSubjectMarks = Integer.parseInt(marksTotalText);
+		      	                if (totalSubjectMarks < passMarks) {  // **Ensure failed practicals are marked as backlog**
 		      	                    hasBacklog = true;
-		      	                    absentCount++;
-		      	                    backlogSubjects.append("Back-").append(subjectCode).append(",");
-		      	                    System.out.println(subjectDetails + " : Absent");
-		      	                    testCaseScenario.log(Status.FAIL, subjectDetails + " : Absent");
+		      	                    backlogSubjects.append(subjectCode).append(",");
+		      	                    System.out.println(subjectDetails + " : Failed with Total Marks " + totalSubjectMarks);
+		      	                    testCaseScenario.log(Status.FAIL, subjectDetails + " : Failed with Total Marks " + totalSubjectMarks);
 		      	                } else {
-		      	                    int subjectMarks = Integer.parseInt(marksText);
-		      	                    if (subjectMarks < 28) {
-		      	                        hasBacklog = true;
-		      	                        backlogSubjects.append("Back-").append(subjectCode).append(",");
-		      	                        System.out.println(subjectDetails + " : Failed with marks " + subjectMarks);
-		      	                        testCaseScenario.log(Status.FAIL, subjectDetails + " : Failed with marks " + subjectMarks);
-		      	                    } else {
-		      	                        System.out.println(subjectDetails + " : Passed with marks " + subjectMarks);
-		      	                        testCaseScenario.log(Status.PASS, subjectDetails + " : Passed with marks " + subjectMarks);
-		      	                    }
+		      	                    System.out.println(subjectDetails + " : Passed with Total Marks " + totalSubjectMarks);
+		      	                    testCaseScenario.log(Status.PASS, subjectDetails + " : Passed with Total Marks " + totalSubjectMarks);
+		      	                }}
+		      	            else {					
+		      	              // Theory subject: Compare (TH + IA) with pass marks
+		      	              int subjectMarksTH = Integer.parseInt(marksTHText);
+		      	              int subjectMarksIA = Integer.parseInt(marksIAText);
+		      	              totalSubjectMarks = subjectMarksTH + subjectMarksIA;
+		      	                if (subjectMarksTH < 28 ||totalSubjectMarks < passMarks) {
+		      	                    hasBacklog = true;
+		      	                    backlogSubjects.append(subjectCode).append(",");
+		      	                    System.out.println(subjectDetails + " : Failed with Total Marks " + totalSubjectMarks);
+		      	                    testCaseScenario.log(Status.FAIL, subjectDetails + " : Failed with Total Marks " + totalSubjectMarks);
+		      	                } else {
+		      	                    System.out.println(subjectDetails + " : Passed with Total Marks " + totalSubjectMarks);
+		      	                    testCaseScenario.log(Status.PASS, subjectDetails + " : Passed with Total Marks " + totalSubjectMarks);
 		      	                }
-		      	            }
+		      	            }}
+		      	        }
+		      	    }
+
+		      	    // **Ensure correct backlog formatting**
+		      	    String formattedScriptBacklog = backlogSubjects.toString().trim().replaceAll(", $", "");
+		      	    if (!formattedScriptBacklog.isEmpty()) {
+		      	        String[] subjects = formattedScriptBacklog.split(",");
+
+		      	        // Apply "Back-" only to the first subject if it doesn't already have it
+		      	        if (!subjects[0].startsWith("Back-")) {
+		      	            subjects[0] = "Back-" + subjects[0].trim();
 		      	        }
 
-		      	        // Case: If the student is absent in ALL subjects
-		      	   // Convert backlog subjects to UI format
-		      	   // Remove "Back-" prefix to match UI format
-		      	   // Convert backlog subjects to UI format (ensure only the first subject has "Back-")
-			      	      String formattedScriptBacklog = backlogSubjects.toString().trim().replaceAll(", $", "");
-			      	 // Ensure "Back-" is always added to the first subject
-			      	 // Ensure "Back-" is applied only to the first subject in the list
-			      	 // Ensure "Back-" is applied only once to the first subject in the list
-			      	 // Ensure "Back-" is applied only to the first backlog subject
-			      	    if (!formattedScriptBacklog.isEmpty()) {
-			      	        String[] subjects = formattedScriptBacklog.split(",");
+		      	        // Ensure no extra "Back-" is added to the remaining subjects
+		      	        for (int i = 1; i < subjects.length; i++) {
+		      	            subjects[i] = subjects[i].replace("Back-", "").trim();
+		      	        }
 
-			      	        // Apply "Back-" only to the first subject if it doesn't already have it
-			      	        if (!subjects[0].startsWith("Back-")) {
-			      	            subjects[0] = "Back-" + subjects[0].trim();
-			      	        }
+		      	        formattedScriptBacklog = String.join(",", subjects);
+		      	    }
 
-			      	        // Ensure no extra "Back-" is added to the remaining subjects
-			      	        for (int i = 1; i < subjects.length; i++) {
-			      	            subjects[i] = subjects[i].replace("Back-", "").trim();
-			      	        }
+		      	    // **Handle Pass/Fail conditions**
+		      	    if (formattedScriptBacklog.isEmpty()) {
+		      	        formattedScriptBacklog = "Pass";
+		      	    }
 
-			      	        formattedScriptBacklog = String.join(",", subjects);
-			      	    }
-			      	    
+		      	    if (totalMark < 300) {
+		      	        formattedScriptBacklog = "Fail"; // If total marks < 300, student fails automatically
+		      	    }
 
+		      	    // **Compare with UI**
+		      	    if (formattedScriptBacklog.equals(uiBacklog)) {
+		      	        System.out.println("Backlog comparison PASS: Script - " + formattedScriptBacklog + " | UI - " + uiBacklog);
+		      	        testCaseScenario.log(Status.PASS, "Backlog comparison PASS: Script - " + formattedScriptBacklog + " | UI - " + uiBacklog);
+		      	    } else {
+		      	        System.out.println("Backlog comparison FAILED: Script - " + formattedScriptBacklog + " | UI - " + uiBacklog);
+		      	        testCaseScenario.log(Status.FAIL, "Backlog comparison FAILED: Script - " + formattedScriptBacklog + " | UI - " + uiBacklog);
+		      	    }
 
-
-      	      // Handle case where no backlog exists
-		      	      if (formattedScriptBacklog.isEmpty()) {
-		      	          formattedScriptBacklog = "Pass"; // Match UI expectation
-		      	      }
-
-		      	      // NEW FIX: Check total marks condition before printing backlog
-		      	      if (totalMark < 300) {
-		      	          formattedScriptBacklog = "Fail";  // Instead of listing backlogs, just set to "Fail"
-		      	      }
-
-		      	      // Compare UI backlog result with script backlog
-		      	      if (formattedScriptBacklog.equals(uiBacklog)) {
-		      	    	  System.out.println("Backlog comparison PASS: Script - " + formattedScriptBacklog + " | UI - " + uiBacklog);
-		      	          testCaseScenario.log(Status.PASS, "Backlog comparison PASS: Script - " + formattedScriptBacklog + " | UI - " + uiBacklog);
-		      	      } else {
-		      	          System.out.println("Backlog comparison FAILED: Script - " + formattedScriptBacklog + " | UI - " + uiBacklog);
-		      	          testCaseScenario.log(Status.FAIL, "Backlog comparison FAILED: Script - " + formattedScriptBacklog + " | UI - " + uiBacklog);
-		      	      }
-
-		      	      // Final result decision
-		      	      if (totalMark >= 300) {
-		      	          if (hasBacklog) {
-		      	              System.out.println("The student has FAILED with total marks: " + totalMark +" since he has backlogs in these subjects: " + formattedScriptBacklog);
-		      	              testCaseScenario.log(Status.FAIL, "The student has FAILED since he has backlogs: " + formattedScriptBacklog);
-		      	          } else {
-		      	              System.out.println("The student has PASSED with total marks: " + totalMark);
-		      	              testCaseScenario.log(Status.PASS, "The student has PASSED with total marks: " + totalMark);
-		      	          }
-		      	      } else {
-		      	          System.out.println("The student has FAILED with total marks: " + totalMark);
-		      	          testCaseScenario.log(Status.FAIL, "The student has FAILED with total marks: " + totalMark);
-		      	      }
+		      	    // **Final decision**
+		      	    if (totalMark >= 300) {
+		      	        if (hasBacklog) {
+		      	            System.out.println("The student has FAILED with total marks: " + totalMark + " since they have backlogs: " + formattedScriptBacklog);
+		      	            testCaseScenario.log(Status.FAIL, "The student has FAILED with total marks: " + totalMark + " since they have backlogs: " + formattedScriptBacklog);
+		      	        } else {
+		      	            System.out.println("The student has PASSED with total marks: " + totalMark);
+		      	            testCaseScenario.log(Status.PASS, "The student has PASSED with total marks: " + totalMark);
+		      	        }
+		      	    } else {
+		      	        System.out.println("The student has FAILED with total marks: " + totalMark);
+		      	        testCaseScenario.log(Status.FAIL, "The student has FAILED with total marks: " + totalMark);
+		      	    }
 
 		      	        
 		      	    } catch (Exception e) {
@@ -275,6 +283,8 @@ public class Scte_Vt  extends BasicFunctions {
 
 		
 		 }
+		      	
+		      			
 		      	
 		      	}    	
 		    	driver.close();
