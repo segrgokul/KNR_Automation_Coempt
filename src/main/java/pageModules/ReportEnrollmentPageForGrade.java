@@ -1388,13 +1388,14 @@ public class ReportEnrollmentPageForGrade extends BasicFunctions {
 							       }}
 							 
 					            
-					            theoryInternalSecMarks =nursingPatternMatcher.group(4);
-					            theoryUnivMaxMarks = nursingPatternMatcher.group(5);
-								theoryUnivSecMarks = nursingPatternMatcher.group(6);
-								theoryTotalMaxMarks = nursingPatternMatcher.group(7);
-								theoryTotalSecMarks = nursingPatternMatcher.group(8);
-								String gradeSecuredPercentage =nursingPatternMatcher.group(9);
-								gradeLetters =nursingPatternMatcher.group(10);
+					     	  theoryInternalSecMarks = nursingPatternMatcher.group(4) != null ? nursingPatternMatcher.group(4) : nursingPatternMatcher.group(14) ;
+					     	 theoryUnivMaxMarks = nursingPatternMatcher.group(5) != null ? nursingPatternMatcher.group(5) : nursingPatternMatcher.group(15);
+					     	 theoryUnivSecMarks = nursingPatternMatcher.group(6) != null ? nursingPatternMatcher.group(6) : nursingPatternMatcher.group(16);
+					     	 theoryTotalMaxMarks = nursingPatternMatcher.group(7) != null ? nursingPatternMatcher.group(7) : nursingPatternMatcher.group(17);
+					     	 theoryTotalSecMarks = nursingPatternMatcher.group(8) != null ? nursingPatternMatcher.group(8) : nursingPatternMatcher.group(18);
+					     	 String gradeSecuredPercentage = nursingPatternMatcher.group(9) != null ? nursingPatternMatcher.group(9) : nursingPatternMatcher.group(19);
+					     	 gradeLetters = nursingPatternMatcher.group(10) != null ? nursingPatternMatcher.group(10) : nursingPatternMatcher.group(20);
+
 
 								   if (!gradeexecuted && !subject.equalsIgnoreCase("Communicative English")) {
 									 

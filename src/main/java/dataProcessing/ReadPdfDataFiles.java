@@ -15,6 +15,9 @@ import java.util.regex.Pattern;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 public class ReadPdfDataFiles {
 
     static String downloadsFolder = System.getProperty("user.home") + "/Downloads";
@@ -23,11 +26,16 @@ public class ReadPdfDataFiles {
     boolean isSemester1 = false;
     boolean isSemester2 = false;
     
-    public void readPdfData() throws IOException {
+    public void readPdfData(ExtentTest testCaseName) throws IOException {
         try {
-            // Find the latest PDF file
+        	 ExtentTest testCaseScenario = testCaseName
+ 		            .createNode("Read PDF write Excel Test case has started running");
+
+        	
+        	// Find the latest PDF file
             File latestPDF = getLatestPDF();
             System.out.println("Downloads folder: " + downloadsFolder);
+            testCaseScenario.log(Status.PASS, "Latest PDF file is loaded successfully");
 
             
             //checks the latest page is not null

@@ -10,6 +10,7 @@ import webElement.MasterPageXpaths;
 import webElement.ReportCoursePageXpaths;
 import webElement.ReportEnrollmentPageXpaths;
 import webElement.ResultTRDataXpaths;
+import webElement.Scte_VtXpaths;
 import webElement.SettingsAssignCoursePageXpaths;
 
 
@@ -24,6 +25,7 @@ import webElement.SettingsAssignCoursePageXpaths;
 				private static AttendanceTheroryXpaths TheroryXP;
 				private static DashboardPageXpaths DashboardXP;
 				private static MasterPageXpaths MasterXP;
+				private static Scte_VtXpaths Scte_VtXP;
 				
 				// Use a different name for the static instance
 		
@@ -113,5 +115,23 @@ import webElement.SettingsAssignCoursePageXpaths;
 	return AssignCourseXP;
 
 	
-		}	}
+		}	
+		
+	
+	public static Scte_VtXpaths getInstanceScte_VtXpaths() {
+			
+			if (Scte_VtXP == null) {
+				Scte_VtXP = new Scte_VtXpaths(driver);
+				return Scte_VtXP;
+
+			}	
+	return Scte_VtXP;
+
+	
+		}
+	
+	
+	
+	
+	}
 	

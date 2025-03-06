@@ -644,7 +644,7 @@ public class ReportEnrollmentPage extends BasicFunctions {
 					//TO print the text
 					
 					String text = stripper.getText(document).replaceAll("[\r\n]+", "\n");
-					System.out.println(text);
+			//		System.out.println(text);
 					
 					System.out.println("Page " + page + ":");
 					System.out.println("---------------------------------------------------");
@@ -708,7 +708,7 @@ public class ReportEnrollmentPage extends BasicFunctions {
 			            System.out.println(subject);
 			        }
 			    
-			        String regex = "(M\\.Sc\\.|B\\.Sc\\.)\\s+";
+			        String regex = "(M\\.Sc\\.|B\\.Sc\\.|BPT)\\s+";
 			        
 			        Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
 			        Matcher matcher1 = pattern.matcher(text);
@@ -804,7 +804,7 @@ public class ReportEnrollmentPage extends BasicFunctions {
 								theoryInternalMaxMark = Double.parseDouble(theoryInternalMaxMarks);
 								paper1Mark = Double.parseDouble(theoryInternalSecMarks) ;
 								}
-								checkMarks(Regno, "Theory Internal Sec. Marks", paper1, paper2, paper3, praticalExam,
+								checkMarks(Regno, "Theory Internal Sec Marks", paper1, paper2, paper3, praticalExam,
 										theoryExam, subjectToFind, examTotal, theoryInternalSecMarks,
 										theoryInternalMaxMark, testCaseName);
 								// Use the value
@@ -1149,7 +1149,56 @@ public class ReportEnrollmentPage extends BasicFunctions {
 						}
 						
 						}
+						
+						
+	else if (matcher1.group().contains("BPT")) {
+		
+		
+		Pattern bptPattern = Pattern.compile(
+		        "^(.*?)\\s*-*\\s*" +  // Subject Name (Group 1)
+			
+		  // Subject Name (Group 1) - Captures multiple lines
+				"(\\d{1,3})\\s*-*\\s*" +  // Theory + Internal Max Marks (Group 2)
+		        "(NA|AB|AP|NR|\\(F\\)|NE\\(AT\\)|\\d{1,2}(?:\\(F\\))?)\\s+" +  // Theory + Internal Secured Marks (Group 3)
+		        "(NA|AB|AP|NR|\\(F\\)|NE\\(AT\\)|\\d{1,2})\\s+" +  // Practical Internal Marks (Group 4)
+		        "(NA|AB|AP|NR|\\(F\\)|NE\\(AT\\)|\\d{1,2})\\s+" +  // Practical Marks (Group 5)
+		        "(NA|AB|AP|NR|\\(F\\)|NE\\(AT\\)|\\d{1,2})\\s+" +  // Practical Viva Marks (Group 6)
+		        "(\\d{1,3})\\s*-*\\s*" +  // Practical + Viva Max Marks (Group 7)
+		        "(\\d{1,3}(?:\\(F\\))?)\\s+" +  // Practical + Viva Secured Marks (Group 8)
+		        "(\\d{1,3})\\s*-*\\s*" +  // Grand Total Max Marks (Group 9)
+		        "(\\d{1,3}(?:\\(F\\))?)\\s+" +  // Grand Total Secured Marks (Group 10)
+		        "(Pass|Fail|AB|AP|NA|NR|\\(F\\)|NE\\(AT\\))$",  // Result Status (Group 11)
+		        Pattern.MULTILINE| Pattern.DOTALL);
+
+		 Matcher bptMatcher = bptPattern.matcher(text);
+		
+		System.out.println("jhdsgfjhdfgs");
+		
+		if (bptMatcher.find()) {
+			
+	 
 	
+			System.out.println("==============");
+			System.out.println(matcher.group(0));
+			
+		     System.out.println("Subject: " + matcher.group(1));
+	            System.out.println("Theory + Internal Max Marks: " + matcher.group(2));
+	            System.out.println("Theory + Internal Secured Marks: " + matcher.group(3));
+	            System.out.println("Practical Internal Marks: " + matcher.group(4));
+	            System.out.println("Practical Marks: " + matcher.group(5));
+	            System.out.println("Practical Viva Marks: " + matcher.group(6));
+	            System.out.println("Practical + Viva Max Marks: " + matcher.group(7));
+	            System.out.println("Practical + Viva Secured Marks: " + matcher.group(8));
+	            System.out.println("Grand Total Max Marks: " + matcher.group(9));
+	            System.out.println("Grand Total Secured Marks: " + matcher.group(10));
+	            System.out.println("Result Status: " + matcher.group(11));
+	            System.out.println("----------------------------");
+	        
+		
+		
+	}
+						
+	}
 						}
 						catch(Exception e) {
 							
@@ -1194,13 +1243,13 @@ public class ReportEnrollmentPage extends BasicFunctions {
 					Matcher regMatcher = registrationPattern.matcher(text);
 					Matcher securedMatcher = securedMarksPattern.matcher(text);
 
-					if (regMatcher.find()) {
-						// Capture the matched number
-						String extractedNumber1 = regMatcher.group(1);
-						registrationNumber = Long.parseLong(extractedNumber1);
-
-						System.out.println("Registration No: " + registrationNumber);
-					}
+					/*
+					 * if (regMatcher.find()) { // Capture the matched number String
+					 * extractedNumber1 = regMatcher.group(1); registrationNumber =
+					 * Long.parseLong(extractedNumber1);
+					 * 
+					 * System.out.println("Registration No: " + registrationNumber); }
+					 */
 
 					if (securedMatcher.find()) {
 						String securedMarks = securedMatcher.group(1); // Extract the number
@@ -1211,25 +1260,51 @@ public class ReportEnrollmentPage extends BasicFunctions {
 					} else {
 						System.out.println("No match found!");
 					}
+				
+					String subjectRegex = "(MDS|BNYS|BHMS|UNANI|BAMS|BUMS)\\s+";
 
-					Pattern fourPattern = Pattern.compile( "([A-Za-z &'\\-]+)\\s+" + // Subject name (Group 1)
-							"(\\d+)\\s+(\\d+|NA)\\s+" + // Theory Max Marks (Group 2) | Theory Sec Marks (Group 3)
-							"(NA|\\d+)\\s+(NA|\\d+)\\s+" + // Practical Max Marks (Group 4) | Practical Sec Marks (Group
-															// 5)
-							"(NA|\\d+)\\s+(NA|\\d+)\\s+" + // Practical+Viva Max Marks (Group 6) | Practical+Viva Sec
-															// Marks (Group
-															// 7)
-							"(\\d+)\\s+(\\d+)\\s+" + // Grand Total Max Marks (Group 8) | Grand Total Sec Marks (Group
-														// 9)
-							"(Pass|Fail|AP|NE|AB)", // Status
-							Pattern.DOTALL);
+			        
+			        Pattern subjectPattern = Pattern.compile(subjectRegex, Pattern.MULTILINE);
+			        Matcher subjectMatcher = subjectPattern.matcher(text);
 
-					// Extract and print each row
+			
+			        if (subjectMatcher.find()) {
+			            System.out.println("Match found Course: " + subjectMatcher.group());
+			        } else {
+			            System.out.println("No match found.");
+			        }
+			        Pattern fourPattern = Pattern.compile(
+			        	    "([A-Za-z &'\\-()]+)\\s+" +  // Subject name (Group 1)
+			        	    "(\\d+|F|---|NE\\s*\\(AT\\)|NE|NA|AB)(?:\\s*\\(F\\))?\\s+" +  // Theory Max Marks (Group 2)
+			        	    "(\\d+|F|---|NE\\s*\\(AT\\)|NE|NA|AB)(?:\\s*\\(F\\))?\\s+" +  // Theory Sec Marks (Group 3)
+			        	    "(\\d+|F|---|NE\\s*\\(AT\\)|NE|NA|AB)(?:\\s*\\(F\\))?\\s+" +  // Practical Max Marks (Group 4)
+			        	    "(\\d+|F|---|NE\\s*\\(AT\\)|NE|NA|AB)(?:\\s*\\(F\\))?\\s+" +  // Practical Sec Marks (Group 5)
+			        	    "(\\d+|F|---|NE\\s*\\(AT\\)|NE|NA|AB)(?:\\s*\\(F\\))?\\s+" +  // Practical+Viva Max Marks (Group 6)
+			        	    "(\\d+|F|---|NE\\s*\\(AT\\)|NE|NA|AB)(?:\\s*\\(F\\))?\\s+" +  // Practical+Viva Sec Marks (Group 7)
+			        	    "(\\d+|F|---|NE\\s*\\(AT\\)|NE|NA|AB)(?:\\s*\\(F\\))?\\s+" +  // Grand Total Max Marks (Group 8)
+			        	    "(\\d+|F|---|NE\\s*\\(AT\\)|NE|NA|AB)(?:\\s*\\(F\\))?\\s*" +  // Grand Total Sec Marks (Group 9)
+			        	    "(Pass|Fail|AP|NE|AB)"  // Status (Group 10)
+			        	);
+
 
 					Matcher fourPatternMatcher = fourPattern.matcher(text);
+									
+					while (fourPatternMatcher.find()) {	
+			
+							
+							  
+							  
+							  							 
 
-					while (fourPatternMatcher.find()) {
 
+		
+
+					
+					
+
+						if (subjectMatcher.group().contains("BAMS")||subjectMatcher.group().contains("BHMS")) {
+							System.out.println("==============");	
+						
 						subject = fourPatternMatcher.group(1).trim();
 
 						 theoryMaxMarks = fourPatternMatcher.group(2); // Take the last part
@@ -1276,8 +1351,20 @@ public class ReportEnrollmentPage extends BasicFunctions {
 						// Status
 						System.out.println("Status: " + status);
 						System.out.println("==============");
+						
+						
+						paper1Mark =0.0;
+						paper2Mark=0.0;
+						paper3Mark =0.0;
+						praticalTotalSecMark =0.0;
+						ExamTotalScore =0.0;
+						Paper1  =0.0;
+						Paper2=0.0;
+						Paper3 =0.0;
+						PraticalExamTotal =0.0;
+						
 
-						if (status.equals("Pass") || status.equals("Fail") || status.equals("AP")) {
+						if ((status.equals("Pass") || status.equals("Fail") || status.equals("AP"))& subject.equals(subjectToFind))  {
 
 							try {
 								
@@ -1410,10 +1497,10 @@ public class ReportEnrollmentPage extends BasicFunctions {
 									ExtentTest testCaseScenario = testCaseName.createNode("Theory internal sec. marks validation for the subject " + subject +" Test case has started running");
 									
 									testCaseScenario.log(Status.PASS,"\nThe Following a Registration number " + Regno +
-											  " Theory plus Pratical Sec. Marks is: " + theoryPracticalSecMarks);
+											  " Theory plus Pratical Sec. Marks is: " + grandTotalSecMarks);
 			
 									  System.out.println("\nThe Following a Registration number " + Regno +
-											  " Theory plus Pratical Sec. Marks is: " + theoryPracticalSecMarks);
+											  " Theory plus Pratical Sec. Marks is: " + grandTotalSecMarks);
 											  
 											  }
 						
@@ -1427,7 +1514,7 @@ public class ReportEnrollmentPage extends BasicFunctions {
 					}
 				}
 
-			}
+			}}
 
 			}}
 
@@ -2613,7 +2700,9 @@ public class ReportEnrollmentPage extends BasicFunctions {
 								theoryExam, examTotal, subjectToFind, testCaseName);
 						// Exit once the matching method is called
 						return;
-					} else if (oneSubjectPatternMatcher.find()) {
+					}
+					
+					else if (oneSubjectPatternMatcher.find()) {
 						// If it matches, call the method for oneSubject patterns
 
 						System.out.println("Pattern matched: 1 subject pattern detected.");

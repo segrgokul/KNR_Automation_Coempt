@@ -13,68 +13,63 @@ import org.openqa.selenium.safari.SafariDriver;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+import base.BasicFunctions;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pageObjMod.pom;
 
 public class BrowserManager {
-    public static  WebDriver driver;
-    
-    
-    
-	
-    public static void Browser_Launch() {
-        // Create a Properties object to load the property file
-        Properties properties = new Properties();
-        
-        try {
-            // Load the config.properties file
-            FileInputStream fileInputStream = new FileInputStream("src/main/resources/config.properties");
-            properties.load(fileInputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
-        }
 
-        // Get the browser value from the properties file
-        String browser = properties.getProperty("browser", "chrome").toLowerCase();  // Default to "chrome" if not set
-        String loginName =properties.getProperty("login_name","test").toLowerCase(); //Default to localhost if not set
-        System.out.println("Login name: " + loginName);
-        String url = urlBasedLogin(loginName);
-        
-        // Launch the browser based on the value in the properties file
-        switch (browser) {
-            case "chrome":
-            	WebDriverManager.chromedriver().setup();
-            	
-                driver = new ChromeDriver();
-                break;
 
-            case "firefox":
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
-                break;
+        public static WebDriver driver;
+        public static Properties properties = new Properties();
 
-            case "edge":
-                WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
-                break;
-
-            case "safari":
-                // Safari driver is built-in on macOS, no need to use WebDriverManager
-                driver = new SafariDriver();
-                break;
-
-            default:
-                System.out.println("Invalid browser selection.");
+        public static void Browser_Launch() {
+            // Load the configuration file
+            try {
+                FileInputStream fileInputStream = new FileInputStream("src/main/resources/config.properties");
+                properties.load(fileInputStream);
+            } catch (IOException e) {
+                e.printStackTrace();
                 return;
+            }
+
+            // Get browser and environment details from properties file
+            String browser = properties.getProperty("browser", "chrome").toLowerCase();
+            String loginName = properties.getProperty("login_name", "test").toLowerCase();
+            String username = properties.getProperty(loginName + "_username", "defaultUser");
+            String password = properties.getProperty(loginName + "_password", "defaultPass");
+            String url = urlBasedLogin(loginName);
+
+            // Launch browser
+            switch (browser) {
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                    break;
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new FirefoxDriver();
+                    break;
+                case "edge":
+                    WebDriverManager.edgedriver().setup();
+                    driver = new EdgeDriver();
+                    break;
+                case "safari":
+                    driver = new SafariDriver();
+                    break;
+                default:
+                    System.out.println("Invalid browser selection.");
+                    return;
+            }
+
+            // Maximize and open URL
+            driver.manage().window().maximize();
+            driver.get(url);
+
+            // Perform login
+            Login(username, password);
         }
 
-        // Maximize the browser window
-        driver.manage().window().maximize();
-
-        // Open a website test url
-        driver.get(url);
-       
-    }
         // Method to return the appropriate URL based on login name
         private static String urlBasedLogin(String loginName) {
             switch (loginName) {
@@ -83,15 +78,36 @@ public class BrowserManager {
                 case "test":
                     return "http://103.154.253.118:81/";
                 case "localhost":
-                    return "http://localhost:8080/";
+                    return "http://localhost:5084/";
                 default:
                     System.out.println("Invalid login name, defaulting to localhost.");
-                    return "http://localhost:8080/";
+                    return "https://sctevt-qa.uonex.in/sn20Yz";
             }
         }
-        //live url
-     //   driver.get("https://knruhs.uonex.in/");
 
-        // Close the browser (optional)
-        // driver.quit();
+        // Login Method
+        public static void Login(String username, String password) {
+            try {
+            	BasicFunctions.implicitWait(30);
+            	BasicFunctions.explicitWait(pom.getInstanceLoginXP().userName, 30);
+            	BasicFunctions.click(pom.getInstanceLoginXP().userName);
+            	BasicFunctions.implicitWait(30);
+            	BasicFunctions.sendKeys(pom.getInstanceLoginXP().userName, username);
+            	BasicFunctions.implicitWait(30);
+            	BasicFunctions.explicitWait(pom.getInstanceLoginXP().userpass, 30);
+            	BasicFunctions.click(pom.getInstanceLoginXP().userpass);
+            	BasicFunctions.implicitWait(30);
+            	BasicFunctions.sendKeys(pom.getInstanceLoginXP().userpass, password);
+            	BasicFunctions.implicitWait(30);
+            	BasicFunctions.explicitWait(pom.getInstanceLoginXP().signinBtn, 30);
+            	BasicFunctions.click(pom.getInstanceLoginXP().signinBtn);
+            	BasicFunctions.implicitWait(30);
+            	BasicFunctions.explicitWait(pom.getInstanceLoginXP().loginTags, 30);
+                if (pom.getInstanceLoginXP().loginTags.isDisplayed()) {
+                    System.out.println("The Admin Login Page has logged in, and the landing page of KNRUHS is displayed.");
+                }
+            } catch (Exception e) {
+                System.out.println("Login failed: " + e.getMessage());
+            }
+        }
     }

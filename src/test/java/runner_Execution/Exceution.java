@@ -3,6 +3,7 @@ package runner_Execution;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URISyntaxException;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -35,6 +36,7 @@ import pageModules.ReportEnrollmentPage;
 import pageModules.ReportEnrollmentPageForGrade;
 import pageModules.ReprortEnrollmentPageForAddtionalParameter;
 import pageModules.ResultTRDataPage;
+import pageModules.Scte_Vt;
 import pageModules.SettingsAssingCoursePage;
 
 public class Exceution extends BrowserManager {
@@ -67,7 +69,7 @@ private static boolean isTestCaseEnrollSet1 = false;
 	ResultTRDataPage TRData = new ResultTRDataPage();
 	AttendanceTheoryPage Therory = new AttendanceTheoryPage();
 	ReadPdfData PDF = new ReadPdfData();
-	
+	Scte_Vt ScteVt = new Scte_Vt();
 	@DataProvider(name ="excel")
 	public Object[][]ReadExcelEnroll() throws IOException,InvalidFormatException {
 		
@@ -98,11 +100,27 @@ return data1;
 for (Object[] row : data2) {
 //    System.out.println(Arrays.toString(row));
 }
-return data2;
-	}
+return data2;	
+	}	
 	
-	
+	@Test(priority = 1, enabled = true,dataProvider = "excel")	
+	public void testCase11(Object regno, Object subjectName,Object finalMark) throws InterruptedException, IOException {
 
+		 if (testCaseName == null) {
+			 testCaseName = extentReport.createTest("Sevt Actions");
+				
+		    }
+		 
+		
+		System.out.println("This is a Normal Test Case1");
+		
+	   
+
+	  
+	    // Perform LoginPage Actions
+		ScteVt.DirectSignIn(regno, subjectName,finalMark,testCaseName);
+		    
+	}
 
 	
 //General login and logout
@@ -180,7 +198,7 @@ public void testCase2() throws InterruptedException, IOException {
 
 
 //for navigating to the report card to avoid the loop for the dataproviders
-@Test(priority = 3, enabled = true)
+@Test(priority = 3, enabled = false)
 public void testCase3() throws InterruptedException, IOException {
    System.out.println("This is a Normal Test Case2");
  
@@ -190,7 +208,6 @@ public void testCase3() throws InterruptedException, IOException {
 	    }
     // Navigate to Course Report Card
 
-	login.Login();
     Coursewise.ReportCardNavigation(testCaseName);
    
    
@@ -237,7 +254,7 @@ public void testCase4(Object clgCode,Object examdate, Object awardName,Object re
 	
 	
 	
-	
+// if the excel has no paper 1 and paper 2 columns	
 @Test(priority = 5, enabled = false, dataProvider = "excel")
 public void testCase6(Object Regno, Object examdate, Object awardName, Object semester, 
                       Object regulation, Object examType, Object paper1, 
@@ -388,7 +405,7 @@ public void testCaseGrade(Object Regno, Object examdate, Object awardName, Objec
 public void testCasePaperMark(Object Regno, Object examdate, Object awardName, Object semester, 
                       Object regulation, Object examType, Object paper1, 
                       Object paper2, Object paper3, Object theroryExam, 
-                      Object praticalExam, Object examTotal,String subjectToFind,Object finalPaper1,Object finalPaper2) 
+                      Object praticalExam, Object examTotal,String subjectToFind,Object theoryInt,Object theoryTh,Object praticalInt,Object praticalPractical, Object praticalViva) 
                       throws InterruptedException, IOException {
     // Set the test case name only once
  
@@ -435,7 +452,7 @@ public void testCasePaperMark(Object Regno, Object examdate, Object awardName, O
     EnrollmentPageForAdditionalParameter.EnrollmentExamType(examType,testCaseName);
     EnrollmentPageForAdditionalParameter.submitButton(testCaseName);
     EnrollmentPageForAdditionalParameter.downloadPdfReportValidation(testCaseName,Regno,
-	  paper1,paper2,paper3,praticalExam,theroryExam,examTotal,subjectToFind,finalPaper1,finalPaper2);
+	  paper1,paper2,paper3,praticalExam,theroryExam,examTotal,subjectToFind,theoryInt,theoryTh,praticalInt,praticalPractical,praticalViva);
 	 
 
 
@@ -456,17 +473,33 @@ public void testCasePaperMark(Object Regno, Object examdate, Object awardName, O
     }
 }
 
-@Test(priority = 8, enabled = true)
+
+//readpdf write excel
+@Test(priority = 8, enabled = false)
 
 public void testReadPdfDataWriteExcel() {
 
 	        try {
+	        	
+	        	
 	            System.out.println("Starting PDF Data Read Test...");
 	       //     ReadPdfData.readPdfData();
+	           
+			/*
+			 * if(!isTestCaseEnrollSet1) { testCaseName =
+			 * extentReport.createTest("Read PDF write Excel");
+			 * 
+			 * isTestCaseEnrollSet1 = true; // Mark it as set
+			 * 
+			 * }
+			 */
+	            
+	            
+	            
 	            
 	            System.out.println("=====================");
 	            
-	            ReadPdf.readPdfData();
+	            ReadPdf.readPdfData(testCaseName);
 	            
 	            
 	            System.out.println("PDF Data Read Test Completed.");
@@ -620,7 +653,7 @@ public void compareExcelData(String regno, String subjectCode, String theoryMark
 	extentReport =new ExtentReports(); 
 	
 	
-	 report = new ExtentSparkReporter("D:\\Coempt_PDF_reading_Excel_writing_Automation\\coempt_Automation_For_Read_PDF_Write_Excel\\src\\test\\resources\\reports\\ExtendReport.html");
+	 report = new ExtentSparkReporter("D:\\Coempt_Automation\\coempt_automation\\src\\test\\resources\\reports\\ExtendReport1.html");
 	
 
 	 
@@ -629,9 +662,9 @@ public void compareExcelData(String regno, String subjectCode, String theoryMark
 	 report.config().setDocumentTitle("Test Automation Report");
 	 report.config().setReportName("Automation Test Results");
 	 extentReport.attachReporter(report);
-	//  Browser_Launch();
+	 Browser_Launch();
 	  
-	  
+	  	
 	}
 
 	@AfterSuite
@@ -640,16 +673,16 @@ public void compareExcelData(String regno, String subjectCode, String theoryMark
 		extentReport.flush();
 		
 		try {
-		String path = "D:/Coempt_PDF_reading_Excel_writing_Automation/coempt_Automation_For_Read_PDF_Write_Excel/src/test/resources/reports/ExtendReport.html";
+		String path = "D:/Coempt_Automation/coempt_automation/src/test/resources/reports/ExtendReport.html";
 		
 		  // Open the report in default browser
-//        Desktop.getDesktop().browse(new URI("file:///D:Coempt_Automation\\coempt_automation\\src\\test\\resources\\reports\\ExtendReport.html")); 
+       Desktop.getDesktop().browse(new URI("file:///D:/Coempt_Automation/coempt_automation/src/test/resources/reports/ExtendReport1.html")); 
 
         //Use File to Create URI
 		
 		File file = new File(path);
         
-	//	Desktop.getDesktop().browse(file.toURI());
+		Desktop.getDesktop().browse(file.toURI());
         
 		
 		

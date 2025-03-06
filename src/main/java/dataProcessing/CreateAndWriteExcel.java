@@ -23,11 +23,7 @@ public class CreateAndWriteExcel {
 
     public static void writeExcelData(int rowIndex,String studentRegno,String studentSemester,String serialNo,String subjectNames,String subjectCode,String credit,String type,String st,String qt,String as,String mte,String emptyColumn1,String emptyColumn2,String emptyColumn3,String to40,String endSemExam,
     	String	to100,String totalMarks,String grade) throws IOException {
-        
-    
-
-    	   
-    	           
+  
     	                // Create a header row if the file is newly created
     	                Row datasRow = sheet.createRow(0);
     	      
@@ -35,9 +31,7 @@ public class CreateAndWriteExcel {
     	                
 //    	                String[] datavalues = { serialNo,studentRegno,studentSemester, subjectNames,subjectCode,credit,type,st,qt,as,mte,emptyColumn1,emptyColumn2,emptyColumn3,to40,endSemExam
 //    	                		,to100,totalMarks,grade};
-
-    	                
-    	                
+          
     	                String[] datavalues = {studentRegno,studentSemester, subjectNames,subjectCode,credit,type,st,qt,as,mte,emptyColumn1,emptyColumn2,emptyColumn3,to40,endSemExam
     	                		,to100,totalMarks,grade};
 
@@ -86,12 +80,10 @@ public class CreateAndWriteExcel {
     	            // Write each value in the correct column
     	     //       Datarow.createCell(0).setCellValue(serialNo);
     	      //      Datarow.createCell(1).setCellValue(subjectNames);
-    	        		  
-    	        		  
-    	        System.out.println("-------------------------------------------------------------------------");
+
+    	        		  System.out.println("-------------------------------------------------------------------------");
     	        		     System.out.println("Written: " + subjectNames + " in row " + rowIndex);		  
-    	       
-    	        		     
+	        		     
     	        //since sr.no is not need i commented it		     
     	        //     Datarow.createCell(0).setCellValue(serialNo);
     	            Datarow.createCell(0).setCellValue(studentRegno);
@@ -103,9 +95,7 @@ public class CreateAndWriteExcel {
     	            Datarow.createCell(3).setCellValue(subjectCode);
     	            
     	//            Datarow.createCell(5).setCellValue(extraSubjectCode);// skipped because of extra code
-    	            
-    	            
-    	       
+
     	            Datarow.createCell(4).setCellValue(credit);
     	            Datarow.createCell(5).setCellValue(type);
     	            Datarow.createCell(6).setCellValue(st);

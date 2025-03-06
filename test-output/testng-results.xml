@@ -1,95 +1,265 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="7" total="9" passed="1" failed="1" skipped="0">
+<testng-results ignored="9" total="17" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-24T17:36:25 IST" name="Default suite" finished-at="2025-02-24T17:36:32 IST" duration-ms="7459">
+  <suite started-at="2025-03-06T11:36:10 IST" name="Default suite" finished-at="2025-03-06T11:40:33 IST" duration-ms="262592">
     <groups>
     </groups>
-    <test started-at="2025-02-24T17:36:25 IST" name="Default test" finished-at="2025-02-24T17:36:32 IST" duration-ms="7459">
+    <test started-at="2025-03-06T11:36:10 IST" name="Default test" finished-at="2025-03-06T11:40:33 IST" duration-ms="262592">
       <class name="runner_Execution.Exceution">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:runner_Execution.Exceution@3c9754d8]" started-at="2025-02-24T17:36:25 IST" name="beforeSuite" finished-at="2025-02-24T17:36:25 IST" duration-ms="440" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:35:37 IST" name="beforeSuite" finished-at="2025-03-06T11:36:10 IST" duration-ms="33598" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:runner_Execution.Exceution@3c9754d8]" started-at="2025-02-24T17:36:25 IST" name="beforeTest" finished-at="2025-02-24T17:36:25 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:36:10 IST" name="beforeTest" finished-at="2025-03-06T11:36:10 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:runner_Execution.Exceution@3c9754d8]" started-at="2025-02-24T17:36:25 IST" name="beforeClass" finished-at="2025-02-24T17:36:25 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:36:10 IST" name="beforeClass" finished-at="2025-03-06T11:36:10 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:runner_Execution.Exceution@3c9754d8]" started-at="2025-02-24T17:36:25 IST" name="beforeMethod" finished-at="2025-02-24T17:36:25 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:36:11 IST" name="beforeMethod" finished-at="2025-03-06T11:36:11 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testCase3()[pri:3, instance:runner_Execution.Exceution@3c9754d8]" started-at="2025-02-24T17:36:25 IST" name="testCase3" finished-at="2025-02-24T17:36:25 IST" duration-ms="24" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.manage()" because "base.BasicFunctions.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.manage()" because "base.BasicFunctions.driver" is null
-at base.BasicFunctions.implicitWait(BasicFunctions.java:75)
-at pageModules.LoginPage.Login(LoginPage.java:148)
-at runner_Execution.Exceution.testCase3(Exceution.java:193)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method signature="testCase11(java.lang.Object,java.lang.Object,java.lang.Object)[pri:1, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:36:11 IST" name="testCase11" data-provider="excel" finished-at="2025-03-06T11:36:44 IST" duration-ms="32888" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[F22060002114]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Back-TH1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[67]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testCase3 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:runner_Execution.Exceution@3c9754d8]" started-at="2025-02-24T17:36:25 IST" name="afterMethod" finished-at="2025-02-24T17:36:25 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- testCase11 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:36:44 IST" name="afterMethod" finished-at="2025-03-06T11:36:44 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:runner_Execution.Exceution@3c9754d8]" started-at="2025-02-24T17:36:25 IST" name="beforeMethod" finished-at="2025-02-24T17:36:25 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:36:44 IST" name="beforeMethod" finished-at="2025-03-06T11:36:44 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testReadPdfDataWriteExcel()[pri:8, instance:runner_Execution.Exceution@3c9754d8]" started-at="2025-02-24T17:36:25 IST" name="testReadPdfDataWriteExcel" finished-at="2025-02-24T17:36:32 IST" duration-ms="7360" status="PASS">
+        <test-method signature="testCase11(java.lang.Object,java.lang.Object,java.lang.Object)[pri:1, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:36:44 IST" name="testCase11" data-provider="excel" finished-at="2025-03-06T11:37:17 IST" duration-ms="32543" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[F22121001017]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Back-TH1,TH2,TH4]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[67]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testReadPdfDataWriteExcel -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:runner_Execution.Exceution@3c9754d8]" started-at="2025-02-24T17:36:32 IST" name="afterMethod" finished-at="2025-02-24T17:36:32 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- testCase11 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:37:17 IST" name="afterMethod" finished-at="2025-03-06T11:37:17 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:runner_Execution.Exceution@3c9754d8]" started-at="2025-02-24T17:36:32 IST" name="afterClass" finished-at="2025-02-24T17:36:32 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:37:17 IST" name="beforeMethod" finished-at="2025-03-06T11:37:17 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testCase11(java.lang.Object,java.lang.Object,java.lang.Object)[pri:1, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:37:17 IST" name="testCase11" data-provider="excel" finished-at="2025-03-06T11:37:49 IST" duration-ms="32725" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[L23096005004]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Back-PR1,PR2]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[67]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase11 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:37:49 IST" name="afterMethod" finished-at="2025-03-06T11:37:49 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:37:49 IST" name="beforeMethod" finished-at="2025-03-06T11:37:49 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testCase11(java.lang.Object,java.lang.Object,java.lang.Object)[pri:1, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:37:49 IST" name="testCase11" data-provider="excel" finished-at="2025-03-06T11:38:22 IST" duration-ms="32591" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[F19060004025]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Pass]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[67]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase11 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:38:22 IST" name="afterMethod" finished-at="2025-03-06T11:38:22 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:38:22 IST" name="beforeMethod" finished-at="2025-03-06T11:38:22 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testCase11(java.lang.Object,java.lang.Object,java.lang.Object)[pri:1, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:38:22 IST" name="testCase11" data-provider="excel" finished-at="2025-03-06T11:38:55 IST" duration-ms="32509" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[F22060001003]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Fail]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[67]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase11 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:38:55 IST" name="afterMethod" finished-at="2025-03-06T11:38:55 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:38:55 IST" name="beforeMethod" finished-at="2025-03-06T11:38:55 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testCase11(java.lang.Object,java.lang.Object,java.lang.Object)[pri:1, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:38:55 IST" name="testCase11" data-provider="excel" finished-at="2025-03-06T11:39:28 IST" duration-ms="33086" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[F22060001002]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Entrepreneurship and Management & Smart Technology]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[67]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase11 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:39:28 IST" name="afterMethod" finished-at="2025-03-06T11:39:28 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:39:28 IST" name="beforeMethod" finished-at="2025-03-06T11:39:28 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testCase11(java.lang.Object,java.lang.Object,java.lang.Object)[pri:1, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:39:28 IST" name="testCase11" data-provider="excel" finished-at="2025-03-06T11:40:00 IST" duration-ms="32677" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[L23060002015]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Entrepreneurship and Management & Smart Technology]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[67]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase11 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:40:00 IST" name="afterMethod" finished-at="2025-03-06T11:40:00 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:40:00 IST" name="beforeMethod" finished-at="2025-03-06T11:40:00 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testCase11(java.lang.Object,java.lang.Object,java.lang.Object)[pri:1, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:40:00 IST" name="testCase11" data-provider="excel" finished-at="2025-03-06T11:40:33 IST" duration-ms="32640" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[F22060001003]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Entrepreneurship and Management & Smart Technology]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[67]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase11 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:40:33 IST" name="afterMethod" finished-at="2025-03-06T11:40:33 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:40:33 IST" name="afterClass" finished-at="2025-03-06T11:40:33 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:runner_Execution.Exceution@3c9754d8]" started-at="2025-02-24T17:36:32 IST" name="afterTest" finished-at="2025-02-24T17:36:32 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:40:33 IST" name="afterTest" finished-at="2025-03-06T11:40:33 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:runner_Execution.Exceution@3c9754d8]" started-at="2025-02-24T17:36:33 IST" name="afterSuite" finished-at="2025-02-24T17:36:33 IST" duration-ms="495" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:runner_Execution.Exceution@4d1c00d0]" started-at="2025-03-06T11:40:33 IST" name="afterSuite" finished-at="2025-03-06T11:40:35 IST" duration-ms="1606" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
