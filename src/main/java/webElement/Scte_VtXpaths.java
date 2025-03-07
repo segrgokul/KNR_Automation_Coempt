@@ -12,9 +12,6 @@ public static WebDriver driver;
 
 
 
-@FindBy(xpath = "(//a[@class='btn btn-sm btn-primary'])[2]")
-public WebElement fivethSemResult;
-
 @FindBy(xpath = "//input[@id='rollno']")
 public WebElement rollNoTB;
 

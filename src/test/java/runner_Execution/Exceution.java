@@ -107,17 +107,17 @@ return data2;
 	private static int totalFailed = 0;
 
 	@Test(priority = 1, enabled = true, dataProvider = "excel")
-	public void testCase11(Object regno, Object subjectName, Object finalMark) throws InterruptedException, IOException {
+	public void testCase11(Object regno, Object sycode, Object finalMark) throws InterruptedException, IOException {
 	    if (testCaseName == null) {
 	        testCaseName = extentReport.createTest("SCET&VT_SEM_5 Actions");
 	    }
 
-	    System.out.println("Starting testCase execution for the reg: " + regno);
+	    System.out.println("Starting testCase execution for the semester " + sycode +" and the reg: " + regno);
 	    System.out.println("=========================");
 
 	    try {
 	        // Perform LoginPage Actions
-	        ScteVt.DirectSignIn(regno, subjectName, finalMark, testCaseName);
+	        ScteVt.DirectSignIn(regno, sycode, finalMark, testCaseName);
 
 	        // If no exception, count as pass
 	        totalPassed++;
