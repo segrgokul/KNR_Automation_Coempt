@@ -40,8 +40,9 @@ public WebElement dobPrevDate;
   public WebElement btnViewStudentResults;  
 
 
-
-
+@FindBy(xpath="//button[@type='button' and text ()='OK']")
+	
+public WebElement btnAlertOk; 
 
 
 

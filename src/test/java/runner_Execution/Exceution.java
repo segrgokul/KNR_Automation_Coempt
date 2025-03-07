@@ -109,7 +109,7 @@ return data2;
 	@Test(priority = 1, enabled = true, dataProvider = "excel")
 	public void testCase11(Object regno, Object subjectName, Object finalMark) throws InterruptedException, IOException {
 	    if (testCaseName == null) {
-	        testCaseName = extentReport.createTest("Sevt Actions");
+	        testCaseName = extentReport.createTest("SCET&VT_SEM_5 Actions");
 	    }
 
 	    System.out.println("Starting testCase execution for the reg: " + regno);

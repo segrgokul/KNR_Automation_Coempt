@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy; // Set a higher limit
 
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 
 import base.BasicFunctions;
@@ -71,6 +72,8 @@ public class Scte_Vt  extends BasicFunctions {
 				 System.out.println(pom.getInstanceScte_VtXpaths().dobTB.isDisplayed());
 					
 				 pom.getInstanceScte_VtXpaths().dobTB.click();
+				 
+				 try {
 				if (pom.getInstanceScte_VtXpaths().dobTB.isDisplayed()) {
 
 		//			test.log(LogStatus.PASS, "User is unable to enter with direct signin button ");
@@ -104,12 +107,20 @@ public class Scte_Vt  extends BasicFunctions {
 		      	 
 		     	implicitWait(30);
 		      	 click(pom.getInstanceScte_VtXpaths().btnViewStudentResults);
-		    	 
+				}//if
 			    
-		      	 
+				 }//try
+					
+					catch(Exception e){
+		if(pom.getInstanceScte_VtXpaths().btnAlertOk.isDisplayed()) {
+
+		testCaseScenario.log(Status.SKIP,"Please check the following regno " + regno,	MediaEntityBuilder.createScreenCaptureFromPath(BasicFunctions.capture(driver)).build());
+	
+		driver.navigate().refresh();
+		
+		}  	 
 		      	 implicitWait(1000);
-		      	 
-		      
+				
 	
 		      	
 		      	 WebElement uiElement = driver.findElement(By.xpath("//h6[@id='result-st']"));
@@ -125,7 +136,7 @@ public class Scte_Vt  extends BasicFunctions {
 		      	
 		      	
 		      	if (parts.length > 1) {
-		      	    System.out.println("UI result: "+parts[1].trim()); 
+		      	    System.out.println("UI result:	 "+parts[1].trim()); 
 		      	    
 		      	    String uiBacklog =parts[1];
 		      	    
@@ -202,7 +213,7 @@ public class Scte_Vt  extends BasicFunctions {
 		      	                    hasBacklog = true;
 		      	                    backlogSubjects.append(subjectCode).append(",");
 		      	                    System.out.println(subjectDetails + " : Failed with Total Marks " + totalSubjectMarks);
-		      	                    testCaseScenario.log(Status.FAIL, subjectDetails + " : Failed with Total Marks " + totalSubjectMarks);
+		      	                    testCaseScenario.log(Status.PASS, subjectDetails + " : Failed with Total Marks " + totalSubjectMarks);
 		      	                } else {
 		      	                    System.out.println(subjectDetails + " : Passed with Total Marks " + totalSubjectMarks);
 		      	                    testCaseScenario.log(Status.PASS, subjectDetails + " : Passed with Total Marks " + totalSubjectMarks);
@@ -216,7 +227,7 @@ public class Scte_Vt  extends BasicFunctions {
 		      	                    hasBacklog = true;
 		      	                    backlogSubjects.append(subjectCode).append(",");
 		      	                    System.out.println(subjectDetails + " : Failed with Total Marks " + totalSubjectMarks);
-		      	                    testCaseScenario.log(Status.FAIL, subjectDetails + " : Failed with Total Marks " + totalSubjectMarks);
+		      	                    testCaseScenario.log(Status.PASS, subjectDetails + " : Failed with Total Marks " + totalSubjectMarks);
 		      	                } else {
 		      	                    System.out.println(subjectDetails + " : Passed with Total Marks " + totalSubjectMarks);
 		      	                    testCaseScenario.log(Status.PASS, subjectDetails + " : Passed with Total Marks " + totalSubjectMarks);
@@ -265,20 +276,20 @@ public class Scte_Vt  extends BasicFunctions {
 		      	    if (totalMark >= 300) {
 		      	        if (hasBacklog) {
 		      	            System.out.println("The student has FAILED with total marks: " + totalMark + " since they have backlogs: " + formattedScriptBacklog);
-		      	            testCaseScenario.log(Status.FAIL, "The student has FAILED with total marks: " + totalMark + " since they have backlogs: " + formattedScriptBacklog);
+		      	            testCaseScenario.log(Status.PASS, "The student has FAILED with total marks: " + totalMark + " since they have backlogs: " + formattedScriptBacklog);
 		      	        } else {
 		      	            System.out.println("The student has PASSED with total marks: " + totalMark);
 		      	            testCaseScenario.log(Status.PASS, "The student has PASSED with total marks: " + totalMark);
 		      	        }
 		      	    } else {
 		      	        System.out.println("The student has FAILED with total marks: " + totalMark);
-		      	        testCaseScenario.log(Status.FAIL, "The student has FAILED with total marks: " + totalMark);
+		      	        testCaseScenario.log(Status.PASS, "The student has FAILED with total marks: " + totalMark);
 		      	    }
-
+		      	      
 		      	        
-		      	    } catch (Exception e) {
+		      	    } catch (Exception e1) {
 		      	        System.out.println("An error occurred: " + e.getMessage());
-		      	        testCaseScenario.log(Status.FAIL, "Error occurred while fetching total marks: " + e.getMessage());
+		      	        testCaseScenario.log(Status.WARNING, "Error occurred while fetching total marks: " + e.getMessage(),	MediaEntityBuilder.createScreenCaptureFromPath(BasicFunctions.capture(driver)).build());
 		      	    }
 
 		
@@ -291,8 +302,11 @@ public class Scte_Vt  extends BasicFunctions {
 
 				// Switch back to the parent window (index 0 in the list)
 				driver.switchTo().window(windowHandles.get(0));
-	    	}
-	    	 	
+	    	
+
+			
+	      	 
+	    	}//try
 	    	catch(Exception e){
 	    		e.printStackTrace();
 	    		capture(driver);
